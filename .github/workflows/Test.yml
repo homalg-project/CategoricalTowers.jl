@@ -44,7 +44,7 @@ jobs:
       - name: Run tests
         run: make test
       - name: Run update_subsplits script if tests pass
-        if: success() && github.event_name == 'push' && matrix.julia-version == '1.11' && matrix.os == 'ubuntu-latest'
+        if: success() && github.event_name == 'push' && matrix.julia-version == '1.12' && matrix.os == 'ubuntu-latest'
         env:
           JULIA_SUBSPLIT_TOKEN: ${{ secrets.SUBSPLIT_PUSH_SECRET }}
         run: |
