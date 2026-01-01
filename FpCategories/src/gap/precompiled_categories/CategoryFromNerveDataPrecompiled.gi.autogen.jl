@@ -525,22 +525,11 @@ function ( cat_1, alpha_1 )
     deduped_4_1 = AsList( deduped_5_1 );
     deduped_3_1 = Cardinality( Target( deduped_5_1 ) );
     deduped_2_1 = Cardinality( Source( deduped_5_1 ) );
-    return CAP_JIT_EXPR_CASE_WRAPPER( function (  )
-                  if (@not ForAll( deduped_4_1, function ( a_3 )
-                               return IsBigInt( a_3 ) && a_3 >= 0;
-                           end ))
-                      return false;
-                  elseif (deduped_2_1 != Length( deduped_4_1 ))
-                      return false;
-                  elseif (@not ForAll( deduped_4_1, function ( a_3 )
-                               return a_3 < deduped_3_1;
-                           end ))
-                      return false;
-                  else
-                      return true;
-                  end;
-                  return;
-              end )(  ) && deduped_2_1 == 1 && Cardinality( NerveData( cat_1 )[1][2] ) == deduped_3_1;
+    return ForAll( deduped_4_1, function ( a_2 )
+                    return IsBigInt( a_2 ) && a_2 >= 0;
+                end ) && deduped_2_1 == Length( deduped_4_1 ) && ForAll( deduped_4_1, function ( a_2 )
+                  return a_2 < deduped_3_1;
+              end ) && deduped_2_1 == 1 && Cardinality( NerveData( cat_1 )[1][2] ) == deduped_3_1;
 end
 ########
         
@@ -556,22 +545,11 @@ function ( cat_1, arg2_1 )
     deduped_4_1 = AsList( deduped_5_1 );
     deduped_3_1 = Cardinality( Target( deduped_5_1 ) );
     deduped_2_1 = Cardinality( Source( deduped_5_1 ) );
-    return CAP_JIT_EXPR_CASE_WRAPPER( function (  )
-                  if (@not ForAll( deduped_4_1, function ( a_3 )
-                               return IsBigInt( a_3 ) && a_3 >= 0;
-                           end ))
-                      return false;
-                  elseif (deduped_2_1 != Length( deduped_4_1 ))
-                      return false;
-                  elseif (@not ForAll( deduped_4_1, function ( a_3 )
-                               return a_3 < deduped_3_1;
-                           end ))
-                      return false;
-                  else
-                      return true;
-                  end;
-                  return;
-              end )(  ) && deduped_2_1 == 1 && Cardinality( NerveData( cat_1 )[1][1] ) == deduped_3_1;
+    return ForAll( deduped_4_1, function ( a_2 )
+                    return IsBigInt( a_2 ) && a_2 >= 0;
+                end ) && deduped_2_1 == Length( deduped_4_1 ) && ForAll( deduped_4_1, function ( a_2 )
+                  return a_2 < deduped_3_1;
+              end ) && deduped_2_1 == 1 && Cardinality( NerveData( cat_1 )[1][1] ) == deduped_3_1;
 end
 ########
         
