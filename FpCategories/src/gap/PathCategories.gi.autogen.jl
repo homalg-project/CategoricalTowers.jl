@@ -59,6 +59,9 @@
       @rec( category_attribute_names =
            [ "UnderlyingQuiver",
              "DefiningTripleOfUnderlyingQuiver",
+             "SetOfObjectsAsUnresolvableAttribute",
+             "SetOfGeneratingMorphismsAsUnresolvableAttribute",
+             "ExternalHoms",
              ],
            );
     
@@ -66,7 +69,7 @@
     AddObjectConstructor( C,
       function ( C, obj_index )
         
-        return SetOfObjects( C )[obj_index];
+        return SetOfObjectsOfCategory( C )[obj_index];
         
     end );
     
@@ -90,7 +93,7 @@
     AddIsEqualForObjects( C,
       function ( C, obj_1, obj_2 )
         
-        return IsIdenticalObj( obj_1, obj_2 );
+        return ObjectIndex( obj_1 ) == ObjectIndex( obj_2 );
         
     end );
     
@@ -139,9 +142,9 @@
       function ( C, mor_1, mor_2 )
         
         return IsEqualForObjects( C, Source( mor_1 ), Source( mor_2 ) ) &&
-                IsEqualForObjects( C, Target( mor_1 ), Target( mor_2 ) ) &&
-                MorphismLength( mor_1 ) == MorphismLength( mor_2 ) &&
-                MorphismIndices( mor_1 ) == MorphismIndices( mor_2 );
+               IsEqualForObjects( C, Target( mor_1 ), Target( mor_2 ) ) &&
+               MorphismLength( mor_1 ) == MorphismLength( mor_2 ) &&
+               MorphismIndices( mor_1 ) == MorphismIndices( mor_2 );
         
     end );
     
@@ -264,11 +267,11 @@
         
     end );
     
+    SetIsFiniteCategory( C, IsFinitePathCategory( C ) );
+    
     # Homomorphism Structure - Only for path categories with underlying acyclic quivers
     
-    if (IsFinitePathCategory( C ) )
-        
-        SetIsFiniteCategory( C, true );
+    if (IsFiniteCategory( C ) )
         
         range_cat = range_of_HomStructure;
         
@@ -277,8 +280,6 @@
         end;
         
         SET_RANGE_CATEGORY_Of_HOMOMORPHISM_STRUCTURE( C, range_cat );
-        
-        @Assert( 0, IsIdenticalObj( RangeCategoryOfHomomorphismStructure( C ), range_cat ) );
         
         AddMorphismsOfExternalHom( C,
           function ( C, obj_1, obj_2 )
@@ -290,10 +291,6 @@
             return ExternalHoms( C )[s][t];
             
         end );
-        
-    else
-        
-        SetIsFiniteCategory( C, false );
         
     end;
     
@@ -310,7 +307,7 @@ end ) );
         
   function( cat )
     
-    return SetOfObjectsOfCategory( cat );
+    return SetOfObjectsAsUnresolvableAttribute( cat );
     
 end );
 
@@ -321,7 +318,7 @@ end );
         
   function( cat )
     
-    return SetOfGeneratingMorphismsOfCategory( cat );
+    return SetOfGeneratingMorphismsAsUnresolvableAttribute( cat );
     
 end );
 
