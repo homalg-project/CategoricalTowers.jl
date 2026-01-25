@@ -5,7 +5,7 @@ authors = [
 	"Kamal Saleh <kamal.saleh@uni-siegen.de>"
 ]
 
-# Transpiled from GAP's FpLinearCategories v2026.01-01
+# Transpiled from GAP's FpLinearCategories v2026.01-02
 version = "0.1.4"
 
 [deps]
