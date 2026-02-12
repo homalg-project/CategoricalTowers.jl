@@ -11,7 +11,7 @@ DummyCategoryInDoctrines( [ "IsAbCategory" ] )
 julia> Display( D1 )
 A CAP category with name DummyCategoryInDoctrines( [ "IsAbCategory" ] ):
 
-16 primitive operations were used to derive 28 operations for this category which algorithmically
+16 primitive operations were used to derive 29 operations for this category which algorithmically
 * IsAbCategory
 
 julia> D2 = DummyCategoryInDoctrines( [ "IsAbCategory", "IsAbelianCategory" ] )
@@ -20,7 +20,7 @@ DummyCategoryInDoctrines( [ "IsAbelianCategory" ] )
 julia> Display( D2 )
 A CAP category with name DummyCategoryInDoctrines( [ "IsAbelianCategory" ] ):
 
-33 primitive operations were used to derive 291 operations for this category which algorithmically
+33 primitive operations were used to derive 292 operations for this category which algorithmically
 * IsAbelianCategory
 
 julia> D3 = DummyCategoryInDoctrines(

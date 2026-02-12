@@ -4,8 +4,8 @@ authors = [
 	"Kamal Saleh <kamal.saleh@uni-siegen.de>"
 ]
 
-# Transpiled from GAP's QuotientCategories v2025.12-01
-version = "0.1.1"
+# Transpiled from GAP's QuotientCategories v2026.02-01
+version = "0.1.2"
 
 [deps]
 MatricesForHomalg = "29b9b1b6-efa6-450e-8188-a5a2c25df071"
@@ -19,7 +19,7 @@ LinearAlgebraForCAP = "3dc4824f-14ac-4ab7-8a60-75dbcd4a9d60"
 
 [compat]
 julia = "1.11"
-CAP = "0.6"
+CAP = "~0.6.19"
 ToolsForCategoricalTowers = "0.1"
 LinearAlgebraForCAP = "~0.1.11"
 ModulePresentationsForCAP = "~0.1.7"

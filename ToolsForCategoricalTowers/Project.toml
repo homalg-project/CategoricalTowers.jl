@@ -4,8 +4,8 @@ authors = [
 	"Mohamed Barakat <mohamed.barakat@uni-siegen.de>"
 ]
 
-# Transpiled from GAP's ToolsForCategoricalTowers v2026.01-02
-version = "0.1.4"
+# Transpiled from GAP's ToolsForCategoricalTowers v2026.02-01
+version = "0.1.5"
 
 [deps]
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"
@@ -18,7 +18,7 @@ CartesianCategories = "c5961c08-7b59-43f4-a15e-02b3e7c87ab8"
 
 [compat]
 julia = "1.11"
-CAP = "0.6"
+CAP = "~0.6.19"
 MonoidalCategories = "0.2"
 CartesianCategories = "0.3"
 FinSetsForCAP = "0.2, 0.3"
