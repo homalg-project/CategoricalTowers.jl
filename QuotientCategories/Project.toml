@@ -4,7 +4,7 @@ authors = [
 	"Kamal Saleh <kamal.saleh@uni-siegen.de>"
 ]
 
-# Transpiled from GAP's QuotientCategories v2026.07-01
+# Transpiled from GAP's QuotientCategories v2026.07-02
 version = "0.2.5"
 
 [deps]
