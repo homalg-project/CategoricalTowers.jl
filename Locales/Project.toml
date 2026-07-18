@@ -6,8 +6,8 @@ authors = [
 	"Tom Kuhmichel <tom.kuhmichel@student.uni-siegen.de>"
 ]
 
-# Transpiled from GAP's Locales v2026.06-02
-version = "0.1.3"
+# Transpiled from GAP's Locales v2026.07-01
+version = "0.1.4"
 
 [deps]
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"
