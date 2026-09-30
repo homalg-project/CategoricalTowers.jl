@@ -1,0 +1,40 @@
+name: Update Release Status Badges
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0 */6 * * *"  # Run every 6 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  release-status:
+    if: github.repository == 'homalg-project/CategoricalTowers.jl'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: true
+
+      - name: Set up Julia
+        uses: julia-actions/setup-julia@v3
+        with:
+          version: '1.12'
+
+      - name: Compare Project.toml versions against the General registry
+        run: julia --startup-file=no dev/check_release_status.jl
+
+      - name: Commit updated badges
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update release status badges [skip ci]"
+          file_pattern: "dev/badges/*.json"
