@@ -859,7 +859,7 @@
             
             offset = List( (1):(eq), i -> BigInt( Position( sort_index_eq[ eq_index_in_C[i] ] , i ) ) );
             
-            ##offset = List( (1):(teq), i -> 1 + Length( Positions( eq_index_in_C[(1):(i)], eq_index_in_C[i] ) ) );
+            ##offset = List( [ 1 .. teq ], i -> 1 + Length( Positions( eq_index_in_C[[ 1 .. i ]], eq_index_in_C[i] ) ) );
             
             test_data = TripleOfLists( test_morphism );
             

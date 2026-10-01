@@ -857,13 +857,13 @@ InstallMethodWithCache( PreSheaves,
   end ) );
 
 # Filters can not be defined inside functions in Julia, hence we define it here and retrieve it in the function:
-@FilterIntersection( IsCapCategory, IsInitialCategory )
+@FilterIntersection( IsCapCategory, IsFiniteCategory, IsInitialCategory )
 @FilterIntersection( IsPreSheafCategory, IsTerminalCategory )
 
 ##
 InstallMethodWithCache( PreSheaves,
         "for two CAP categories",
-        [ FilterIntersection( IsCapCategory, IsInitialCategory ), IsCapCategory ],
+        [ FilterIntersection( IsCapCategory, IsFiniteCategory, IsInitialCategory ), IsCapCategory ],
         
   @FunctionWithNamedArguments(
   [

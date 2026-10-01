@@ -12,6 +12,8 @@ using QuotientCategories
 
 using FinSetsForCAP
 
+using Toposes
+
 include("init.jl")
 
 include("post_init.jl")

@@ -63,7 +63,7 @@ function ( cat_1, a_1 )
     deduped_3_1 = deduped_4_1[2];
     hoisted_2_1 = deduped_3_1[3];
     hoisted_1_1 = deduped_3_1[2];
-    return List( (0):(deduped_4_1[1][2] - 1 ), function ( i_2 )
+    return List( (0):(deduped_4_1[1][2] - 1), function ( i_2 )
               local deduped_1_2;
               deduped_1_2 = 1 + i_2;
               return CreateCapCategoryMorphismWithAttributes( cat_1, CreateCapCategoryObjectWithAttributes( cat_1, IndexOfObject, hoisted_1_1[deduped_1_2] ), CreateCapCategoryObjectWithAttributes( cat_1, IndexOfObject, hoisted_2_1[deduped_1_2] ), IndexOfMorphism, i_2 );
@@ -109,7 +109,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
     deduped_5_1 = deduped_6_1[2];
     hoisted_4_1 = deduped_5_1[3];
     hoisted_3_1 = deduped_5_1[2];
-    return List( (0):(deduped_6_1[1][2] - 1 ), function ( i_2 )
+    return List( (0):(deduped_6_1[1][2] - 1), function ( i_2 )
               local deduped_1_2;
               deduped_1_2 = 1 + i_2;
               return CreateCapCategoryMorphismWithAttributes( cat_1, CreateCapCategoryObjectWithAttributes( cat_1, IndexOfObject, hoisted_3_1[deduped_1_2] ), CreateCapCategoryObjectWithAttributes( cat_1, IndexOfObject, hoisted_4_1[deduped_1_2] ), IndexOfMorphism, i_2 );
@@ -247,7 +247,7 @@ function ( cat_1, alpha_1, beta_1 )
     deduped_5_1 = deduped_6_1[2];
     hoisted_4_1 = deduped_5_1[3];
     hoisted_3_1 = deduped_5_1[2];
-    return List( (0):(deduped_6_1[1][2] - 1 ), function ( i_2 )
+    return List( (0):(deduped_6_1[1][2] - 1), function ( i_2 )
               local deduped_1_2;
               deduped_1_2 = 1 + i_2;
               return CreateCapCategoryMorphismWithAttributes( cat_1, CreateCapCategoryObjectWithAttributes( cat_1, IndexOfObject, hoisted_3_1[deduped_1_2] ), CreateCapCategoryObjectWithAttributes( cat_1, IndexOfObject, hoisted_4_1[deduped_1_2] ), IndexOfMorphism, i_2 );
@@ -267,7 +267,7 @@ function ( cat_1 )
     deduped_4_1 = deduped_5_1[2];
     hoisted_2_1 = deduped_4_1[3];
     hoisted_1_1 = deduped_4_1[2];
-    hoisted_3_1 = List( (0):(deduped_5_1[1][2] - 1 ), function ( i_2 )
+    hoisted_3_1 = List( (0):(deduped_5_1[1][2] - 1), function ( i_2 )
             local deduped_1_2;
             deduped_1_2 = 1 + i_2;
             return CreateCapCategoryMorphismWithAttributes( cat_1, CreateCapCategoryObjectWithAttributes( cat_1, IndexOfObject, hoisted_1_1[deduped_1_2] ), CreateCapCategoryObjectWithAttributes( cat_1, IndexOfObject, hoisted_2_1[deduped_1_2] ), IndexOfMorphism, i_2 );
@@ -290,7 +290,7 @@ function ( cat_1 )
     deduped_3_1 = deduped_4_1[2];
     hoisted_2_1 = deduped_3_1[3];
     hoisted_1_1 = deduped_3_1[2];
-    return List( (0):(deduped_4_1[1][2] - 1 ), function ( i_2 )
+    return List( (0):(deduped_4_1[1][2] - 1), function ( i_2 )
             local deduped_1_2;
             deduped_1_2 = 1 + i_2;
             return CreateCapCategoryMorphismWithAttributes( cat_1, CreateCapCategoryObjectWithAttributes( cat_1, IndexOfObject, hoisted_1_1[deduped_1_2] ), CreateCapCategoryObjectWithAttributes( cat_1, IndexOfObject, hoisted_2_1[deduped_1_2] ), IndexOfMorphism, i_2 );
@@ -305,7 +305,7 @@ end
         
 ########
 function ( cat_1 )
-    return List( (0):(DataTables( cat_1 )[1][1] - 1 ), function ( i_2 )
+    return List( (0):(DataTables( cat_1 )[1][1] - 1), function ( i_2 )
             return CreateCapCategoryObjectWithAttributes( cat_1, IndexOfObject, i_2 );
         end );
 end

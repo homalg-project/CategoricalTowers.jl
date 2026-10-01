@@ -19,32 +19,31 @@
     @Assert( 0,
             Length( quadruple ) == 4 &&
             IsList( quadruple[3] ) &&
-            ForAll( quadruple[3], IsInt ) &&
+            ForAll( quadruple[3], IsBigInt ) &&
             IsList( quadruple[4] ) &&
             ForAll( quadruple[4], IsList ) );
     
-    return CreateCapCategoryObjectWithAttributes( category_of_quivers,
-                   DefiningQuadrupleOfReflexiveQuiverEnrichedOverSkeletalFinSets, quadruple );
+    return ObjectConstructor( category_of_quivers, quadruple );
     
 end );
 
 ##
 @InstallMethod( CreateReflexiveQuiver,
         "for a category of finite reflexive quivers, an integer, a list of integers, and a list of pairs of integers",
-        [ IsCategoryOfReflexiveQuivers, IsInt, IsList, IsList ],
+        [ IsCategoryOfReflexiveQuivers, IsBigInt, IsList, IsList ],
         
   function ( category_of_quivers, n, loops, arrows )
     local arr;
     
-    if (ForAll( arrows, IsInt ))
+    if (ForAll( arrows, IsBigInt ))
         @Assert( 0, IsEvenInt( Length( arrows ) ) );
-        arr = List( (1):(Length( arrows ) / 2), i -> PairGAP( arrows[2 * i - 1], arrows[2 * i] ) );
+        arr = List( (1):(QuoInt( Length( arrows ), 2 )), i -> PairGAP( arrows[2 * i - 1], arrows[2 * i] ) );
     else
         arr = arrows;
     end;
     
     return CreateReflexiveQuiver( category_of_quivers,
-                   @NTupleGAP( 4, n, Length( arr ), loops, arr ) );
+                   @NTupleGAP( 4, n, BigInt( Length( arr ) ), loops, arr ) );
     
 end );
 
@@ -55,10 +54,7 @@ end );
         
   function ( category_of_quivers, source, images, range )
     
-    return CreateCapCategoryMorphismWithAttributes( category_of_quivers,
-                   source,
-                   range,
-                   DefiningPairOfReflexiveQuiverMorphismEnrichedOverSkeletalFinSets, images );
+    return MorphismConstructor( category_of_quivers, source, images, range );
     
 end );
 
@@ -78,7 +74,12 @@ end );
         "for a category of sekelal finite sets",
         [ IsSkeletalCategoryOfFiniteSets ],
         
-  function ( category_of_skeletal_finsets )
+    @FunctionWithNamedArguments(
+    [
+        [ "no_precompiled_code", false ],
+        [ "FinalizeCategory", true ],
+    ],
+    function ( CAP_NAMED_ARGUMENTS, category_of_skeletal_finsets )
     local name, category_filter, category_object_filter, category_morphism_filter,
           object_datum_type, object_constructor, object_datum,
           morphism_datum_type, morphism_constructor, morphism_datum,
@@ -98,25 +99,33 @@ end );
     ##
     object_datum_type =
       CapJitDataTypeOfNTupleOf( 4,
-              IsInt,
-              IsInt,
-              CapJitDataTypeOfListOf( IsInt ),
+              IsBigInt,
+              IsBigInt,
+              CapJitDataTypeOfListOf( IsBigInt ),
               CapJitDataTypeOfListOf(
                       CapJitDataTypeOfNTupleOf( 2,
-                              IsInt,
-                              IsInt ) ) );
+                              IsBigInt,
+                              IsBigInt ) ) );
     
-    object_constructor = CreateReflexiveQuiver;
+    object_constructor =
+        ( category_of_quivers, quadruple ) ->
+            CreateCapCategoryObjectWithAttributes( category_of_quivers,
+                DefiningQuadrupleOfReflexiveQuiverEnrichedOverSkeletalFinSets, quadruple );
     
     object_datum = ( Quivers, o ) -> DefiningQuadrupleOfReflexiveQuiverEnrichedOverSkeletalFinSets( o );
     
     ##
     morphism_datum_type =
       CapJitDataTypeOfNTupleOf( 2,
-              CapJitDataTypeOfListOf( IsInt ),
-              CapJitDataTypeOfListOf( IsInt ) );
+              CapJitDataTypeOfListOf( IsBigInt ),
+              CapJitDataTypeOfListOf( IsBigInt ) );
     
-    morphism_constructor = CreateReflexiveQuiverMorphism;
+    morphism_constructor =
+        ( category_of_quivers, source, images, range ) ->
+            CreateCapCategoryMorphismWithAttributes( category_of_quivers,
+                source,
+                range,
+                DefiningPairOfReflexiveQuiverMorphismEnrichedOverSkeletalFinSets, images );
     
     morphism_datum = ( Quivers, m ) -> DefiningPairOfReflexiveQuiverMorphismEnrichedOverSkeletalFinSets( m );
     
@@ -124,9 +133,13 @@ end );
     
     F = SimplicialCategoryTruncatedInDegree( 1; range_of_HomStructure = category_of_skeletal_finsets, FinalizeCategory = true );
     
-    F = CategoryFromDataTables( F; set_category_attribute_resolving_functions = true, FinalizeCategory = true );
+    F = CallFuncListAtRuntime( CategoryFromDataTables, [ F ]; set_category_attribute_resolving_functions = true, FinalizeCategory = true );
     
-    F_hat = FiniteCocompletion( F; FinalizeCategory = true );
+    F_hat = FiniteCocompletion( F
+                #= comment for Julia (FiniteCocompletion(-) does not yet support this named-arg)
+               ; FinalizeCategory = true
+                # =#
+                );
     
     @Assert( 0, IsIdenticalObj( RangeCategoryOfHomomorphismStructure( F ), category_of_skeletal_finsets ) );
     
@@ -249,16 +262,18 @@ end );
             [ "UnderlyingCategory",
               ] );
     
-    if (ValueOption( "no_precompiled_code" ) != true)
+    if (no_precompiled_code != true)
         ADD_FUNCTIONS_FOR_FinReflexiveQuiversPrecompiled( Quivers );
         ADD_FUNCTIONS_FOR_FinReflexiveQuiversAsCCCPrecompiled( Quivers );
     end;
     
-    Finalize( Quivers );
+    if (FinalizeCategory == true)
+        Finalize( Quivers );
+    end;
     
     return Quivers;
     
-end );
+end ) );
 
 ##
 @BindGlobal( "FinReflexiveQuivers",
@@ -269,7 +284,7 @@ FinReflexiveQuivers.Name = "FinReflexiveQuivers";
 ##
 @InstallMethod( CreateReflexiveQuiver,
         "for an integer, a list of integers, and a list of pairs of integers",
-        [ IsInt, IsList, IsList ],
+        [ IsBigInt, IsList, IsList ],
         
   function ( n, loops, arrows )
     
@@ -360,14 +375,12 @@ end );
 end );
 
 ##
-@InstallMethod( \.,
-        "for a category of finite reflexive quivers and a positive integer",
-        [ IsCategoryOfReflexiveQuivers, IsPosInt ],
+@InstallMethod( /,
+        "for a string and a category of finite reflexive quivers",
+        [ IsString, IsCategoryOfReflexiveQuivers ],
         
-  function ( category_of_quivers, string_as_int )
-    local name, F, Y, Yc;
-    
-    name = NameRNam( string_as_int );
+  function ( name, category_of_quivers )
+    local F, Y, Yc;
     
     F = UnderlyingCategory( category_of_quivers );
     
@@ -381,7 +394,7 @@ end );
         name = "id";
     end;
     
-    Yc = Y( F[name] );
+    Yc = CallFuncListAtRuntime( ApplyFunctor, [ Y, name / F ] );
     
     if (IsObjectInCategoryOfReflexiveQuivers( Yc ))
         
@@ -418,16 +431,14 @@ end );
 end );
 
 ##
-@InstallMethod( \.,
-        "for an object in a category of finite reflexive quivers and a positive integer",
-        [ IsObjectInCategoryOfReflexiveQuivers, IsPosInt ],
+@InstallMethod( /,
+        "for a string and an object in a category of finite reflexive quivers",
+        [ IsString, IsObjectInCategoryOfReflexiveQuivers ],
         
-  function ( reflexive_quiver, string_as_int )
-    local datum, n, m, loops, arrows, name;
+  function ( name, reflexive_quiver )
+    local datum, n, m, loops, arrows;
     
     datum = ObjectDatum( reflexive_quiver );
-    
-    name = NameRNam( string_as_int );
     
     n = datum[1];
     
@@ -454,16 +465,14 @@ end );
 end );
 
 ##
-@InstallMethod( \.,
-        "for a morphism in a category of finite reflexive quivers and a positive integer",
-        [ IsMorphismInCategoryOfReflexiveQuivers, IsPosInt ],
+@InstallMethod( /,
+        "for a string and a morphism in a category of finite reflexive quivers",
+        [ IsString, IsMorphismInCategoryOfReflexiveQuivers ],
         
-  function ( mor, string_as_int )
-    local datum, name;
+  function ( name, mor )
+    local datum;
     
     datum = MorphismDatum( mor );
-    
-    name = NameRNam( string_as_int );
     
     if (name == "V" || name == "C0")
         return MapOfFinSets( Source( mor ).V, datum[1], Target( mor ).V );
@@ -475,9 +484,15 @@ end );
     
 end );
 
+#= comment for Julia
+INSTALL_DOT_METHOD( IsCategoryOfReflexiveQuivers );
+INSTALL_DOT_METHOD( IsObjectInCategoryOfReflexiveQuivers );
+INSTALL_DOT_METHOD( IsMorphismInCategoryOfReflexiveQuivers );
+
 ##
 MakeShowable( [ "image/svg+xml" ], IsObjectInCategoryOfReflexiveQuivers );
 MakeShowable( [ "image/svg+xml" ], IsMorphismInCategoryOfReflexiveQuivers && IsMonomorphism );
+# =#
 
 ##
 @InstallMethod( DotVertexLabelledDigraph,
@@ -535,11 +550,13 @@ end );
 
 ##
 @InstallMethod( DotVertexLabelledDigraph,
-        "for a morphism in a category of finite reflexive quivers",
-        [ IsMorphismInCategoryOfReflexiveQuivers && IsMonomorphism ],
+        "for a monomorphism in a category of finite reflexive quivers",
+        [ IsMorphismInCategoryOfReflexiveQuivers ],
         
   function ( monomorphism )
     local reflexive_quiver, vertices, loops, arrows, str, arrows_as_pairs, i, arrowhead;
+    
+    @Assert( 0, IsMonomorphism( monomorphism ) );
     
     reflexive_quiver = Target( monomorphism );
     
@@ -614,7 +631,7 @@ end );
 end );
 
 ##
-@InstallMethod( Display,
+@InstallMethod( DisplayString,
         "for an object in a category of finite reflexive quivers",
         [ IsObjectInCategoryOfReflexiveQuivers ],
         
@@ -637,13 +654,13 @@ end );
         return @Concatenation( " ", StringGAP( -1 + i ), " = ", StringGAP( arrows[i] ) );
     end;
     
-    Print( "( ", StringPrint( FinSet( datum[1] ) ), ", [",
-           JoinStringsWithSeparator( List( (1):(datum[2]), f ) ), " ] )\n" );
+    return @Concatenation( "( ", PrintString( FinSet( datum[1] ) ), ", [",
+           JoinStringsWithSeparator( List( (1):(datum[2]), f ), ", " ), " ] )\n" );
     
 end );
 
 ##
-@InstallMethod( Display,
+@InstallMethod( DisplayString,
         "for a morphism in a category of finite reflexive quivers",
         [ IsMorphismInCategoryOfReflexiveQuivers ],
         
@@ -652,12 +669,11 @@ end );
 
     F = UnderlyingCategory( CapCategory( mor ) );
     
-    Print( "Image of ", StringView( F.C0 ), ":\n" );
-    Display( mor.V );
-    
-    Print( "\nImage of ", StringView( F.C1 ), ":\n" );
-    Display( mor.A );
-    
-    Print( "\nA morphism in ", Name( CapCategory( mor ) ), " given by the above data\n" );
+    return @Concatenation(
+            "Image of ", ViewString( F.C0 ), ":\n",
+            DisplayString( mor.V ),
+            "\nImage of ", ViewString( F.C1 ), ":\n",
+            DisplayString( mor.A ),
+            "\nA morphism in ", Name( CapCategory( mor ) ), " given by the above data\n" );
     
 end );

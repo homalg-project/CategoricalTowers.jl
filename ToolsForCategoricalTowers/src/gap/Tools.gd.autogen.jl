@@ -608,12 +608,25 @@ DeclareGlobalVariable( "RECORD_OF_COMPACT_NAMES_OF_CATEGORICAL_OPERATIONS" );
 #!  The input is a cocartesian category <A>cat</A> and a list <A>objs</A> of objects therein of length $l$,
 #!  such that the list of all possible finite coproducts is finite.
 #!  The output is a list of lists of pairs.
-#!  Each pair consists of a sublist $I$ of <C>(1):(l)</C> and the coproduct of the sublist objs[I].
+#!  Each pair consists of a sublist $I$ of <C>[ 1 .. l ]</C> and the coproduct of the sublist objs[I].
 #! @Arguments cat, objs
 #! @Returns a list of objects
 @DeclareOperation( "AllCoproducts",
         [ IsCapCategory, IsList ] );
 # =#
 @DeclareFilterDispatchedOperation( "AllCoproducts" )
+
+#= comment for Julia
+#! @Description
+#!  The arguments are a &CAP; category <A>A</A>, a list <A>imgs_of_objs</A> of the images of the objects of <A>A</A> in <A>C</A>,
+#!  a list <A>imgs_of_gmors</A> of the images of the generating morphisms of <A>A</A> in <A>C</A>, and a &CAP; category <A>C</A>.
+#!  The output is the functor <A>A</A> $\to$ <A>C</A> determined by these images.
+#!  Declared centrally here since it is installed on unrelated filters by several packages (e.g. Locales, FpLinearCategories).
+#! @Arguments A, imgs_of_objs, imgs_of_gmors, C
+#! @Returns a &CAP; functor
+@DeclareOperation( "CreateFunctor",
+        [ IsCapCategory, IsList, IsList, IsCapCategory ] );
+# =#
+@DeclareFilterDispatchedOperation( "CreateFunctor" )
 
 @DeclareOperation( "OneMutableGAP", [ IsCapCategoryMorphism ] );

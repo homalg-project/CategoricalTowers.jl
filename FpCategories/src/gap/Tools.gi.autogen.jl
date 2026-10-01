@@ -9,20 +9,9 @@
 InstallTrueMethod( IsObjectFiniteCategory, IsFinitelyPresentedCategory );
 InstallTrueMethod( IsFinitelyPresentedCategory, IsFiniteCategory );
 
-#= comment for Julia
 ##
 @InstallMethod( SetOfGeneratingMorphisms,
-        [ IsCapCategory && IsInitialCategory ],
-        
-  function( I )
-    
-    return [ ];
-    
-end );
-
-##
-@InstallMethod( SetOfGeneratingMorphisms,
-        [ IsCapCategory && HasOppositeCategory ],
+        [ WasCreatedAsOppositeCategory ],
         
   function( cat_op )
     
@@ -33,7 +22,6 @@ end );
                          ObjectConstructor( cat_op, Source( mor ) ) ) );
     
 end );
-# =#
 
 ##
 @InstallMethod( SetOfGeneratingMorphisms,
@@ -61,7 +49,7 @@ end );
   function( cat )
     local objs, mors;
     
-    if (!( HasIsFinitelyPresentedCategory( cat ) && IsFinitelyPresentedCategory( cat ) ))
+    if (!( ForAll( [ "SetOfObjectsOfCategory", "SetOfGeneratingMorphismsOfCategory" ], op -> CanCompute( cat, op ) ) ))
         TryNextMethod( );
     end;
     
@@ -1184,6 +1172,87 @@ end );
                          HomHomOmega_morphisms ),
                    Sieves_maximal,
                    Sieves_emb  );
+    
+end );
+
+##
+@InstallMethod( SieveFunctor,
+        [ IsCapCategory ],
+        
+  function ( B )
+    local Sieves, Bop, sFinSets;
+    
+    if (!(HasIsFiniteCategory( B ) && IsFiniteCategory( B ) && HasRangeCategoryOfHomomorphismStructure( B )))
+        TryNextMethod( );
+    end;
+    
+    # asserts that IsSkeletalCategoryOfFiniteSets( RangeCategoryOfHomomorphismStructure( B ) )
+    Sieves = TruthMorphismOfTrueToSieveFunctorAndEmbedding( B );
+    
+    Bop = OppositeOfObjectFiniteCategory( B );
+    
+    sFinSets = RangeCategoryOfHomomorphismStructure( B );
+    
+    ## the functor of sieves Bop → sFinSets, c ↦ Sieves(c)
+    return CapFunctor( Bop, Sieves[1][1], Sieves[1][2], sFinSets );
+    
+end );
+
+##
+@InstallMethod( TruthMorphismOfTrueToSieveFunctor,
+        [ IsCapCategory ],
+        
+  function ( B )
+    local Sieves, Bop, sFinSets, Constant_functor, Sieves_maximal, Sieves_functor;
+    
+    if (!(HasIsFiniteCategory( B ) && IsFiniteCategory( B ) && HasRangeCategoryOfHomomorphismStructure( B )))
+        TryNextMethod( );
+    end;
+    
+    Sieves = TruthMorphismOfTrueToSieveFunctorAndEmbedding( B );
+    
+    Bop = OppositeOfObjectFiniteCategory( B );
+    
+    sFinSets = RangeCategoryOfHomomorphismStructure( B );
+    
+    Constant_functor = CapFunctor( Bop, Sieves[2][1], Sieves[2][2], sFinSets );
+    Sieves_maximal = Sieves[4];
+    Sieves_functor = SieveFunctor( B );
+    
+    ## T → Sieves, c ↦ ( T(c) == [*] → Sieves(c), * ↦ maximal_sieve(c) = Hom(-, c) )
+    return NaturalTransformation(
+                   Constant_functor,
+                   Sieves_maximal,
+                   Sieves_functor );
+    
+end );
+
+##
+@InstallMethod( EmbeddingOfSieveFunctor,
+        [ IsCapCategory ],
+        
+  function ( B )
+    local Sieves, Bop, sFinSets, Sieves_functor, Sieves_emb, HomHomOmega_functor;
+    
+    if (!(HasIsFiniteCategory( B ) && IsFiniteCategory( B ) && HasRangeCategoryOfHomomorphismStructure( B )))
+        TryNextMethod( );
+    end;
+    
+    Sieves = TruthMorphismOfTrueToSieveFunctorAndEmbedding( B );
+    
+    Bop = OppositeOfObjectFiniteCategory( B );
+    
+    sFinSets = RangeCategoryOfHomomorphismStructure( B );
+    
+    Sieves_functor = SieveFunctor( B );
+    Sieves_emb = Sieves[5];
+    HomHomOmega_functor = CapFunctor( Bop, Sieves[3][1], Sieves[3][2], sFinSets );
+    
+    ## Sieves → Hom(Hom(-, c), Ω), c ↦ ( Sieves(c) ↪ Hom(Hom(-, c), Ω), s ↦ s )
+    return NaturalTransformation(
+                   Sieves_functor,
+                   Sieves_emb,
+                   HomHomOmega_functor );
     
 end );
 

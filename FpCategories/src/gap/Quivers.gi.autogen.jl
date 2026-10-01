@@ -31,7 +31,7 @@
         objs = SplitString( ReplacedString( data[1], "..", "," ), "," );
         min = IntGAP( objs[1] );
         max = IntGAP( objs[2] );
-        objs = List( (min):(max ), StringGAP );
+        objs = List( (min):(max), StringGAP );
     else
         objs = SplitString( data[1], "," );
     end;

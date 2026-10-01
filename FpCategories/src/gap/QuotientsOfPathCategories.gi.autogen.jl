@@ -326,7 +326,7 @@ end );
 end );
 
 ##
-@InstallMethod( CapFunctor,
+@InstallMethod( CreateFunctor,
         "for a quotient of a path category, two lists, and a category",
         [ IsQuotientOfPathCategory, IsList, IsList, IsCapCategory ],
         
@@ -354,7 +354,7 @@ end );
 end );
 
 ##
-@InstallMethod( CapFunctor,
+@InstallMethod( CreateFunctor,
         "for a quotient of a path category, two records, and a category",
         [ IsQuotientOfPathCategory, IsRecord, IsRecord, IsCapCategory ],
         

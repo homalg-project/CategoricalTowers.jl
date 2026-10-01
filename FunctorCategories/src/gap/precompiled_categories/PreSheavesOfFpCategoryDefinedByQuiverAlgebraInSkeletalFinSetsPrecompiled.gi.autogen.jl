@@ -243,12 +243,12 @@ function ( cat_1, arg2_1, arg3_1 )
             deduped_1_2 = deduped_1_1[1 + deduped_6_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_45_1[1 + deduped_7_1[deduped_2_2]] ) );
         end );
-    deduped_40_1 = [ 0 .. Sum( List( deduped_43_1, function ( i_2 )
+    deduped_40_1 = (0):(Sum( List( deduped_43_1, function ( i_2 )
                     return deduped_8_1[1 + i_2][1];
-                end ) ) - 1 ];
-    deduped_39_1 = [ 1 .. Sum( List( deduped_43_1, function ( m_2 )
+                end ) ) - 1);
+    deduped_39_1 = (1):(Sum( List( deduped_43_1, function ( m_2 )
                   return deduped_1_1[1 + deduped_5_1[1 + m_2][2]];
-              end ) ) ];
+              end ) ));
     deduped_4_1 = List( deduped_49_1[1], Cardinality );
     deduped_2_1 = List( deduped_45_1, UnderlyingVertex );
     deduped_38_1 = @Concatenation( List( deduped_42_1, function ( o_2 )
@@ -290,7 +290,7 @@ function ( cat_1, arg2_1, arg3_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_31_1[deduped_3_2][1];
               hoisted_1_2 = deduped_32_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -321,7 +321,7 @@ function ( cat_1, arg2_1, arg3_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_8_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -336,9 +336,9 @@ function ( cat_1, arg2_1, arg3_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_4_1[SafeUniquePositionProperty( deduped_45_1, function ( obj_4 )
+                          return (0):(deduped_4_1[SafeUniquePositionProperty( deduped_45_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_21_1[SafeUniquePositionProperty( deduped_20_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -403,7 +403,7 @@ function ( cat_1, arg2_1, arg3_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_15_1[deduped_3_2][1];
               hoisted_1_2 = deduped_19_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -433,7 +433,7 @@ function ( cat_1, arg2_1, arg3_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_8_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -448,9 +448,9 @@ function ( cat_1, arg2_1, arg3_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_4_1[SafeUniquePositionProperty( deduped_45_1, function ( obj_4 )
+                          return (0):(deduped_4_1[SafeUniquePositionProperty( deduped_45_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_21_1[SafeUniquePositionProperty( deduped_20_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -518,12 +518,12 @@ function ( cat_1, arg2_1, arg3_1 )
             deduped_1_2 = deduped_1_1[1 + deduped_6_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_47_1[1 + deduped_7_1[deduped_2_2]] ) );
         end );
-    deduped_42_1 = [ 0 .. Sum( List( deduped_45_1, function ( i_2 )
+    deduped_42_1 = (0):(Sum( List( deduped_45_1, function ( i_2 )
                     return deduped_8_1[1 + i_2][1];
-                end ) ) - 1 ];
-    deduped_41_1 = [ 1 .. Sum( List( deduped_45_1, function ( m_2 )
+                end ) ) - 1);
+    deduped_41_1 = (1):(Sum( List( deduped_45_1, function ( m_2 )
                   return deduped_1_1[1 + deduped_5_1[1 + m_2][2]];
-              end ) ) ];
+              end ) ));
     deduped_4_1 = List( deduped_51_1[1], Cardinality );
     deduped_2_1 = List( deduped_47_1, UnderlyingVertex );
     deduped_40_1 = @Concatenation( List( deduped_44_1, function ( o_2 )
@@ -565,7 +565,7 @@ function ( cat_1, arg2_1, arg3_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_32_1[deduped_3_2][1];
               hoisted_1_2 = deduped_33_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -596,7 +596,7 @@ function ( cat_1, arg2_1, arg3_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_8_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -611,9 +611,9 @@ function ( cat_1, arg2_1, arg3_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_4_1[SafeUniquePositionProperty( deduped_47_1, function ( obj_4 )
+                          return (0):(deduped_4_1[SafeUniquePositionProperty( deduped_47_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_21_1[SafeUniquePositionProperty( deduped_20_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -685,7 +685,7 @@ function ( cat_1, arg2_1, arg3_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_15_1[deduped_3_2][1];
               hoisted_1_2 = deduped_19_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -715,7 +715,7 @@ function ( cat_1, arg2_1, arg3_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_8_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -730,9 +730,9 @@ function ( cat_1, arg2_1, arg3_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_4_1[SafeUniquePositionProperty( deduped_47_1, function ( obj_4 )
+                          return (0):(deduped_4_1[SafeUniquePositionProperty( deduped_47_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_21_1[SafeUniquePositionProperty( deduped_20_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -815,24 +815,24 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
             deduped_1_2 = deduped_36_1[1 + deduped_6_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_106_1[1 + deduped_7_1[deduped_2_2]] ) );
         end );
-    deduped_94_1 = [ 0 .. Sum( List( deduped_99_1, function ( i_2 )
+    deduped_94_1 = (0):(Sum( List( deduped_99_1, function ( i_2 )
                     return deduped_62_1[1 + i_2][1];
-                end ) ) - 1 ];
+                end ) ) - 1);
     deduped_8_1 = List( deduped_99_1, function ( m_2 )
             local deduped_1_2, deduped_2_2;
             deduped_2_2 = 1 + m_2;
             deduped_1_2 = deduped_1_1[1 + deduped_6_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_106_1[1 + deduped_7_1[deduped_2_2]] ) );
         end );
-    deduped_93_1 = [ 0 .. Sum( List( deduped_99_1, function ( i_2 )
+    deduped_93_1 = (0):(Sum( List( deduped_99_1, function ( i_2 )
                     return deduped_8_1[1 + i_2][1];
-                end ) ) - 1 ];
-    deduped_92_1 = [ 1 .. Sum( List( deduped_99_1, function ( m_2 )
+                end ) ) - 1);
+    deduped_92_1 = (1):(Sum( List( deduped_99_1, function ( m_2 )
                   return deduped_36_1[1 + deduped_5_1[1 + m_2][2]];
-              end ) ) ];
-    deduped_91_1 = [ 1 .. Sum( List( deduped_99_1, function ( m_2 )
+              end ) ));
+    deduped_91_1 = (1):(Sum( List( deduped_99_1, function ( m_2 )
                   return deduped_1_1[1 + deduped_5_1[1 + m_2][2]];
-              end ) ) ];
+              end ) ));
     deduped_37_1 = List( deduped_110_1[1], Cardinality );
     deduped_2_1 = List( deduped_106_1, UnderlyingVertex );
     deduped_90_1 = @Concatenation( List( deduped_100_1, function ( o_2 )
@@ -894,7 +894,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_31_1[deduped_3_2][1];
               hoisted_1_2 = deduped_32_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -925,7 +925,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_8_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -940,9 +940,9 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_4_1[SafeUniquePositionProperty( deduped_106_1, function ( obj_4 )
+                          return (0):(deduped_4_1[SafeUniquePositionProperty( deduped_106_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_21_1[SafeUniquePositionProperty( deduped_20_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -1007,7 +1007,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_15_1[deduped_3_2][1];
               hoisted_1_2 = deduped_19_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -1037,7 +1037,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_8_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -1052,9 +1052,9 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_4_1[SafeUniquePositionProperty( deduped_106_1, function ( obj_4 )
+                          return (0):(deduped_4_1[SafeUniquePositionProperty( deduped_106_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_21_1[SafeUniquePositionProperty( deduped_20_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -1134,7 +1134,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = Sum( deduped_98_1[(1):(i_2 - 1)] );
               hoisted_2_2 = (deduped_3_2):(deduped_3_2 + deduped_98_1[i_2] - 1);
               hoisted_1_2 = deduped_51_1[i_2][1];
-              return List( (0):(deduped_12_1[i_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_12_1[i_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -1170,7 +1170,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                   end );
               hoisted_2_2 = List( deduped_7_2, UnderlyingVertex );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_12_1[i_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_12_1[i_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -1185,9 +1185,9 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_37_1[SafeUniquePositionProperty( deduped_106_1, function ( obj_4 )
+                          return (0):(deduped_37_1[SafeUniquePositionProperty( deduped_106_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_52_1[SafeUniquePositionProperty( deduped_20_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -1204,9 +1204,9 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
     hoisted_47_1 = @Concatenation( List( deduped_101_1, function ( i_2 )
               return ListWithIdenticalEntries( deduped_12_1[i_2][1], deduped_87_1 );
           end ) );
-    hoisted_59_1 = List( [ 0 .. Sum( List( deduped_101_1, function ( i_2 )
+    hoisted_59_1 = List( (0):(Sum( List( deduped_101_1, function ( i_2 )
                       return deduped_12_1[i_2][1];
-                  end ) ) - 1 ], function ( i_2 )
+                  end ) ) - 1), function ( i_2 )
             local hoisted_1_2, hoisted_2_2, deduped_3_2;
             deduped_3_2 = 1 + i_2;
             hoisted_2_2 = hoisted_53_1[deduped_3_2];
@@ -1242,7 +1242,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_74_1[deduped_3_2][1];
               hoisted_1_2 = deduped_75_1[deduped_3_2][1];
-              return List( (0):(deduped_62_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_62_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -1272,7 +1272,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_62_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_62_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -1287,9 +1287,9 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_37_1[SafeUniquePositionProperty( deduped_106_1, function ( obj_4 )
+                          return (0):(deduped_37_1[SafeUniquePositionProperty( deduped_106_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_52_1[SafeUniquePositionProperty( deduped_20_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -1351,7 +1351,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_64_1[deduped_3_2][1];
               hoisted_1_2 = deduped_67_1[deduped_3_2][1];
-              return List( (0):(deduped_62_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_62_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -1381,7 +1381,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_62_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_62_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -1396,9 +1396,9 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_37_1[SafeUniquePositionProperty( deduped_106_1, function ( obj_4 )
+                          return (0):(deduped_37_1[SafeUniquePositionProperty( deduped_106_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_52_1[SafeUniquePositionProperty( deduped_20_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -1482,24 +1482,24 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
             deduped_1_2 = deduped_38_1[1 + deduped_6_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_112_1[1 + deduped_7_1[deduped_2_2]] ) );
         end );
-    deduped_99_1 = [ 0 .. Sum( List( deduped_104_1, function ( i_2 )
+    deduped_99_1 = (0):(Sum( List( deduped_104_1, function ( i_2 )
                     return deduped_64_1[1 + i_2][1];
-                end ) ) - 1 ];
+                end ) ) - 1);
     deduped_8_1 = List( deduped_104_1, function ( m_2 )
             local deduped_1_2, deduped_2_2;
             deduped_2_2 = 1 + m_2;
             deduped_1_2 = deduped_1_1[1 + deduped_6_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_112_1[1 + deduped_7_1[deduped_2_2]] ) );
         end );
-    deduped_98_1 = [ 0 .. Sum( List( deduped_104_1, function ( i_2 )
+    deduped_98_1 = (0):(Sum( List( deduped_104_1, function ( i_2 )
                     return deduped_8_1[1 + i_2][1];
-                end ) ) - 1 ];
-    deduped_97_1 = [ 1 .. Sum( List( deduped_104_1, function ( m_2 )
+                end ) ) - 1);
+    deduped_97_1 = (1):(Sum( List( deduped_104_1, function ( m_2 )
                   return deduped_38_1[1 + deduped_5_1[1 + m_2][2]];
-              end ) ) ];
-    deduped_96_1 = [ 1 .. Sum( List( deduped_104_1, function ( m_2 )
+              end ) ));
+    deduped_96_1 = (1):(Sum( List( deduped_104_1, function ( m_2 )
                   return deduped_1_1[1 + deduped_5_1[1 + m_2][2]];
-              end ) ) ];
+              end ) ));
     deduped_39_1 = List( deduped_116_1[1], Cardinality );
     deduped_2_1 = List( deduped_112_1, UnderlyingVertex );
     deduped_95_1 = @Concatenation( List( deduped_105_1, function ( o_2 )
@@ -1561,7 +1561,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_32_1[deduped_3_2][1];
               hoisted_1_2 = deduped_33_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -1592,7 +1592,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_8_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -1607,9 +1607,9 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_4_1[SafeUniquePositionProperty( deduped_112_1, function ( obj_4 )
+                          return (0):(deduped_4_1[SafeUniquePositionProperty( deduped_112_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_21_1[SafeUniquePositionProperty( deduped_20_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -1681,7 +1681,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_15_1[deduped_3_2][1];
               hoisted_1_2 = deduped_19_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -1711,7 +1711,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_8_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -1726,9 +1726,9 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_4_1[SafeUniquePositionProperty( deduped_112_1, function ( obj_4 )
+                          return (0):(deduped_4_1[SafeUniquePositionProperty( deduped_112_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_21_1[SafeUniquePositionProperty( deduped_20_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -1811,7 +1811,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = Sum( deduped_103_1[(1):(i_2 - 1)] );
               hoisted_2_2 = (deduped_3_2):(deduped_3_2 + deduped_103_1[i_2] - 1);
               hoisted_1_2 = deduped_53_1[i_2][1];
-              return List( (0):(deduped_12_1[i_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_12_1[i_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -1847,7 +1847,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                   end );
               hoisted_2_2 = List( deduped_7_2, UnderlyingVertex );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_12_1[i_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_12_1[i_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -1862,9 +1862,9 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_39_1[SafeUniquePositionProperty( deduped_112_1, function ( obj_4 )
+                          return (0):(deduped_39_1[SafeUniquePositionProperty( deduped_112_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_54_1[SafeUniquePositionProperty( deduped_20_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -1881,9 +1881,9 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
     hoisted_49_1 = @Concatenation( List( deduped_106_1, function ( i_2 )
               return ListWithIdenticalEntries( deduped_12_1[i_2][1], deduped_92_1 );
           end ) );
-    hoisted_61_1 = List( [ 0 .. Sum( List( deduped_106_1, function ( i_2 )
+    hoisted_61_1 = List( (0):(Sum( List( deduped_106_1, function ( i_2 )
                       return deduped_12_1[i_2][1];
-                  end ) ) - 1 ], function ( i_2 )
+                  end ) ) - 1), function ( i_2 )
             local hoisted_1_2, hoisted_2_2, deduped_3_2;
             deduped_3_2 = 1 + i_2;
             hoisted_2_2 = hoisted_55_1[deduped_3_2];
@@ -1919,7 +1919,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_77_1[deduped_3_2][1];
               hoisted_1_2 = deduped_78_1[deduped_3_2][1];
-              return List( (0):(deduped_64_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_64_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -1949,7 +1949,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_64_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_64_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -1964,9 +1964,9 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_39_1[SafeUniquePositionProperty( deduped_112_1, function ( obj_4 )
+                          return (0):(deduped_39_1[SafeUniquePositionProperty( deduped_112_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_54_1[SafeUniquePositionProperty( deduped_20_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -2035,7 +2035,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_66_1[deduped_3_2][1];
               hoisted_1_2 = deduped_69_1[deduped_3_2][1];
-              return List( (0):(deduped_64_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_64_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -2065,7 +2065,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_64_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_64_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -2080,9 +2080,9 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_39_1[SafeUniquePositionProperty( deduped_112_1, function ( obj_4 )
+                          return (0):(deduped_39_1[SafeUniquePositionProperty( deduped_112_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_54_1[SafeUniquePositionProperty( deduped_20_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -2164,12 +2164,12 @@ function ( cat_1, source_1, range_1, alpha_1 )
             deduped_1_2 = deduped_4_1[1 + deduped_9_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_57_1[1 + deduped_10_1[deduped_2_2]] ) );
         end );
-    deduped_47_1 = [ 0 .. Sum( List( deduped_49_1, function ( i_2 )
+    deduped_47_1 = (0):(Sum( List( deduped_49_1, function ( i_2 )
                     return deduped_11_1[1 + i_2][1];
-                end ) ) - 1 ];
-    deduped_46_1 = [ 1 .. Sum( List( deduped_49_1, function ( m_2 )
+                end ) ) - 1);
+    deduped_46_1 = (1):(Sum( List( deduped_49_1, function ( m_2 )
                   return deduped_4_1[1 + deduped_8_1[1 + m_2][2]];
-              end ) ) ];
+              end ) ));
     deduped_7_1 = List( deduped_56_1, Cardinality );
     deduped_5_1 = List( deduped_57_1, UnderlyingVertex );
     deduped_45_1 = @Concatenation( List( deduped_50_1, function ( o_2 )
@@ -2212,7 +2212,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_34_1[deduped_3_2][1];
               hoisted_1_2 = deduped_35_1[deduped_3_2][1];
-              return List( (0):(deduped_11_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_11_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -2243,7 +2243,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_11_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_11_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -2258,9 +2258,9 @@ function ( cat_1, source_1, range_1, alpha_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_7_1[SafeUniquePositionProperty( deduped_57_1, function ( obj_4 )
+                          return (0):(deduped_7_1[SafeUniquePositionProperty( deduped_57_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_24_1[SafeUniquePositionProperty( deduped_23_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -2325,7 +2325,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_18_1[deduped_3_2][1];
               hoisted_1_2 = deduped_22_1[deduped_3_2][1];
-              return List( (0):(deduped_11_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_11_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -2355,7 +2355,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_11_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_11_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -2370,9 +2370,9 @@ function ( cat_1, source_1, range_1, alpha_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_7_1[SafeUniquePositionProperty( deduped_57_1, function ( obj_4 )
+                          return (0):(deduped_7_1[SafeUniquePositionProperty( deduped_57_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_24_1[SafeUniquePositionProperty( deduped_23_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -2406,7 +2406,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
             end )[1 + AsList( alpha_1 )[1 + CAP_JIT_INCOMPLETE_LOGIC( ((0):(Cardinality( Source( alpha_1 ) ) - 1))[1] )]] );
     deduped_3_1 = List( deduped_53_1, Cardinality );
     deduped_39_1 = List( deduped_51_1, function ( i_2 )
-            return Product( deduped_45_1[[ 1 + Sum( deduped_3_1[(1):(i_2 - 1)] ) .. Sum( deduped_3_1[(1):(i_2)] ) ]] );
+            return Product( deduped_45_1[(1 + Sum( deduped_3_1[(1):(i_2 - 1)] )):(Sum( deduped_3_1[(1):(i_2)] ))] );
         end );
     return CreateCapCategoryMorphismWithAttributes( cat_1, source_1, range_1, ValuesOnAllObjects, List( deduped_51_1, function ( i_2 )
               local hoisted_1_2, hoisted_3_2, deduped_4_2, deduped_5_2, deduped_6_2, deduped_7_2;
@@ -2461,12 +2461,12 @@ function ( cat_1, source_1, range_1, alpha_1 )
             deduped_1_2 = deduped_4_1[1 + deduped_15_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_62_1[1 + deduped_16_1[deduped_2_2]] ) );
         end );
-    deduped_52_1 = [ 0 .. Sum( List( deduped_55_1, function ( i_2 )
+    deduped_52_1 = (0):(Sum( List( deduped_55_1, function ( i_2 )
                     return deduped_17_1[1 + i_2][1];
-                end ) ) - 1 ];
-    deduped_51_1 = [ 1 .. Sum( List( deduped_55_1, function ( m_2 )
+                end ) ) - 1);
+    deduped_51_1 = (1):(Sum( List( deduped_55_1, function ( m_2 )
                   return deduped_4_1[1 + deduped_14_1[1 + m_2][2]];
-              end ) ) ];
+              end ) ));
     deduped_7_1 = List( deduped_61_1, Cardinality );
     deduped_5_1 = List( deduped_62_1, UnderlyingVertex );
     deduped_50_1 = @Concatenation( List( deduped_54_1, function ( o_2 )
@@ -2510,7 +2510,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_38_1[deduped_3_2][1];
               hoisted_1_2 = deduped_39_1[deduped_3_2][1];
-              return List( (0):(deduped_17_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_17_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -2541,7 +2541,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_17_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_17_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -2556,9 +2556,9 @@ function ( cat_1, source_1, range_1, alpha_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_7_1[SafeUniquePositionProperty( deduped_62_1, function ( obj_4 )
+                          return (0):(deduped_7_1[SafeUniquePositionProperty( deduped_62_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_29_1[SafeUniquePositionProperty( deduped_28_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -2630,7 +2630,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_23_1[deduped_3_2][1];
               hoisted_1_2 = deduped_27_1[deduped_3_2][1];
-              return List( (0):(deduped_17_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_17_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -2660,7 +2660,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_17_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_17_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -2675,9 +2675,9 @@ function ( cat_1, source_1, range_1, alpha_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_7_1[SafeUniquePositionProperty( deduped_62_1, function ( obj_4 )
+                          return (0):(deduped_7_1[SafeUniquePositionProperty( deduped_62_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_29_1[SafeUniquePositionProperty( deduped_28_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -2715,7 +2715,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
     hoisted_44_1 = AsList( alpha_1 );
     deduped_3_1 = List( deduped_58_1, Cardinality );
     deduped_9_1 = List( deduped_56_1, function ( i_2 )
-            return Product( deduped_50_1[[ 1 + Sum( deduped_3_1[(1):(i_2 - 1)] ) .. Sum( deduped_3_1[(1):(i_2)] ) ]] );
+            return Product( deduped_50_1[(1 + Sum( deduped_3_1[(1):(i_2 - 1)] )):(Sum( deduped_3_1[(1):(i_2)] ))] );
         end );
     hoisted_13_1 = List( deduped_56_1, function ( i_2 )
             local hoisted_3_2, deduped_4_2, deduped_5_2;
@@ -2779,12 +2779,12 @@ function ( cat_1, arg2_1, arg3_1 )
             deduped_1_2 = deduped_1_1[1 + deduped_6_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_59_1[1 + deduped_7_1[deduped_2_2]] ) );
         end );
-    deduped_50_1 = [ 0 .. Sum( List( deduped_53_1, function ( i_2 )
+    deduped_50_1 = (0):(Sum( List( deduped_53_1, function ( i_2 )
                     return deduped_8_1[1 + i_2][1];
-                end ) ) - 1 ];
-    deduped_49_1 = [ 1 .. Sum( List( deduped_53_1, function ( m_2 )
+                end ) ) - 1);
+    deduped_49_1 = (1):(Sum( List( deduped_53_1, function ( m_2 )
                   return deduped_1_1[1 + deduped_5_1[1 + m_2][2]];
-              end ) ) ];
+              end ) ));
     deduped_4_1 = List( deduped_60_1, Cardinality );
     deduped_2_1 = List( deduped_59_1, UnderlyingVertex );
     deduped_48_1 = @Concatenation( List( deduped_52_1, function ( o_2 )
@@ -2826,7 +2826,7 @@ function ( cat_1, arg2_1, arg3_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_31_1[deduped_3_2][1];
               hoisted_1_2 = deduped_32_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -2857,7 +2857,7 @@ function ( cat_1, arg2_1, arg3_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_8_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -2872,9 +2872,9 @@ function ( cat_1, arg2_1, arg3_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_4_1[SafeUniquePositionProperty( deduped_59_1, function ( obj_4 )
+                          return (0):(deduped_4_1[SafeUniquePositionProperty( deduped_59_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_21_1[SafeUniquePositionProperty( deduped_20_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -2939,7 +2939,7 @@ function ( cat_1, arg2_1, arg3_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_15_1[deduped_3_2][1];
               hoisted_1_2 = deduped_19_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -2969,7 +2969,7 @@ function ( cat_1, arg2_1, arg3_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_8_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -2984,9 +2984,9 @@ function ( cat_1, arg2_1, arg3_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_4_1[SafeUniquePositionProperty( deduped_59_1, function ( obj_4 )
+                          return (0):(deduped_4_1[SafeUniquePositionProperty( deduped_59_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_21_1[SafeUniquePositionProperty( deduped_20_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -3021,7 +3021,7 @@ function ( cat_1, arg2_1, arg3_1 )
     hoisted_43_1 = Target( cat_1 );
     deduped_38_1 = List( deduped_56_1, Cardinality );
     deduped_39_1 = List( deduped_54_1, function ( i_2 )
-            return Product( deduped_48_1[[ 1 + Sum( deduped_38_1[(1):(i_2 - 1)] ) .. Sum( deduped_38_1[(1):(i_2)] ) ]] );
+            return Product( deduped_48_1[(1 + Sum( deduped_38_1[(1):(i_2 - 1)] )):(Sum( deduped_38_1[(1):(i_2)] ))] );
         end );
     hoisted_41_1 = List( deduped_54_1, function ( i_2 )
             local hoisted_3_2, deduped_4_2, deduped_5_2;
@@ -3086,12 +3086,12 @@ function ( cat_1, arg2_1, arg3_1 )
             deduped_1_2 = deduped_1_1[1 + deduped_6_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_61_1[1 + deduped_7_1[deduped_2_2]] ) );
         end );
-    deduped_52_1 = [ 0 .. Sum( List( deduped_55_1, function ( i_2 )
+    deduped_52_1 = (0):(Sum( List( deduped_55_1, function ( i_2 )
                     return deduped_8_1[1 + i_2][1];
-                end ) ) - 1 ];
-    deduped_51_1 = [ 1 .. Sum( List( deduped_55_1, function ( m_2 )
+                end ) ) - 1);
+    deduped_51_1 = (1):(Sum( List( deduped_55_1, function ( m_2 )
                   return deduped_1_1[1 + deduped_5_1[1 + m_2][2]];
-              end ) ) ];
+              end ) ));
     deduped_4_1 = List( deduped_62_1, Cardinality );
     deduped_2_1 = List( deduped_61_1, UnderlyingVertex );
     deduped_50_1 = @Concatenation( List( deduped_54_1, function ( o_2 )
@@ -3133,7 +3133,7 @@ function ( cat_1, arg2_1, arg3_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_32_1[deduped_3_2][1];
               hoisted_1_2 = deduped_33_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -3164,7 +3164,7 @@ function ( cat_1, arg2_1, arg3_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_8_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -3179,9 +3179,9 @@ function ( cat_1, arg2_1, arg3_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_4_1[SafeUniquePositionProperty( deduped_61_1, function ( obj_4 )
+                          return (0):(deduped_4_1[SafeUniquePositionProperty( deduped_61_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_21_1[SafeUniquePositionProperty( deduped_20_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -3253,7 +3253,7 @@ function ( cat_1, arg2_1, arg3_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_15_1[deduped_3_2][1];
               hoisted_1_2 = deduped_19_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -3283,7 +3283,7 @@ function ( cat_1, arg2_1, arg3_1 )
                       return UnderlyingVertex( Target( logic_new_func_x_3 ) );
                   end );
               hoisted_1_2 = deduped_9_2[1];
-              return List( (0):(deduped_8_1[deduped_10_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_10_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3;
                       deduped_8_3 = 1 + i_3;
                       deduped_7_3 = hoisted_3_2[deduped_8_3];
@@ -3298,9 +3298,9 @@ function ( cat_1, arg2_1, arg3_1 )
                                   end;
                                   return;
                               end )(  ))
-                          return [ 0 .. deduped_4_1[SafeUniquePositionProperty( deduped_61_1, function ( obj_4 )
+                          return (0):(deduped_4_1[SafeUniquePositionProperty( deduped_61_1, function ( obj_4 )
                                          return UnderlyingVertex( obj_4 ) == deduped_7_3;
-                                     end )] - 1 ];
+                                     end )] - 1);
                       else
                           return deduped_21_1[SafeUniquePositionProperty( deduped_20_1, function ( mor_4 )
                                    if (UnderlyingVertex( Source( mor_4 ) ) == deduped_7_3 && UnderlyingVertex( Range( mor_4 ) ) == deduped_5_3)
@@ -3338,7 +3338,7 @@ function ( cat_1, arg2_1, arg3_1 )
     hoisted_45_1 = Target( cat_1 );
     deduped_40_1 = List( deduped_58_1, Cardinality );
     deduped_41_1 = List( deduped_56_1, function ( i_2 )
-            return Product( deduped_50_1[[ 1 + Sum( deduped_40_1[(1):(i_2 - 1)] ) .. Sum( deduped_40_1[(1):(i_2)] ) ]] );
+            return Product( deduped_50_1[(1 + Sum( deduped_40_1[(1):(i_2 - 1)] )):(Sum( deduped_40_1[(1):(i_2)] ))] );
         end );
     hoisted_43_1 = List( deduped_56_1, function ( i_2 )
             local hoisted_3_2, deduped_4_2, deduped_5_2;

@@ -256,12 +256,12 @@ function ( cat_1, arg2_1, arg3_1 )
             deduped_1_2 = deduped_1_1[1 + deduped_4_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_7_1[1 + deduped_6_1[deduped_2_2]] ) );
         end );
-    deduped_42_1 = [ 0 .. Sum( List( deduped_48_1, function ( i_2 )
+    deduped_42_1 = (0):(Sum( List( deduped_48_1, function ( i_2 )
                     return deduped_8_1[1 + i_2][1];
-                end ) ) - 1 ];
-    deduped_41_1 = [ 1 .. Sum( List( deduped_48_1, function ( m_2 )
+                end ) ) - 1);
+    deduped_41_1 = (1):(Sum( List( deduped_48_1, function ( m_2 )
                   return deduped_1_1[1 + deduped_3_1[1 + m_2][2]];
-              end ) ) ];
+              end ) ));
     deduped_40_1 = (0):(deduped_43_1 - 1);
     deduped_20_1 = List( deduped_47_1, function ( o_2 )
             local deduped_1_2, deduped_2_2;
@@ -301,7 +301,7 @@ function ( cat_1, arg2_1, arg3_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_36_1[deduped_3_2][1];
               hoisted_1_2 = deduped_35_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -328,7 +328,7 @@ function ( cat_1, arg2_1, arg3_1 )
               hoisted_3_2 = List( deduped_36_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_8_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_18_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -403,7 +403,7 @@ function ( cat_1, arg2_1, arg3_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_21_1[deduped_3_2][1];
               hoisted_1_2 = deduped_17_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -422,7 +422,7 @@ function ( cat_1, arg2_1, arg3_1 )
               hoisted_3_2 = List( deduped_21_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_8_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_18_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -521,12 +521,12 @@ function ( cat_1, arg2_1, arg3_1 )
             deduped_1_2 = deduped_1_1[1 + deduped_4_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_7_1[1 + deduped_6_1[deduped_2_2]] ) );
         end );
-    deduped_44_1 = [ 0 .. Sum( List( deduped_50_1, function ( i_2 )
+    deduped_44_1 = (0):(Sum( List( deduped_50_1, function ( i_2 )
                     return deduped_8_1[1 + i_2][1];
-                end ) ) - 1 ];
-    deduped_43_1 = [ 1 .. Sum( List( deduped_50_1, function ( m_2 )
+                end ) ) - 1);
+    deduped_43_1 = (1):(Sum( List( deduped_50_1, function ( m_2 )
                   return deduped_1_1[1 + deduped_3_1[1 + m_2][2]];
-              end ) ) ];
+              end ) ));
     deduped_42_1 = (0):(deduped_45_1 - 1);
     deduped_20_1 = List( deduped_49_1, function ( o_2 )
             local deduped_1_2, deduped_2_2;
@@ -566,7 +566,7 @@ function ( cat_1, arg2_1, arg3_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_37_1[deduped_3_2][1];
               hoisted_1_2 = deduped_36_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -593,7 +593,7 @@ function ( cat_1, arg2_1, arg3_1 )
               hoisted_3_2 = List( deduped_37_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_8_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_18_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -675,7 +675,7 @@ function ( cat_1, arg2_1, arg3_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_21_1[deduped_3_2][1];
               hoisted_1_2 = deduped_17_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -694,7 +694,7 @@ function ( cat_1, arg2_1, arg3_1 )
               hoisted_3_2 = List( deduped_21_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_8_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_18_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -821,24 +821,24 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
             deduped_1_2 = deduped_40_1[1 + deduped_4_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_7_1[1 + deduped_6_1[deduped_2_2]] ) );
         end );
-    deduped_92_1 = [ 0 .. Sum( List( deduped_104_1, function ( i_2 )
+    deduped_92_1 = (0):(Sum( List( deduped_104_1, function ( i_2 )
                     return deduped_66_1[1 + i_2][1];
-                end ) ) - 1 ];
+                end ) ) - 1);
     deduped_8_1 = List( deduped_104_1, function ( m_2 )
             local deduped_1_2, deduped_2_2;
             deduped_2_2 = 1 + m_2;
             deduped_1_2 = deduped_1_1[1 + deduped_4_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_7_1[1 + deduped_6_1[deduped_2_2]] ) );
         end );
-    deduped_91_1 = [ 0 .. Sum( List( deduped_104_1, function ( i_2 )
+    deduped_91_1 = (0):(Sum( List( deduped_104_1, function ( i_2 )
                     return deduped_8_1[1 + i_2][1];
-                end ) ) - 1 ];
-    deduped_90_1 = [ 1 .. Sum( List( deduped_104_1, function ( m_2 )
+                end ) ) - 1);
+    deduped_90_1 = (1):(Sum( List( deduped_104_1, function ( m_2 )
                   return deduped_40_1[1 + deduped_3_1[1 + m_2][2]];
-              end ) ) ];
-    deduped_89_1 = [ 1 .. Sum( List( deduped_104_1, function ( m_2 )
+              end ) ));
+    deduped_89_1 = (1):(Sum( List( deduped_104_1, function ( m_2 )
                   return deduped_1_1[1 + deduped_3_1[1 + m_2][2]];
-              end ) ) ];
+              end ) ));
     deduped_88_1 = (0):(deduped_95_1 - 1);
     deduped_87_1 = (0):(deduped_94_1 - 1);
     deduped_86_1 = (0):(deduped_93_1 - 1);
@@ -879,7 +879,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_36_1[deduped_3_2][1];
               hoisted_1_2 = deduped_35_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -906,7 +906,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               hoisted_3_2 = List( deduped_36_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_8_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_18_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -981,7 +981,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_21_1[deduped_3_2][1];
               hoisted_1_2 = deduped_17_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -1000,7 +1000,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               hoisted_3_2 = List( deduped_21_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_8_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_18_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -1094,7 +1094,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = Sum( deduped_102_1[(1):(i_2 - 1)] );
               hoisted_2_2 = (deduped_3_2):(deduped_3_2 + deduped_102_1[i_2] - 1);
               hoisted_1_2 = deduped_54_1[i_2][1];
-              return List( (0):(deduped_20_1[i_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_20_1[i_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -1121,7 +1121,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                   end );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_20_1[i_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_20_1[i_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_18_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -1156,9 +1156,9 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
     hoisted_51_1 = @Concatenation( List( deduped_106_1, function ( i_2 )
               return ListWithIdenticalEntries( deduped_20_1[i_2][1], deduped_95_1 );
           end ) );
-    hoisted_63_1 = List( [ 0 .. Sum( List( deduped_106_1, function ( i_2 )
+    hoisted_63_1 = List( (0):(Sum( List( deduped_106_1, function ( i_2 )
                       return deduped_20_1[i_2][1];
-                  end ) ) - 1 ], function ( i_2 )
+                  end ) ) - 1), function ( i_2 )
             local hoisted_1_2, hoisted_2_2, deduped_3_2;
             deduped_3_2 = 1 + i_2;
             hoisted_2_2 = hoisted_57_1[deduped_3_2];
@@ -1194,7 +1194,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_79_1[deduped_3_2][1];
               hoisted_1_2 = deduped_78_1[deduped_3_2][1];
-              return List( (0):(deduped_66_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_66_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -1213,7 +1213,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               hoisted_3_2 = List( deduped_79_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_66_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_66_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_18_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -1288,7 +1288,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_71_1[deduped_3_2][1];
               hoisted_1_2 = deduped_70_1[deduped_3_2][1];
-              return List( (0):(deduped_66_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_66_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -1307,7 +1307,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               hoisted_3_2 = List( deduped_71_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_66_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_66_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_18_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -1435,24 +1435,24 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
             deduped_1_2 = deduped_42_1[1 + deduped_4_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_7_1[1 + deduped_6_1[deduped_2_2]] ) );
         end );
-    deduped_97_1 = [ 0 .. Sum( List( deduped_109_1, function ( i_2 )
+    deduped_97_1 = (0):(Sum( List( deduped_109_1, function ( i_2 )
                     return deduped_68_1[1 + i_2][1];
-                end ) ) - 1 ];
+                end ) ) - 1);
     deduped_8_1 = List( deduped_109_1, function ( m_2 )
             local deduped_1_2, deduped_2_2;
             deduped_2_2 = 1 + m_2;
             deduped_1_2 = deduped_1_1[1 + deduped_4_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_7_1[1 + deduped_6_1[deduped_2_2]] ) );
         end );
-    deduped_96_1 = [ 0 .. Sum( List( deduped_109_1, function ( i_2 )
+    deduped_96_1 = (0):(Sum( List( deduped_109_1, function ( i_2 )
                     return deduped_8_1[1 + i_2][1];
-                end ) ) - 1 ];
-    deduped_95_1 = [ 1 .. Sum( List( deduped_109_1, function ( m_2 )
+                end ) ) - 1);
+    deduped_95_1 = (1):(Sum( List( deduped_109_1, function ( m_2 )
                   return deduped_42_1[1 + deduped_3_1[1 + m_2][2]];
-              end ) ) ];
-    deduped_94_1 = [ 1 .. Sum( List( deduped_109_1, function ( m_2 )
+              end ) ));
+    deduped_94_1 = (1):(Sum( List( deduped_109_1, function ( m_2 )
                   return deduped_1_1[1 + deduped_3_1[1 + m_2][2]];
-              end ) ) ];
+              end ) ));
     deduped_93_1 = (0):(deduped_100_1 - 1);
     deduped_92_1 = (0):(deduped_99_1 - 1);
     deduped_91_1 = (0):(deduped_98_1 - 1);
@@ -1493,7 +1493,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_37_1[deduped_3_2][1];
               hoisted_1_2 = deduped_36_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -1520,7 +1520,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               hoisted_3_2 = List( deduped_37_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_8_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_18_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -1602,7 +1602,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_21_1[deduped_3_2][1];
               hoisted_1_2 = deduped_17_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -1621,7 +1621,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               hoisted_3_2 = List( deduped_21_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_8_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_18_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -1718,7 +1718,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = Sum( deduped_107_1[(1):(i_2 - 1)] );
               hoisted_2_2 = (deduped_3_2):(deduped_3_2 + deduped_107_1[i_2] - 1);
               hoisted_1_2 = deduped_56_1[i_2][1];
-              return List( (0):(deduped_20_1[i_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_20_1[i_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -1745,7 +1745,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
                   end );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_20_1[i_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_20_1[i_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_18_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -1780,9 +1780,9 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
     hoisted_53_1 = @Concatenation( List( deduped_111_1, function ( i_2 )
               return ListWithIdenticalEntries( deduped_20_1[i_2][1], deduped_100_1 );
           end ) );
-    hoisted_65_1 = List( [ 0 .. Sum( List( deduped_111_1, function ( i_2 )
+    hoisted_65_1 = List( (0):(Sum( List( deduped_111_1, function ( i_2 )
                       return deduped_20_1[i_2][1];
-                  end ) ) - 1 ], function ( i_2 )
+                  end ) ) - 1), function ( i_2 )
             local hoisted_1_2, hoisted_2_2, deduped_3_2;
             deduped_3_2 = 1 + i_2;
             hoisted_2_2 = hoisted_59_1[deduped_3_2];
@@ -1818,7 +1818,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_82_1[deduped_3_2][1];
               hoisted_1_2 = deduped_81_1[deduped_3_2][1];
-              return List( (0):(deduped_68_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_68_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -1837,7 +1837,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               hoisted_3_2 = List( deduped_82_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_68_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_68_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_18_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -1919,7 +1919,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_73_1[deduped_3_2][1];
               hoisted_1_2 = deduped_72_1[deduped_3_2][1];
-              return List( (0):(deduped_68_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_68_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -1938,7 +1938,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
               hoisted_3_2 = List( deduped_73_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_68_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_68_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_18_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -2051,12 +2051,12 @@ function ( cat_1, source_1, range_1, alpha_1 )
             deduped_1_2 = deduped_4_1[1 + deduped_7_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_10_1[1 + deduped_9_1[deduped_2_2]] ) );
         end );
-    deduped_49_1 = [ 0 .. Sum( List( deduped_54_1, function ( i_2 )
+    deduped_49_1 = (0):(Sum( List( deduped_54_1, function ( i_2 )
                     return deduped_11_1[1 + i_2][1];
-                end ) ) - 1 ];
-    deduped_48_1 = [ 1 .. Sum( List( deduped_54_1, function ( m_2 )
+                end ) ) - 1);
+    deduped_48_1 = (1):(Sum( List( deduped_54_1, function ( m_2 )
                   return deduped_4_1[1 + deduped_6_1[1 + m_2][2]];
-              end ) ) ];
+              end ) ));
     deduped_47_1 = (0):(deduped_50_1 - 1);
     hoisted_46_1 = Target( cat_1 );
     deduped_23_1 = List( deduped_55_1, function ( o_2 )
@@ -2097,7 +2097,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_39_1[deduped_3_2][1];
               hoisted_1_2 = deduped_38_1[deduped_3_2][1];
-              return List( (0):(deduped_11_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_11_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -2124,7 +2124,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
               hoisted_3_2 = List( deduped_39_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_11_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_11_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_21_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -2199,7 +2199,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_24_1[deduped_3_2][1];
               hoisted_1_2 = deduped_20_1[deduped_3_2][1];
-              return List( (0):(deduped_11_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_11_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -2218,7 +2218,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
               hoisted_3_2 = List( deduped_24_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_11_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_11_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_21_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -2270,7 +2270,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
             end )[1 + AsList( alpha_1 )[1 + CAP_JIT_INCOMPLETE_LOGIC( ((0):(Cardinality( Source( alpha_1 ) ) - 1))[1] )]] );
     deduped_3_1 = List( deduped_58_1, Cardinality );
     deduped_43_1 = List( deduped_56_1, function ( i_2 )
-            return Product( deduped_51_1[[ 1 + Sum( deduped_3_1[(1):(i_2 - 1)] ) .. Sum( deduped_3_1[(1):(i_2)] ) ]] );
+            return Product( deduped_51_1[(1 + Sum( deduped_3_1[(1):(i_2 - 1)] )):(Sum( deduped_3_1[(1):(i_2)] ))] );
         end );
     return CreateCapCategoryMorphismWithAttributes( cat_1, source_1, range_1, ValuesOnAllObjects, List( deduped_56_1, function ( i_2 )
               local hoisted_1_2, hoisted_3_2, deduped_4_2, deduped_5_2, deduped_6_2, deduped_7_2;
@@ -2338,12 +2338,12 @@ function ( cat_1, source_1, range_1, alpha_1 )
             deduped_1_2 = deduped_4_1[1 + deduped_13_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_16_1[1 + deduped_15_1[deduped_2_2]] ) );
         end );
-    deduped_54_1 = [ 0 .. Sum( List( deduped_60_1, function ( i_2 )
+    deduped_54_1 = (0):(Sum( List( deduped_60_1, function ( i_2 )
                     return deduped_17_1[1 + i_2][1];
-                end ) ) - 1 ];
-    deduped_53_1 = [ 1 .. Sum( List( deduped_60_1, function ( m_2 )
+                end ) ) - 1);
+    deduped_53_1 = (1):(Sum( List( deduped_60_1, function ( m_2 )
                   return deduped_4_1[1 + deduped_12_1[1 + m_2][2]];
-              end ) ) ];
+              end ) ));
     deduped_52_1 = (0):(deduped_55_1 - 1);
     hoisted_51_1 = Target( cat_1 );
     hoisted_50_1 = (0):(Cardinality( Source( alpha_1 ) ) - 1);
@@ -2385,7 +2385,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_43_1[deduped_3_2][1];
               hoisted_1_2 = deduped_42_1[deduped_3_2][1];
-              return List( (0):(deduped_17_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_17_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -2412,7 +2412,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
               hoisted_3_2 = List( deduped_43_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_17_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_17_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_26_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -2494,7 +2494,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_29_1[deduped_3_2][1];
               hoisted_1_2 = deduped_25_1[deduped_3_2][1];
-              return List( (0):(deduped_17_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_17_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -2513,7 +2513,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
               hoisted_3_2 = List( deduped_29_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_17_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_17_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_26_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -2569,7 +2569,7 @@ function ( cat_1, source_1, range_1, alpha_1 )
     hoisted_48_1 = AsList( alpha_1 );
     deduped_3_1 = List( deduped_63_1, Cardinality );
     deduped_7_1 = List( deduped_61_1, function ( i_2 )
-            return Product( deduped_56_1[[ 1 + Sum( deduped_3_1[(1):(i_2 - 1)] ) .. Sum( deduped_3_1[(1):(i_2)] ) ]] );
+            return Product( deduped_56_1[(1 + Sum( deduped_3_1[(1):(i_2 - 1)] )):(Sum( deduped_3_1[(1):(i_2)] ))] );
         end );
     hoisted_11_1 = List( deduped_61_1, function ( i_2 )
             local hoisted_3_2, deduped_4_2, deduped_5_2;
@@ -2646,12 +2646,12 @@ function ( cat_1, arg2_1, arg3_1 )
             deduped_1_2 = deduped_1_1[1 + deduped_4_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_7_1[1 + deduped_6_1[deduped_2_2]] ) );
         end );
-    deduped_52_1 = [ 0 .. Sum( List( deduped_58_1, function ( i_2 )
+    deduped_52_1 = (0):(Sum( List( deduped_58_1, function ( i_2 )
                     return deduped_8_1[1 + i_2][1];
-                end ) ) - 1 ];
-    deduped_51_1 = [ 1 .. Sum( List( deduped_58_1, function ( m_2 )
+                end ) ) - 1);
+    deduped_51_1 = (1):(Sum( List( deduped_58_1, function ( m_2 )
                   return deduped_1_1[1 + deduped_3_1[1 + m_2][2]];
-              end ) ) ];
+              end ) ));
     deduped_50_1 = (0):(deduped_53_1 - 1);
     deduped_20_1 = List( deduped_57_1, function ( o_2 )
             local deduped_1_2, deduped_2_2;
@@ -2691,7 +2691,7 @@ function ( cat_1, arg2_1, arg3_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_36_1[deduped_3_2][1];
               hoisted_1_2 = deduped_35_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -2718,7 +2718,7 @@ function ( cat_1, arg2_1, arg3_1 )
               hoisted_3_2 = List( deduped_36_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_8_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_18_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -2793,7 +2793,7 @@ function ( cat_1, arg2_1, arg3_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_21_1[deduped_3_2][1];
               hoisted_1_2 = deduped_17_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -2812,7 +2812,7 @@ function ( cat_1, arg2_1, arg3_1 )
               hoisted_3_2 = List( deduped_21_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_8_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_18_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -2865,7 +2865,7 @@ function ( cat_1, arg2_1, arg3_1 )
     hoisted_47_1 = Target( cat_1 );
     deduped_42_1 = List( deduped_63_1, Cardinality );
     deduped_43_1 = List( deduped_59_1, function ( i_2 )
-            return Product( deduped_54_1[[ 1 + Sum( deduped_42_1[(1):(i_2 - 1)] ) .. Sum( deduped_42_1[(1):(i_2)] ) ]] );
+            return Product( deduped_54_1[(1 + Sum( deduped_42_1[(1):(i_2 - 1)] )):(Sum( deduped_42_1[(1):(i_2)] ))] );
         end );
     hoisted_45_1 = List( deduped_59_1, function ( i_2 )
             local hoisted_3_2, deduped_4_2, deduped_5_2;
@@ -2943,12 +2943,12 @@ function ( cat_1, arg2_1, arg3_1 )
             deduped_1_2 = deduped_1_1[1 + deduped_4_1[deduped_2_2]];
             return @NTupleGAP( 2, deduped_1_2, ListWithIdenticalEntries( deduped_1_2, deduped_7_1[1 + deduped_6_1[deduped_2_2]] ) );
         end );
-    deduped_54_1 = [ 0 .. Sum( List( deduped_60_1, function ( i_2 )
+    deduped_54_1 = (0):(Sum( List( deduped_60_1, function ( i_2 )
                     return deduped_8_1[1 + i_2][1];
-                end ) ) - 1 ];
-    deduped_53_1 = [ 1 .. Sum( List( deduped_60_1, function ( m_2 )
+                end ) ) - 1);
+    deduped_53_1 = (1):(Sum( List( deduped_60_1, function ( m_2 )
                   return deduped_1_1[1 + deduped_3_1[1 + m_2][2]];
-              end ) ) ];
+              end ) ));
     deduped_52_1 = (0):(deduped_55_1 - 1);
     deduped_20_1 = List( deduped_59_1, function ( o_2 )
             local deduped_1_2, deduped_2_2;
@@ -2988,7 +2988,7 @@ function ( cat_1, arg2_1, arg3_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_37_1[deduped_3_2][1];
               hoisted_1_2 = deduped_36_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -3015,7 +3015,7 @@ function ( cat_1, arg2_1, arg3_1 )
               hoisted_3_2 = List( deduped_37_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_8_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_18_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -3097,7 +3097,7 @@ function ( cat_1, arg2_1, arg3_1 )
               deduped_3_2 = 1 + i_2;
               hoisted_2_2 = deduped_21_1[deduped_3_2][1];
               hoisted_1_2 = deduped_17_1[deduped_3_2][1];
-              return List( (0):(deduped_8_1[deduped_3_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_3_2][1] - 1), function ( i_3 )
                       local hoisted_3_3, deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3;
                       deduped_7_3 = hoisted_2_2[1 + hoisted_1_2[1 + i_3]];
                       deduped_6_3 = 1 + deduped_7_3;
@@ -3116,7 +3116,7 @@ function ( cat_1, arg2_1, arg3_1 )
               hoisted_3_2 = List( deduped_21_1[deduped_5_2][2], IndexOfMorphism );
               hoisted_2_2 = deduped_4_2[1];
               hoisted_1_2 = List( deduped_4_2[2], IndexOfMorphism );
-              return List( (0):(deduped_8_1[deduped_5_2][1] - 1 ), function ( i_3 )
+              return List( (0):(deduped_8_1[deduped_5_2][1] - 1), function ( i_3 )
                       local deduped_4_3, deduped_5_3, deduped_6_3, deduped_7_3, deduped_8_3, deduped_9_3, deduped_10_3, deduped_11_3;
                       deduped_11_3 = 1 + i_3;
                       deduped_10_3 = deduped_18_1[1 + hoisted_1_2[deduped_11_3]][1 + hoisted_3_2[1 + hoisted_2_2[deduped_11_3]]];
@@ -3172,7 +3172,7 @@ function ( cat_1, arg2_1, arg3_1 )
     hoisted_49_1 = Target( cat_1 );
     deduped_44_1 = List( deduped_65_1, Cardinality );
     deduped_45_1 = List( deduped_61_1, function ( i_2 )
-            return Product( deduped_56_1[[ 1 + Sum( deduped_44_1[(1):(i_2 - 1)] ) .. Sum( deduped_44_1[(1):(i_2)] ) ]] );
+            return Product( deduped_56_1[(1 + Sum( deduped_44_1[(1):(i_2 - 1)] )):(Sum( deduped_44_1[(1):(i_2)] ))] );
         end );
     hoisted_47_1 = List( deduped_61_1, function ( i_2 )
             local hoisted_3_2, deduped_4_2, deduped_5_2;

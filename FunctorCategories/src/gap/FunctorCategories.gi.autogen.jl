@@ -344,15 +344,10 @@ end );
         
   function ( Hom, values_of_functor )
     
-    return CreateCapCategoryObjectWithAttributes( Hom,
-                   Source, Source( Hom ),
-                   Target, Target( Hom ),
-                   ValuesOfFunctor, values_of_functor );
+    return ObjectConstructor( Hom, values_of_functor );
     
 end );
 
-#= comment for Julia
-# Multiple installations of an object-constructor causes issues in julia (ambiguous number of arguments).
 ##
 @InstallMethod( AsObjectInFunctorCategoryByValues,
         "for a functor category and two lists",
@@ -364,7 +359,6 @@ end );
                    PairGAP( values_of_all_objects, values_of_all_generating_morphisms ) );
     
 end );
-# =#
 
 ##
 @InstallMethod( AsObjectInFunctorCategoryByFunctions,
@@ -515,10 +509,7 @@ end; # IsPackageMarkedForLoading( "Algebroids", ">= 2026.07-04" )
         
   function ( Hom, source, values_on_all_objects, range )
     
-    return CreateCapCategoryMorphismWithAttributes( Hom,
-                   source,
-                   range,
-                   ValuesOnAllObjects, values_on_all_objects );
+    return MorphismConstructor( Hom, source, values_on_all_objects, range );
     
 end );
 
@@ -647,7 +638,14 @@ InstallMethodWithCache( FunctorCategory,
               CapJitDataTypeOfListOf( CapJitDataTypeOfObjectOfCategory( D ) ),
               CapJitDataTypeOfListOf( CapJitDataTypeOfMorphismOfCategory( D ) ) );
     
-    object_constructor = AsObjectInFunctorCategoryByValues;
+    object_constructor =
+        function( Hom, values_of_functor )
+          
+          return CreateCapCategoryObjectWithAttributes( Hom,
+                        Source, Source( Hom ),
+                        Target, Target( Hom ),
+                        ValuesOfFunctor, values_of_functor );
+        end;
     
     object_datum = ( Hom, o ) -> ValuesOfFunctor( o );
     
@@ -655,7 +653,14 @@ InstallMethodWithCache( FunctorCategory,
     morphism_datum_type =
       CapJitDataTypeOfListOf( CapJitDataTypeOfMorphismOfCategory( D ) );
     
-    morphism_constructor = AsMorphismInFunctorCategoryByValues;
+    morphism_constructor =
+        function( Hom, source, values_on_all_objects, range )
+          
+          return CreateCapCategoryMorphismWithAttributes( Hom,
+                        source,
+                        range,
+                        ValuesOnAllObjects, values_on_all_objects );
+        end;
     
     morphism_datum = ( Hom, m ) -> ValuesOnAllObjects( m );
     
@@ -1019,16 +1024,16 @@ INSTALL_DOT_METHOD( IsFunctorCategory );
 
 ##
 @InstallMethod( YonedaProjection,
-        [ IsCapCategory ],
+        [ IsCapCategory, IsCapCategory ],
         
-  function ( B )
-    local Hom, Yepis, N1, N2, pt;
+  function ( Hom, B )
+    local Yepis, N1, N2, pt;
+    
+    @Assert( 0, IsIdenticalObj( Hom, FunctorCategory( B ) ) );
     
     if (!( HasIsFiniteCategory( B ) && IsFiniteCategory( B ) ))
         TryNextMethod( );
     end;
-    
-    Hom = FunctorCategory( B );
     
     Yepis = YonedaNaturalEpimorphisms( B );
     
@@ -1057,17 +1062,28 @@ INSTALL_DOT_METHOD( IsFunctorCategory );
 end );
 
 ##
-@InstallMethod( YonedaComposition,
+@InstallMethod( YonedaProjection,
         [ IsCapCategory ],
         
   function ( B )
-    local Hom, Yepis, H, N1, N2, mu;
+    local Hom;
+    
+    Hom = FunctorCategory( B );
+    
+    return CallFuncListAtRuntime( YonedaProjection, [ Hom, B ] );
+    
+end );
+
+##
+@InstallMethod( YonedaComposition,
+        [ IsCapCategory, IsCapCategory ],
+        
+  function ( Hom, B )
+    local Yepis, H, N1, N2, mu;
     
     if (!( HasIsFiniteCategory( B ) && IsFiniteCategory( B ) ))
         TryNextMethod( );
     end;
-    
-    Hom = FunctorCategory( B );
     
     Yepis = YonedaNaturalEpimorphisms( B );
     
@@ -1096,17 +1112,28 @@ end );
 end );
 
 ##
-@InstallMethod( YonedaFibration,
+@InstallMethod( YonedaComposition,
         [ IsCapCategory ],
         
   function ( B )
-    local Hom, Yepis, H, N0, N1;
+    local Hom;
+    
+    Hom = FunctorCategory( B );
+    
+    return CallFuncListAtRuntime( YonedaComposition, [ Hom, B ] );
+    
+end );
+
+##
+@InstallMethod( YonedaFibration,
+        [ IsCapCategory, IsCapCategory ],
+        
+  function ( Hom, B )
+    local Yepis, H, N0, N1;
     
     if (!( HasIsFiniteCategory( B ) && IsFiniteCategory( B ) ))
         TryNextMethod( );
     end;
-    
-    Hom = FunctorCategory( B );
     
     Yepis = YonedaNaturalEpimorphisms( B );
     
@@ -1124,6 +1151,19 @@ end );
                    N1, ## The Yoneda functor B → H, c ↦ Hom(-, c), ψ ↦ Hom(-, ψ)
                    Yepis[6],
                    N0 ); ## The constant functor of 0-cells
+    
+end );
+
+##
+@InstallMethod( YonedaFibration,
+        [ IsCapCategory ],
+        
+  function ( B )
+    local Hom;
+    
+    Hom = FunctorCategory( B );
+    
+    return CallFuncListAtRuntime( YonedaFibration, [ Hom, B ] );
     
 end );
 
@@ -1335,10 +1375,12 @@ end );
 @InstallMethod( LaTeXOutput,
           [ IsMorphismInFunctorCategory ],
           
-  function( eta )
-    local only_datum, objs, v_objs, i, datum;
-    
-    only_datum = ValueOption( "OnlyDatum" );
+  @FunctionWithNamedArguments(
+  [
+    [ "OnlyDatum", false ],
+  ],
+  function( CAP_NAMED_ARGUMENTS, eta )
+    local objs, v_objs, i, datum;
     
     objs = SetOfObjects( Source( Source( eta ) ) );
     
@@ -1359,7 +1401,7 @@ end );
     
     datum = @Concatenation( datum, "\\end[array]" );
     
-    if (only_datum == true)
+    if (OnlyDatum == true)
       
       return datum;
       
@@ -1375,4 +1417,4 @@ end );
     
     end;
     
-end );
+end ) );

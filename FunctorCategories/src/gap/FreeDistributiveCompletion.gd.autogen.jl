@@ -16,7 +16,7 @@
 #!  The &GAP; category of a free distributive completion category.
 #! @Arguments category
 @DeclareFilter( "IsFreeDistributiveCompletion",
-        IsCapCategory );
+        IsWrapperCapCategory );
 
 #! @Description
 #!  The &GAP; category of cells in a free distributive completion category.
@@ -28,13 +28,13 @@
 #!  The &GAP; category of objects in a free distributive completion category.
 #! @Arguments obj
 @DeclareFilter( "IsObjectInFreeDistributiveCompletion",
-        FilterIntersection( IsCapCategoryObject, IsCellInFreeDistributiveCompletion ) );
+        FilterIntersection( IsWrapperCapCategoryObject, IsCellInFreeDistributiveCompletion ) );
 
 #! @Description
 #!  The &GAP; category of morphisms in a free distributive completion category.
 #! @Arguments mor
 @DeclareFilter( "IsMorphismInFreeDistributiveCompletion",
-        FilterIntersection( IsCapCategoryMorphism, IsCellInFreeDistributiveCompletion ) );
+        FilterIntersection( IsWrapperCapCategoryMorphism, IsCellInFreeDistributiveCompletion ) );
 
 ####################################
 #

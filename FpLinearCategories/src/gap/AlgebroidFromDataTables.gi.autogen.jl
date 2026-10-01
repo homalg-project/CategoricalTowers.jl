@@ -907,11 +907,11 @@ end );
               
               p = Last( p );
               
-              power = IntGAP( name[ (p + 1):(Length( name ) ) ] );
+              power = IntGAP( name[ (p + 1):(Length( name )) ] );
               
               if (power != fail)
                     
-                    name = name[ (1):(p - 1 ) ];
+                    name = name[ (1):(p - 1) ];
                     
                     p = PositionProperty( mors_labels,
                                   label -> Length( name ) >= Length( label ) && IsMatchingSublist( name, label, Length( name ) - Length( label ) + 1 ) );
@@ -1000,7 +1000,7 @@ end );
     
     return LazyHList( (1):(NumberOfObjects( q )),
           i -> LazyHList( (1):(NumberOfObjects( q )),
-            j -> ListN( IdentityMat( ranks[i][j], CommutativeSemiringOfLinearCategory( A ) ), (1):(ranks[i][j] ),
+            j -> ListN( IdentityMat( ranks[i][j], CommutativeSemiringOfLinearCategory( A ) ), (1):(ranks[i][j]),
               ( coeff, index ) -> MorphismConstructor( A, SetOfObjects( A )[i], coeff, [ index ], SetOfObjects( A )[j] ) ) ) );
     
 end );
@@ -1100,7 +1100,6 @@ end );
     
 end );
 
-#= comment for Julia
 ##
 @InstallMethod( IsAdmissibleAlgebroid,
           [ IsFpAlgebroidFromDataTables ],
@@ -1113,20 +1112,20 @@ end );
     A_op = OppositeOfObjectFiniteCategory( A );
     
     if (HasIsAdmissibleAlgebroid( A_op ))
-        
         return IsAdmissibleAlgebroid( A_op );
-        
     end;
     
     dim = AsZFunction(
         function ( i )
-          local C, objs;
+          local C;
           
-          C = QuotientCategory( A, PowerOfArrowIdeal( A, i ); overhead = false );
+          C = QuotientCategory( A, PowerOfArrowIdeal( A, i )
+                  #= comment for julia
+                 ; overhead = false
+                  # =#
+                  );
           
-          objs = List( SetOfObjects( A ), u -> ObjectConstructor( C, u ) );
-          
-          return Sum( List( objs, u -> Sum( List( objs, v -> RankOfObject( HomomorphismStructureOnObjects( C, u, v ) ) ) ) ) );
+          return CallFuncListAtRuntime( Dimension, [ C ] );
           
         end );
     
@@ -1155,10 +1154,9 @@ end );
     return bool;
     
 end );
-# =#
 
 ##
-@InstallMethod( CapFunctor,
+@InstallMethod( CreateFunctor,
         "for an algebroid from data tables, two lists, a CAP Category",
         [ IsFpAlgebroidFromDataTables, IsList, IsList, IsCapCategory ],
 

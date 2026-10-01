@@ -182,17 +182,10 @@ end );
         
   function ( coPSh, values_of_copresheaf )
     
-    return CreateCapCategoryObjectWithAttributes( coPSh,
-                   Source, Source( coPSh ),
-                   Target, Target( coPSh ),
-                   ValuesOfCoPreSheaf, values_of_copresheaf );
+    return ObjectConstructor( coPSh, values_of_copresheaf );
     
 end );
 
-#= comment for Julia
-# Multiple installations of an object-constructor causes issues in julia (ambiguous number of arguments).
-# It would be much better to implement the object-constructor of CoPreSheaves properly without letting it delegate to CreateCoPreSheafByValues which would have
-# multiple convenience methods.
 ##
 @InstallMethod( CreateCoPreSheafByValues,
         "for a copresheaf category and two lists",
@@ -204,7 +197,6 @@ end );
                    PairGAP( values_of_all_objects, values_of_all_generating_morphisms ) );
     
 end );
-# =#
 
 ##
 @InstallMethod( CreateCoPreSheafByFunctions,
@@ -352,10 +344,7 @@ end; # IsPackageMarkedForLoading( "Algebroids", ">= 2026.07-04" )
         
   function ( coPSh, source, values_on_all_objects, range )
     
-    return CreateCapCategoryMorphismWithAttributes( coPSh,
-                   source,
-                   range,
-                   ValuesOnAllObjects, values_on_all_objects );
+    return MorphismConstructor( coPSh, source, values_on_all_objects, range );
     
 end );
 
@@ -484,7 +473,14 @@ InstallMethodWithCache( CoPreSheaves,
               CapJitDataTypeOfListOf( CapJitDataTypeOfObjectOfCategory( D ) ),
               CapJitDataTypeOfListOf( CapJitDataTypeOfMorphismOfCategory( D ) ) );
     
-    object_constructor = CreateCoPreSheafByValues;
+    object_constructor =
+      function( coPSh, values_of_copresheaf )
+          
+          return CreateCapCategoryObjectWithAttributes( coPSh,
+                        Source, Source( coPSh ),
+                        Target, Target( coPSh ),
+                        ValuesOfCoPreSheaf, values_of_copresheaf );
+      end;
     
     object_datum = ( coPSh, o ) -> ValuesOfCoPreSheaf( o );
     
@@ -492,7 +488,14 @@ InstallMethodWithCache( CoPreSheaves,
     morphism_datum_type =
       CapJitDataTypeOfListOf( CapJitDataTypeOfMorphismOfCategory( D ) );
     
-    morphism_constructor = CreateCoPreSheafMorphismByValues;
+    morphism_constructor =
+      function( coPSh, source, values_on_all_objects, range )
+          
+          return CreateCapCategoryMorphismWithAttributes( coPSh,
+                        source,
+                        range,
+                        ValuesOnAllObjects, values_on_all_objects );
+      end;
     
     morphism_datum = ( coPSh, m ) -> ValuesOnAllObjects( m );
     
@@ -784,7 +787,7 @@ end );
     
     F = SourceOfFunctor( coY );
     
-    coYc = coY( F[name] );
+    coYc = CallFuncListAtRuntime( ApplyFunctor, [ coY, F[name] ] );
     
     if (IsObjectInPreSheafCategory( coYc ))
         
@@ -1034,10 +1037,12 @@ end );
 @InstallMethod( LaTeXOutput,
           [ IsMorphismInCoPreSheafCategory ],
           
-  function( eta )
-    local only_datum, objs, v_objs, i, datum;
-    
-    only_datum = ValueOption( "OnlyDatum" );
+  @FunctionWithNamedArguments(
+  [
+    [ "OnlyDatum", false ],
+  ],
+  function( CAP_NAMED_ARGUMENTS, eta )
+    local objs, v_objs, i, datum;
     
     objs = SetOfObjects( Source( Source( eta ) ) );
     
@@ -1058,7 +1063,7 @@ end );
     
     datum = @Concatenation( datum, "\\end[array]" );
     
-    if (only_datum == true)
+    if (OnlyDatum == true)
       
       return datum;
       
@@ -1074,4 +1079,4 @@ end );
     
     end;
     
-end );
+end ) );

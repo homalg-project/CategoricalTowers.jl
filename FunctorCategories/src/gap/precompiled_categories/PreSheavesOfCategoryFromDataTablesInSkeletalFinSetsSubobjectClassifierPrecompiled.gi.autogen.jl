@@ -105,9 +105,9 @@ function ( cat_1 )
                                         end ) );
                               end ) ) );
                       hoisted_1_3 = hoisted_1_2[deduped_9_3];
-                      return List( [ 0 .. CAP_JIT_INCOMPLETE_LOGIC( Sum( List( deduped_36_1, function ( b_4 )
+                      return List( (0):(CAP_JIT_INCOMPLETE_LOGIC( Sum( List( deduped_36_1, function ( b_4 )
                                           return hoisted_1_3[b_4];
-                                      end ) ) ) - 1 ], function ( i_4 )
+                                      end ) ) ) - 1), function ( i_4 )
                               return hoisted_7_3[1 + hoisted_6_3[(1 + i_4)]];
                           end );
                   end ) );
@@ -145,9 +145,9 @@ function ( cat_1 )
                                           return QuoIntWithDomain( i_5, hoisted_1_4, deduped_3_4 );
                                       end );
                               end ) ) );
-                      return List( [ 0 .. CAP_JIT_INCOMPLETE_LOGIC( Sum( List( deduped_36_1, function ( a_4 )
+                      return List( (0):(CAP_JIT_INCOMPLETE_LOGIC( Sum( List( deduped_36_1, function ( a_4 )
                                           return hoisted_1_2[a_4][deduped_1_3];
-                                      end ) ) ) - 1 ], function ( i_4 )
+                                      end ) ) ) - 1), function ( i_4 )
                               return hoisted_3_3[1 + hoisted_2_3[(1 + i_4)]];
                           end );
                   end ) );

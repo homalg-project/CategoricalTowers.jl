@@ -5,7 +5,14 @@ authors = [
 ]
 
 # Transpiled from GAP's QuotientCategories v2026.07-02
-version = "0.2.5"
+version = "0.2.6"
+
+# Current dependencies of GAP's QuotientCategories v2026.07-02
+# NeededOtherPackages:
+#   MatricesForHomalg >= 2026.04-01
+#   CAP >= 2026.04-02
+#   ToolsForCategoricalTowers >= 2026.05-01
+# SuggestedOtherPackages:
 
 [deps]
 MatricesForHomalg = "29b9b1b6-efa6-450e-8188-a5a2c25df071"
@@ -20,12 +27,12 @@ LinearAlgebraForCAP = "3dc4824f-14ac-4ab7-8a60-75dbcd4a9d60"
 [extensions]
 
 [compat]
-julia = "1.11"
+julia = "1.11, 1.12"
 MatricesForHomalg = "~0.1.4"
-CAP = "0.7, 0.8"
+CAP = "~0.8.17"
 MonoidalCategories = "~0.2.15, 0.3"
 CartesianCategories = "~0.3.15, 0.4"
-ToolsForCategoricalTowers = "0.1"
+ToolsForCategoricalTowers = "~0.1.12"
 LinearAlgebraForCAP = "0.2"
 ModulePresentationsForCAP = "0.2"
 

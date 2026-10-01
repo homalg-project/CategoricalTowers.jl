@@ -34,7 +34,6 @@ jobs:
           - SubcategoriesForCAP
           - PresheafCategories
           - FiniteCocompletions
-          - FunctorCategories
         julia-version:
           - '1.12'
           - 'nightly'
@@ -55,9 +54,55 @@ jobs:
       - name: Run tests
         run: make -C ${{ matrix.package }} test
 
+  test_functor_categories:
+    name: FunctorCategories (${{ matrix.group }}) - Julia ${{ matrix.julia-version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        group:
+          - SubobjectClassifier_TerminalCategory_YonedaComposition
+          - StreamVortexSystemBig
+          - StreamVortexSystem
+          - PreSheaves
+          - AutoDocTests
+        julia-version:
+          - '1.12'
+          - 'nightly'
+        os:
+          - ubuntu-latest
+        include:
+          - group: SubobjectClassifier_TerminalCategory_YonedaComposition
+            files: SubobjectClassifier.g.md,TerminalCategory.g.md,YonedaComposition.g.md
+          - group: StreamVortexSystemBig
+            files: StreamVortexSystemBig.g.md
+          - group: StreamVortexSystem
+            files: StreamVortexSystem.g.md,StreamVortexSystemLinear.g.md
+          - group: PreSheaves
+            files: Weierstrass.g.md,PreSheaves.md,presheaves_of_algebroid_from_data_tables.g.md
+          - group: AutoDocTests
+            files: AutoDocTests.tst.autogen.md
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up Julia
+        uses: julia-actions/setup-julia@v3
+        with:
+          version: ${{ matrix.julia-version }}
+      - name: Install all packages
+        run: make install
+      - name: Run tests
+        env:
+          DOCTEST_FILES: ${{ matrix.files }}
+        run: make -C FunctorCategories test
+
   update_subsplits:
     name: Update subsplits
-    needs: test
+    needs: [test, test_functor_categories]
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
     steps:

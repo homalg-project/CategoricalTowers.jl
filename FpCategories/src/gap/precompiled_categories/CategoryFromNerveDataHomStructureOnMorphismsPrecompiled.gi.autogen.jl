@@ -138,7 +138,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
     hoisted_51_1 = List( (0):(deduped_58_1 - 1), function ( i_2 )
             return deduped_37_1[1 + hoisted_42_1[1 + deduped_61_1[1 + i_2]]];
         end );
-    hoisted_45_1 = List( (0):(Cardinality( deduped_94_1[1][3] ) - 1 ), function ( x_2 )
+    hoisted_45_1 = List( (0):(Cardinality( deduped_94_1[1][3] ) - 1), function ( x_2 )
             local deduped_1_2;
             deduped_1_2 = 1 + CAP_JIT_INCOMPLETE_LOGIC( x_2 );
             return -1 + BigInt( SafePosition( deduped_75_1, CAP_JIT_INCOMPLETE_LOGIC( deduped_6_1[deduped_1_2] + deduped_5_1[deduped_1_2] * deduped_85_1 ) ) );
@@ -183,7 +183,7 @@ function ( cat_1, source_1, alpha_1, beta_1, range_1 )
     deduped_109_1 = Cardinality( Source( deduped_113_1 ) );
     deduped_108_1 = Cardinality( Source( deduped_112_1 ) );
     deduped_107_1 = Cardinality( Source( deduped_110_1 ) );
-    deduped_106_1 = (0):(Cardinality( deduped_118_1[1][3] ) - 1 );
+    deduped_106_1 = (0):(Cardinality( deduped_118_1[1][3] ) - 1);
     deduped_105_1 = deduped_109_1 * deduped_108_1;
     deduped_104_1 = deduped_109_1 * Cardinality( Source( deduped_116_1 ) );
     deduped_103_1 = deduped_108_1 * Cardinality( Source( deduped_115_1 ) );

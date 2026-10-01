@@ -107,9 +107,9 @@ function ( cat_1 )
                                     end );
                             end ) );
                       hoisted_1_3 = hoisted_1_2[deduped_11_3];
-                      return List( [ 0 .. Sum( List( deduped_30_1, function ( logic_new_func_x_4 )
+                      return List( (0):(Sum( List( deduped_30_1, function ( logic_new_func_x_4 )
                                         return hoisted_1_3[logic_new_func_x_4];
-                                    end ) ) - 1 ], function ( i_4 )
+                                    end ) ) - 1), function ( i_4 )
                               return hoisted_8_3[1 + hoisted_7_3[(1 + i_4)]];
                           end );
                   end ) );
@@ -144,13 +144,13 @@ function ( cat_1 )
                                 deduped_3_4 = hoisted_5_2[logic_new_func_x_4][deduped_1_3];
                                 hoisted_2_4 = deduped_3_4[2];
                                 hoisted_1_4 = deduped_3_4[1];
-                                return List( (0):(hoisted_4_2[logic_new_func_x_4][deduped_1_3] - 1 ), function ( i_5 )
+                                return List( (0):(hoisted_4_2[logic_new_func_x_4][deduped_1_3] - 1), function ( i_5 )
                                         return REM_INT( QUO_INT( i_5, hoisted_1_4 ), hoisted_2_4 );
                                     end );
                             end ) );
-                      return List( [ 0 .. Sum( List( deduped_30_1, function ( logic_new_func_x_4 )
+                      return List( (0):(Sum( List( deduped_30_1, function ( logic_new_func_x_4 )
                                         return hoisted_1_2[logic_new_func_x_4][deduped_1_3];
-                                    end ) ) - 1 ], function ( i_4 )
+                                    end ) ) - 1), function ( i_4 )
                               return hoisted_3_3[1 + hoisted_2_3[(1 + i_4)]];
                           end );
                   end ) );

@@ -16,7 +16,7 @@
 #!  The &GAP; category of a finite completion category.
 #! @Arguments category
 @DeclareFilter( "IsFiniteCompletion",
-        IsCapCategory );
+        IsWrapperCapCategory );
 
 #! @Description
 #!  The &GAP; category of cells in a finite completion category.
@@ -28,13 +28,13 @@
 #!  The &GAP; category of objects in a finite completion category.
 #! @Arguments obj
 @DeclareFilter( "IsObjectInFiniteCompletion",
-        FilterIntersection( IsCapCategoryObject, IsCellInFiniteCompletion ) );
+        FilterIntersection( IsWrapperCapCategoryObject, IsCellInFiniteCompletion ) );
 
 #! @Description
 #!  The &GAP; category of morphisms in a finite completion category.
 #! @Arguments mor
 @DeclareFilter( "IsMorphismInFiniteCompletion",
-        FilterIntersection( IsCapCategoryMorphism, IsCellInFiniteCompletion ) );
+        FilterIntersection( IsWrapperCapCategoryMorphism, IsCellInFiniteCompletion ) );
 
 ####################################
 #

@@ -9,8 +9,12 @@
         "for an object in a Hom-category",
         [ IsObjectInFunctorCategory ],
         
-  function ( F )
-    local d, endbas, k, n, random, b, alpha, i, alpha2, keremb;
+    @FunctionWithNamedArguments(
+    [
+        [ "random", true ],
+    ],
+    function ( CAP_NAMED_ARGUMENTS, F )
+        local d, endbas, k, n, b, alpha, i, alpha2, keremb;
     
     d = Maximum( List( ValuesOfFunctor( F )[1], ObjectDatum ) );
     
@@ -25,9 +29,6 @@
     k = CommutativeSemiringOfLinearCategory( CapCategory( F ) );
     
     n = IntGAP( Log2( Float( d ) ) ) + 1;
-    
-    ## the default is true
-    random = @not IsIdenticalObj( ValueOption( "random" ), false );
     
     for b in Reversed( (2):(Length( endbas )) )
         
@@ -63,15 +64,19 @@
     
     return fail;
     
-end );
+end ) );
 
 ##
 @InstallMethod( WeakDirectSumDecomposition,
         "for an object in a Hom-category",
         [ IsObjectInFunctorCategory ],
         
-  function ( F )
-    local queue, summands, eta, result;
+    @FunctionWithNamedArguments(
+    [
+        [ "random", true ],
+    ],
+    function ( CAP_NAMED_ARGUMENTS, F )
+        local queue, summands, eta, result;
     
     queue = [ IdentityMorphism( F ) ];
     
@@ -81,7 +86,7 @@ end );
         
         eta = Remove( queue );
         
-        result = DecomposeOnceByRandomEndomorphism( Source( eta ) );
+        result = DecomposeOnceByRandomEndomorphism( Source( eta ); random = random );
         
         if (result == fail)
             Add( summands, eta );
@@ -93,4 +98,4 @@ end );
     
     return summands;
     
-end );
+end ) );

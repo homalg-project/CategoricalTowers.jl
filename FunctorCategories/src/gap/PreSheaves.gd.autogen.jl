@@ -436,9 +436,13 @@ CapJitAddTypeSignature( "PreSheavesOfFpEnrichedCategory", [ IsCapCategory, IsCap
 @DeclareAttribute( "MaximalMorphismFromRepresentable",
         IsObjectInPreSheafCategory );
 
+#= comment for Julia
 #! @Arguments F
 @DeclareAttribute( "CoveringListOfRepresentables",
         IsObjectInPreSheafCategory );
+# =#
+
+@DeclareFilterDispatchedOperation( "CoveringListOfRepresentables" )
 
 #! @Arguments F
 @DeclareAttribute( "CoveringListOfRepresentablesUsingSplits",
@@ -456,9 +460,13 @@ CapJitAddTypeSignature( "PreSheavesOfFpEnrichedCategory", [ IsCapCategory, IsCap
 @DeclareAttribute( "SectionFromOptimizedCoYonedaProjectiveObjectIntoCoYonedaProjectiveObject",
         IsObjectInPreSheafCategory );
 
+#= comment for Julia
 #! @Arguments F
 @DeclareOperation( "RetractionByCoveringListOfRepresentables",
         [ IsPreSheafCategory, IsList, IsObjectInPreSheafCategory ] );
+# =#
+
+@DeclareFilterDispatchedOperation( "RetractionByCoveringListOfRepresentables" )
 
 #! @Arguments F
 @DeclareAttribute( "RetractionFromCoYonedaProjectiveObjectOntoOptimizedCoYonedaProjectiveObject",
@@ -492,9 +500,15 @@ CapJitAddTypeSignature( "PreSheavesOfFpEnrichedCategory", [ IsCapCategory, IsCap
 @DeclareOperation( "ApplyPreSheafToObjectInFiniteStrictCoproductCompletion",
         [ IsCapCategory, IsObjectInPreSheafCategory, IsObjectInFiniteStrictCoproductCompletion ] );
 
+@DeclareOperation( "ApplyPreSheafToObjectInFiniteStrictCoproductCompletion",
+        [ IsCapCategory, IsObjectInPreSheafCategory, IsCapCategory, IsObjectInFiniteStrictCoproductCompletion ] );
+
 #! @Arguments PSh, presheaf, mor
 @DeclareOperation( "ApplyPreSheafToMorphismInFiniteStrictCoproductCompletion",
         [ IsCapCategory, IsObjectInPreSheafCategory, IsMorphismInFiniteStrictCoproductCompletion ] );
+
+@DeclareOperation( "ApplyPreSheafToMorphismInFiniteStrictCoproductCompletion",
+        [ IsCapCategory, IsObjectInPreSheafCategory, IsCapCategory, IsMorphismInFiniteStrictCoproductCompletion ] );
 
 #! @Description
 #!  Construct the category of categories internal to the monoidal or cartesian category <A>C</A>.

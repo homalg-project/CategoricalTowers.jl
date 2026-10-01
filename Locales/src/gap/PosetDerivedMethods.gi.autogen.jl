@@ -61,11 +61,41 @@ AddDerivationToCAP( Coproduct,
     
 end; CategoryFilter = cat -> HasIsTotalOrderCategory( cat ) && IsTotalOrderCategory( cat ) && !( @IsBound( cat.supports_empty_limits ) && cat.supports_empty_limits == true ) );
 
+##
+AddDerivationToCAP( SetOfGeneratingMorphismsOfCategory,
+        "SetOfGeneratingMorphismsOfCategory using SetOfObjectsOfCategory, IsHomSetInhabited, and UniqueMorphism",
+        [ [ SetOfObjectsOfCategory, 1 ],
+          [ IsHomSetInhabited, 20 ],
+          [ UniqueMorphism, 4 ] ],
+        
+  function( cat )
+    local objects, l;
+    
+    objects = SetOfObjectsOfCategory( cat );
+    l = Length( objects );
+    
+    # Compute the Hasse diagram: s → t is a covering relation iff s ≠ t,
+    # Hom(s,t) is inhabited, and there is no u with s ≠ u ≠ t and
+    # Hom(s,u), Hom(u,t) inhabited.  Transitivity of the order guarantees
+    # that every redundant edge has such a length-2 witness, so checking
+    # length-2 paths suffices (no deeper search needed).
+    return @Concatenation( List( (1):(l), s ->
+                   List( Filtered( (1):(l), t ->
+                           t != s &&
+                           IsHomSetInhabited( cat, objects[s], objects[t] ) &&
+                           @not ForAny( (1):(l), u ->
+                                   u != s && u != t &&
+                                   IsHomSetInhabited( cat, objects[s], objects[u] ) &&
+                                   IsHomSetInhabited( cat, objects[u], objects[t] ) ) ),
+                         t -> UniqueMorphism( cat, objects[s], objects[t] ) ) ) );
+    
+end; CategoryFilter = cat -> HasIsPosetCategory( cat ) && IsPosetCategory( cat ) && HasIsFiniteCategory( cat ) && IsFiniteCategory( cat ) );
+
 if (IsPackageMarkedForLoading( "Digraphs", ">= 1.3.1" ))
 
 ##
 AddDerivationToCAP( SetOfGeneratingMorphismsOfCategory,
-        "",
+        "SetOfGeneratingMorphismsOfCategory using DigraphReflexiveTransitiveReduction",
         [ [ SetOfObjectsOfCategory, 1 ],
           [ IsHomSetInhabited, 1 ],
           [ UniqueMorphism, 4 ] ],

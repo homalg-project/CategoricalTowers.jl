@@ -1175,7 +1175,7 @@ function ( cat_1, alpha_1, beta_1 )
                                           return indices_5 == hoisted_15_1;
                                       end );
                                   deduped_12_4 = [ hoisted_13_1[deduped_20_4][deduped_20_4][deduped_14_4] ];
-                                  deduped_3_4 = (1 ):(NumberColumns( HomalgMatrixListList( deduped_12_4, 1, deduped_6_1[hoisted_16_1[deduped_20_4][deduped_20_4][deduped_14_4]][hoisted_17_1[deduped_20_4][deduped_20_4][deduped_14_4]], deduped_37_1 ) ) );
+                                  deduped_3_4 = (1):(NumberColumns( HomalgMatrixListList( deduped_12_4, 1, deduped_6_1[hoisted_16_1[deduped_20_4][deduped_20_4][deduped_14_4]][hoisted_17_1[deduped_20_4][deduped_20_4][deduped_14_4]], deduped_37_1 ) ));
                                   deduped_1_4 = deduped_12_4[hoisted_18_1];
                                   if (deduped_15_4 == 0 || deduped_21_4 == 0 || (deduped_16_4 == 0 || deduped_19_4 == 0))
                                       deduped_13_4 = NullMatImmutable( deduped_15_4, deduped_16_4 );

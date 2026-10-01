@@ -5,8 +5,25 @@ authors = [
 	"Marc Talleux <marc.talleux@u-picardie.fr>"
 ]
 
-# Transpiled from GAP's FiniteCocompletions v2026.07-01
-version = "0.1.1"
+# Transpiled from GAP's FiniteCocompletions v2026.09-01
+version = "0.1.2"
+
+# Current dependencies of GAP's FiniteCocompletions v2026.09-01
+# NeededOtherPackages:
+#   GAPDoc >= 1.5
+#   CAP >= 2026.06-03
+#   MonoidalCategories >= 2026.06-01
+#   CartesianCategories >= 2026.07-01
+#   ToolsForCategoricalTowers >= 2025.08-01
+#   Toposes >= 2024.02-08
+#   FinSetsForCAP >= 2025.12-08
+#   QuotientCategories >= 2026.04-01
+#   Locales >= 2025.12-04
+#   FpCategories >= 2026.09-03
+#   AdditiveClosuresForCAP >= 2026.06-02
+#   FreydCategoriesForCAP >= 2026.06-01
+#   PresheafCategories >= 2026.05-01
+# SuggestedOtherPackages:
 
 [deps]
 MatricesForHomalg = "29b9b1b6-efa6-450e-8188-a5a2c25df071"
@@ -31,21 +48,21 @@ PresheafCategories = "7356a560-9b13-4027-8f83-9f0b8f55db70"
 
 [compat]
 MatricesForHomalg = "~0.1.9"
-CAP = "~0.8.8"
+CAP = "~0.8.17"
 MonoidalCategories = "~0.3.0"
 CartesianCategories = "~0.4.0"
-ToolsForCategoricalTowers = "~0.1.10"
-Toposes = "~0.1.22"
+ToolsForCategoricalTowers = "~0.1.12"
+Toposes = "~0.1.24"
 FinSetsForCAP = "~0.3.11"
-QuotientCategories = "~0.2.3"
-Locales = "~0.1.2"
-FpCategories = "~0.1.13"
-FpLinearCategories = "~0.2.3"
+QuotientCategories = "~0.2.6"
+Locales = "~0.1.5"
+FpCategories = "~0.1.15"
+FpLinearCategories = "~0.2.6"
 LinearClosuresForCAP = "~0.2.3"
 AdditiveClosuresForCAP = "~0.2.3"
 FreydCategoriesForCAP = "~0.2.4"
-PresheafCategories = "~0.1.4"
-julia = "1.11"
+PresheafCategories = "~0.1.7"
+julia = "1.11, 1.12"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"

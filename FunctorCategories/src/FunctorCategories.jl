@@ -14,6 +14,10 @@ using QuotientCategories
 
 using LinearAlgebraForCAP
 
+using LinearClosuresForCAP
+
+using AdditiveClosuresForCAP
+
 using FreydCategoriesForCAP
 
 using ToolsForCategoricalTowers
@@ -27,6 +31,8 @@ using FpCategories
 using FpLinearCategories
 
 using Locales
+
+using FiniteCocompletions
 
 using PresheafCategories
 

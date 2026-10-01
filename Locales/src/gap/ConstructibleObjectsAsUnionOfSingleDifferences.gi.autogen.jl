@@ -40,7 +40,7 @@ end );
     
     ## TODO: use IteratorOfCombinations once GAP supports ForAll with an iterator as 1st argument
     return ForAll( (0):(l),
-                   #i -> ForAll( IteratorOfCombinations( (1):(l), i ),
+                   #i -> ForAll( IteratorOfCombinations( [ 1 .. l ], i ),
                    i -> ForAll( Combinations( (1):(l), i ),
                            I -> IsHomSetInhabited( C,
                                    DirectProduct( C, @Concatenation( [ a ], bp[I] ) ),

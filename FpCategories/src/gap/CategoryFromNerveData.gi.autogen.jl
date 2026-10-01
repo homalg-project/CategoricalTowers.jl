@@ -142,7 +142,7 @@
     AddSetOfObjectsOfCategory( C,
       function( C )
         
-        return List( (0):(Cardinality( NerveData( C )[1][1] ) - 1 ), i -> CreateObject( C, i ) );
+        return List( (0):(Cardinality( NerveData( C )[1][1] ) - 1), i -> CreateObject( C, i ) );
         
     end );
     
@@ -150,7 +150,7 @@
     AddSetOfMorphismsOfFiniteCategory( C,
       function( C )
         
-        return List( (0):(Cardinality( NerveData( C )[1][2] ) - 1 ), i -> CreateMorphism( C, i ) );
+        return List( (0):(Cardinality( NerveData( C )[1][2] ) - 1), i -> CreateMorphism( C, i ) );
         
     end );
     
@@ -1030,6 +1030,28 @@ end );
     
     ViewObj( mor );
     Print( "\n" );
+    
+end );
+
+##
+@InstallMethod( PrintString,
+        "for an object in a category from nerve data",
+        [ IsObjectInCategoryFromNerveData ],
+        
+  function( obj )
+    
+    return @Concatenation( ViewString( obj ), "\n" );
+    
+end );
+
+##
+@InstallMethod( PrintString,
+        "for a morphism in a category from nerve data",
+        [ IsMorphismInCategoryFromNerveData ],
+        
+  function( mor )
+    
+    return @Concatenation( ViewString( mor ), "\n" );
     
 end );
 

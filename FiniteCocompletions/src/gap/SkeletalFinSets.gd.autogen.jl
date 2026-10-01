@@ -57,7 +57,7 @@ end );
 
 #! @Description
 #!  The list associated to a skeletal finite set, i.e.,
-#!  <C>AsList( FinSet( n ) ) == (0):(n - 1)</C>.
+#!  <C>AsList( FinSet( n ) ) == [ 0 .. n - 1 ]</C>.
 #! @Arguments M
 #! @Returns a list
 @DeclareAttribute( "AsList",

@@ -351,7 +351,7 @@ end );
     
     s = DisplayString( A[1] );
     if (Length( s ) > 0 && s[Length( s )] == '\n')
-        s = s[[1 .. Length( s ) - 1]];
+        s = s[(1):(Length( s ) - 1)];
     end;
     display = @Concatenation( "( ", s, " )" );
     
@@ -359,7 +359,7 @@ end );
         Append( display, "\n\n∪\n\n" );
         s = DisplayString( A[i] );
         if (Length( s ) > 0 && s[Length( s )] == '\n')
-            s = s[[1 .. Length( s ) - 1]];
+            s = s[(1):(Length( s ) - 1)];
         end;
         Append( display, @Concatenation( "( ", s, " )" ) );
     end;

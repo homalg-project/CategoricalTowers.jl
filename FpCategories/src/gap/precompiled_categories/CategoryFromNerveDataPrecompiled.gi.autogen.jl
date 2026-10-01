@@ -623,7 +623,7 @@ function ( cat_1, alpha_1, beta_1 )
         end );
     hoisted_8_1 = AsList( deduped_16_1[7] );
     hoisted_7_1 = AsList( deduped_16_1[6] );
-    return CreateCapCategoryMorphismWithAttributes( cat_1, Source( alpha_1 ), Target( beta_1 ), MapOfMorphism, CreateCapCategoryMorphismWithAttributes( deduped_17_1, CreateCapCategoryObjectWithAttributes( deduped_17_1, Cardinality, deduped_18_1 ), Range( deduped_13_1 ), AsList, [ AsList( deduped_13_1 )[1 + CAP_JIT_INCOMPLETE_LOGIC( -1 + BigInt( SafePosition( List( (0):(Cardinality( deduped_19_1[1][3] ) - 1 ), function ( x_2 )
+    return CreateCapCategoryMorphismWithAttributes( cat_1, Source( alpha_1 ), Target( beta_1 ), MapOfMorphism, CreateCapCategoryMorphismWithAttributes( deduped_17_1, CreateCapCategoryObjectWithAttributes( deduped_17_1, Cardinality, deduped_18_1 ), Range( deduped_13_1 ), AsList, [ AsList( deduped_13_1 )[1 + CAP_JIT_INCOMPLETE_LOGIC( -1 + BigInt( SafePosition( List( (0):(Cardinality( deduped_19_1[1][3] ) - 1), function ( x_2 )
                                local deduped_1_2;
                                deduped_1_2 = 1 + CAP_JIT_INCOMPLETE_LOGIC( x_2 );
                                return -1 + BigInt( SafePosition( deduped_10_1, CAP_JIT_INCOMPLETE_LOGIC( hoisted_7_1[deduped_1_2] + hoisted_8_1[deduped_1_2] * deduped_12_1 ) ) );
@@ -647,7 +647,7 @@ function ( cat_1, alpha_1, beta_1 )
     deduped_20_1 = deduped_22_1[3];
     deduped_19_1 = deduped_22_1[8];
     deduped_18_1 = Cardinality( Source( deduped_20_1 ) );
-    deduped_17_1 = (0):(Cardinality( deduped_25_1[1][3] ) - 1 );
+    deduped_17_1 = (0):(Cardinality( deduped_25_1[1][3] ) - 1);
     deduped_16_1 = deduped_18_1 * Cardinality( Source( deduped_21_1 ) );
     deduped_15_1 = (0):(deduped_16_1 - 1);
     hoisted_7_1 = AsList( deduped_21_1 );

@@ -836,7 +836,7 @@ end );
 end );
 
 ##
-@InstallMethod( CapFunctor,
+@InstallMethod( CreateFunctor,
         "for a path category, two lists, and a category",
         [ IsPathCategory, IsList, IsList, IsCapCategory ],
         
