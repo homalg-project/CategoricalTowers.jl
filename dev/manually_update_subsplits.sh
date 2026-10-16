@@ -61,6 +61,11 @@ git subtree split --prefix=FiniteCocompletions -b FiniteCocompletions-split
 git push git@github.com:${GITHUB_USER}/FiniteCocompletions.jl.git FiniteCocompletions-split:master
 echo "Pushed to FiniteCocompletions.jl"
 
+# SliceCategories
+git subtree split --prefix=SliceCategories -b SliceCategories-split
+git push git@github.com:${GITHUB_USER}/SliceCategories.jl.git SliceCategories-split:master
+echo "Pushed to SliceCategories.jl"
+
 # FunctorCategories
 git subtree split --prefix=FunctorCategories -b FunctorCategories-split
 git push git@github.com:${GITHUB_USER}/FunctorCategories.jl.git FunctorCategories-split:master

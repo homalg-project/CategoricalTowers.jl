@@ -60,6 +60,11 @@ git subtree split --prefix=FiniteCocompletions -b FiniteCocompletions-split > /d
 git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/FiniteCocompletions.jl.git FiniteCocompletions-split:master
 echo "Pushed to FiniteCocompletions.jl"
 
+# SliceCategories
+git subtree split --prefix=SliceCategories -b SliceCategories-split > /dev/null 2>&1
+git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/SliceCategories.jl.git SliceCategories-split:master
+echo "Pushed to SliceCategories.jl"
+
 # FunctorCategories
 git subtree split --prefix=FunctorCategories -b FunctorCategories-split > /dev/null 2>&1
 git push https://${JULIA_SUBSPLIT_TOKEN}@github.com/homalg-project/FunctorCategories.jl.git FunctorCategories-split:master
