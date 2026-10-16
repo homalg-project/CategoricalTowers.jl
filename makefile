@@ -8,8 +8,34 @@ install:
 		Pkg.develop(path = "SubcategoriesForCAP"); \
 		Pkg.develop(path = "PresheafCategories"); \
 		Pkg.develop(path = "FiniteCocompletions"); \
+		Pkg.develop(path = "SliceCategories"); \
 		Pkg.develop(path = "FunctorCategories"); \
 	'
+
+uninstall:
+	$(MAKE) -C ToolsForCategoricalTowers uninstall
+	$(MAKE) -C QuotientCategories uninstall
+	$(MAKE) -C FpCategories uninstall
+	$(MAKE) -C FpLinearCategories uninstall
+	$(MAKE) -C Locales uninstall
+	$(MAKE) -C SubcategoriesForCAP uninstall
+	$(MAKE) -C PresheafCategories uninstall
+	$(MAKE) -C FiniteCocompletions uninstall
+	$(MAKE) -C SliceCategories uninstall
+	$(MAKE) -C FunctorCategories uninstall
+
+gen-basic:
+	$(MAKE) -C ToolsForCategoricalTowers gen-basic
+	$(MAKE) -C QuotientCategories gen-basic
+	$(MAKE) -C FpCategories gen-basic
+	$(MAKE) -C FpLinearCategories gen-basic
+	$(MAKE) -C Locales gen-basic
+	$(MAKE) -C SubcategoriesForCAP gen-basic
+	$(MAKE) -C PresheafCategories gen-basic
+	$(MAKE) -C FiniteCocompletions gen-basic
+	$(MAKE) -C SliceCategories gen-basic
+	$(MAKE) -C FunctorCategories gen-basic
+	$(MAKE) gen-root
 
 gen:
 	$(MAKE) -C ToolsForCategoricalTowers gen
@@ -20,19 +46,12 @@ gen:
 	$(MAKE) -C SubcategoriesForCAP gen
 	$(MAKE) -C PresheafCategories gen
 	$(MAKE) -C FiniteCocompletions gen
+	$(MAKE) -C SliceCategories gen
 	$(MAKE) -C FunctorCategories gen
+	$(MAKE) gen-root
 
-
-gen-full:
-	$(MAKE) -C ToolsForCategoricalTowers gen-full
-	$(MAKE) -C QuotientCategories gen-full
-	$(MAKE) -C FpCategories gen-full
-	$(MAKE) -C FpLinearCategories gen-full
-	$(MAKE) -C Locales gen-full
-	$(MAKE) -C SubcategoriesForCAP gen-full
-	$(MAKE) -C PresheafCategories gen-full
-	$(MAKE) -C FiniteCocompletions gen-full
-	$(MAKE) -C FunctorCategories gen-full
+gen-root:
+	ansible-playbook -i $$HOME/.gap/PackageJanitor/gap_to_julia/hosts $$HOME/.gap/PackageJanitor/gap_to_julia/site.yml -l CategoricalTowers_root --diff
 
 test:
 	$(MAKE) -C ToolsForCategoricalTowers test
@@ -43,6 +62,7 @@ test:
 	$(MAKE) -C SubcategoriesForCAP test
 	$(MAKE) -C PresheafCategories test
 	$(MAKE) -C FiniteCocompletions test
+	$(MAKE) -C SliceCategories test
 	$(MAKE) -C FunctorCategories test
 
 git-commit:
@@ -54,6 +74,7 @@ git-commit:
 	$(MAKE) -C SubcategoriesForCAP git-commit
 	$(MAKE) -C PresheafCategories git-commit
 	$(MAKE) -C FiniteCocompletions git-commit
+	$(MAKE) -C SliceCategories git-commit
 	$(MAKE) -C FunctorCategories git-commit
 
 update-subsplits:

@@ -47,14 +47,14 @@ function CreateBouquetMorphism(
 end
 
 function CreateQuiver( n::Int, arrows::Vector{Int} )
-    return CreateQuiver( BigInt( n ), BigInt.( arrows ) )
+	return CreateQuiver( BigInt( n ), BigInt.( arrows ) )
 end
 
 function CreateQuiver(
-        category_of_quivers::TheJuliaAbstractTypeIsCategoryOfQuivers,
-        n::Int,
-        arrows::Vector{Int} )
-    return CreateQuiver( category_of_quivers, BigInt( n ), BigInt.( arrows ) )
+	category_of_quivers::TheJuliaAbstractTypeIsCategoryOfQuivers,
+	n::Int,
+	arrows::Vector{Int} )
+	return CreateQuiver( category_of_quivers, BigInt( n ), BigInt.( arrows ) )
 end
 
 function CreateQuiverMorphism(
@@ -69,15 +69,15 @@ function CreateQuiverMorphism(
 end
 
 function CreateReflexiveQuiver( n::Int, loops::Vector{Int}, arrows::Vector{Int} )
-    return CreateReflexiveQuiver( BigInt( n ), BigInt.( loops ), BigInt.( arrows ) )
+	return CreateReflexiveQuiver( BigInt( n ), BigInt.( loops ), BigInt.( arrows ) )
 end
 
 function CreateReflexiveQuiver(
-        category_of_quivers::TheJuliaAbstractTypeIsCategoryOfReflexiveQuivers,
-        n::Int,
-        loops::Vector{Int},
-        arrows::Vector{Int} )
-    return CreateReflexiveQuiver( category_of_quivers, BigInt( n ), BigInt.( loops ), BigInt.( arrows ) )
+	category_of_quivers::TheJuliaAbstractTypeIsCategoryOfReflexiveQuivers,
+	n::Int,
+	loops::Vector{Int},
+	arrows::Vector{Int} )
+	return CreateReflexiveQuiver( category_of_quivers, BigInt( n ), BigInt.( loops ), BigInt.( arrows ) )
 end
 
 function CreateReflexiveQuiverMorphism(
@@ -86,6 +86,26 @@ function CreateReflexiveQuiverMorphism(
 	images_of_arrows::Vector{Int},
 	range::TheJuliaAbstractTypeIsObjectInCategoryOfReflexiveQuivers )
 	return CreateReflexiveQuiverMorphism( source,
+				BigInt.( images_of_vertices ),
+				BigInt.( images_of_arrows ),
+				range )
+end
+
+function CreateDecoratedQuiver(
+	category_of_decorated_quivers::TheJuliaAbstractTypeIsCategoryOfDecoratedQuivers,
+	decoration_of_vertices::Vector{Int},
+	arrows_with_decoration::Vector{Int} )
+	return CreateDecoratedQuiver( category_of_decorated_quivers,
+				BigInt.( decoration_of_vertices ),
+				BigInt.( arrows_with_decoration ) )
+end
+
+function CreateDecoratedQuiverMorphism(
+	source::TheJuliaAbstractTypeIsObjectInCategoryOfDecoratedQuivers,
+	images_of_vertices::Vector{Int},
+	images_of_arrows::Vector{Int},
+	range::TheJuliaAbstractTypeIsObjectInCategoryOfDecoratedQuivers )
+	return CreateDecoratedQuiverMorphism( source,
 				BigInt.( images_of_vertices ),
 				BigInt.( images_of_arrows ),
 				range )

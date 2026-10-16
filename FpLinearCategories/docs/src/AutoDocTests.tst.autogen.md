@@ -2,6 +2,8 @@
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, QuotientCategories, FpCategories, LinearClosuresForCAP, AdditiveClosuresForCAP, LinearAlgebraForCAP, FreydCategoriesForCAP, FpLinearCategories
 
+julia> # extracted from examples/AlgebroidFromDataTables.g
+
 julia> true
 true
 
@@ -210,6 +212,8 @@ true
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, QuotientCategories, FpCategories, LinearClosuresForCAP, AdditiveClosuresForCAP, LinearAlgebraForCAP, FreydCategoriesForCAP, FpLinearCategories
 
+julia> # extracted from examples/QuotientCategoryOfLinearClosureOfPathCategory.g
+
 julia> true
 true
 
@@ -298,6 +302,8 @@ julia> HomStructure( B["0"], B["5"] )
 
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, QuotientCategories, FpCategories, LinearClosuresForCAP, AdditiveClosuresForCAP, LinearAlgebraForCAP, FreydCategoriesForCAP, FpLinearCategories
+
+julia> # extracted from examples/GroebnerBasisInLinearClosureOfPathCategory.g
 
 julia> true
 true

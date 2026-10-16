@@ -1,0 +1,192 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+# SliceCategories: Slice categories
+#
+# Declarations
+#
+
+#! @Chapter Slice categories
+
+####################################
+#
+#! @Section GAP categories
+#
+####################################
+
+#! @Description
+#!  The &GAP; category of a slice category.
+@DeclareFilter( "IsSliceCategory",
+        IsCapCategory );
+
+#! @Description
+#!  The &GAP; category of cells in a slice category.
+@DeclareFilter( "IsCellInASliceCategory",
+        IsCapCategoryCell );
+
+#! @Description
+#!  The &GAP; category of objects in a slice category.
+@DeclareFilter( "IsObjectInASliceCategory",
+        FilterIntersection( IsCapCategoryObject, IsCellInASliceCategory ) );
+
+#! @Description
+#!  The &GAP; category of morphisms in a slice category.
+@DeclareFilter( "IsMorphismInASliceCategory",
+        FilterIntersection( IsCapCategoryMorphism, IsCellInASliceCategory ) );
+
+#! @Description
+#!  The &GAP; category of a slice category over the tensor unit.
+@DeclareFilter( "IsSliceCategoryOverTensorUnit",
+        IsSliceCategory );
+
+#! @Description
+#!  The &GAP; category of cells in a slice category over the tensor unit.
+@DeclareFilter( "IsCellInSliceCategoryOverTensorUnit",
+        IsCellInASliceCategory );
+
+#! @Description
+#!  The &GAP; category of objects in a slice category over the tensor unit.
+
+@DeclareFilter( "IsObjectInSliceCategoryOverTensorUnit",
+        FilterIntersection( IsObjectInASliceCategory, IsCellInSliceCategoryOverTensorUnit ) );
+
+#! @Description
+#!  The &GAP; category of morphisms in a slice category over the tensor unit.
+@DeclareFilter( "IsMorphismInSliceCategoryOverTensorUnit",
+        FilterIntersection( IsMorphismInASliceCategory, IsCellInSliceCategoryOverTensorUnit ) );
+
+####################################
+#
+#! @Section Global variables
+#
+####################################
+
+#!
+DeclareGlobalVariable( "CAP_INTERNAL_METHOD_NAME_LIST_FOR_SLICE_CATEGORY" );
+
+####################################
+#
+#! @Section Attributes
+#
+####################################
+
+#! @Description
+#!  The ambient category of the slice category <A>S</A>.
+#! @Arguments S
+#! @Returns a list
+@DeclareAttribute( "AmbientCategory",
+        IsSliceCategory );
+
+CapJitAddTypeSignature( "AmbientCategory", [ IsSliceCategory ], function ( input_types )
+    
+    return CapJitDataTypeOfCategory( AmbientCategory( input_types[1].category ) );
+    
+end );
+
+#! @Description
+#!  The base object of the slice category <A>S</A>.
+#! @Arguments S
+#! @Returns a &CAP; object
+@DeclareAttribute( "BaseObject",
+        IsSliceCategory );
+
+CapJitAddTypeSignature( "BaseObject", [ IsSliceCategory ], function ( input_types )
+    
+    return CapJitDataTypeOfObjectOfCategory( AmbientCategory( input_types[1].category ) );
+    
+end );
+
+#! @Description
+#!  The base object underlying <A>cell</A>.
+#! @Arguments cell
+#! @Returns a &CAP; object
+@DeclareAttribute( "BaseObject",
+        IsCellInASliceCategory );
+
+#! @Description
+#!  The morphism in the ambient category underlying the slice category object <A>obj</A>.
+#! @Arguments obj
+#! @Returns a &CAP; morphism
+@DeclareAttribute( "UnderlyingMorphism",
+        IsObjectInASliceCategory );
+
+CapJitAddTypeSignature( "UnderlyingMorphism", [ IsObjectInASliceCategory ], function ( input_types )
+    
+    @Assert( 0, IsSliceCategory( input_types[1].category ) );
+    
+    return CapJitDataTypeOfMorphismOfCategory( AmbientCategory( input_types[1].category ) );
+    
+end );
+
+#! @Description
+#!  The source of the morphism in the ambient category underlying the slice category object <A>obj</A>.
+#! @Arguments obj
+#! @Returns a &CAP; object
+@DeclareAttribute( "SourceOfUnderlyingMorphism",
+        IsObjectInASliceCategory );
+
+#! @Description
+#!  The cell in the ambient category underlying the slice category morphism <A>mor</A>.
+#! @Arguments mor
+#! @Returns a &CAP; mor
+@DeclareAttribute( "UnderlyingCell",
+        IsCellInASliceCategory );
+
+CapJitAddTypeSignature( "UnderlyingCell", [ IsMorphismInASliceCategory ], function ( input_types )
+    
+    @Assert( 0, IsSliceCategory( input_types[1].category ) );
+    
+    return CapJitDataTypeOfMorphismOfCategory( AmbientCategory( input_types[1].category ) );
+    
+end );
+
+#! @Description
+#!  The natural embedding functor from <A>S</A> to <C>AmbientCategory</C>(<A>S</A>).
+#! @Arguments S
+#! @Returns a functor
+@DeclareAttribute( "InclusionFunctor",
+        IsSliceCategory );
+
+#! @Description
+#!  The argument is an object $J \colon j \rightarrow 1$ in the slice category <A>S</A> over the tensor unit.
+#!  The output is the dual morphism $J^\vee \colon 1 \rightarrow \mathrm[\underline[Hom]](j,1)$ in the ambient category of <A>S</A>.
+#! @Arguments J
+#! @Returns a &CAP; morphism
+@DeclareAttribute( "DualOverTensorUnit",
+        IsCapCategoryMorphism );
+
+CapJitAddTypeSignature( "DualOverTensorUnit", [ IsCapCategory, IsCapCategoryMorphism ], function ( input_types )
+    
+    return CapJitDataTypeOfMorphismOfCategory( input_types[1].category );
+    
+end );
+
+####################################
+#
+#! @Section Operations
+#
+####################################
+
+#! @Description
+#!  The natural morphism $I \to \mathrm[\underline[Hom]](J,I)$, where
+#!  <A>I</A> and <A>J</A> are objects in a slice category over the tensor unit.
+#! @Arguments J, I
+#! @Returns a morphism
+@DeclareOperation( "MorphismFromCovariantArgumentOfInternalHom",
+        [ IsObjectInSliceCategoryOverTensorUnit, IsObjectInSliceCategoryOverTensorUnit ] );
+
+####################################
+#
+#! @Section Constructors
+#
+####################################
+
+#! @Arguments mor, S
+@DeclareOperation( "AsSliceCategoryCell",
+        [ IsCapCategoryMorphism, IsSliceCategory ] );
+
+#! @Arguments mor, S
+@DeclareOperation( "/",
+        [ IsCapCategoryMorphism, IsSliceCategory ] );
+
+#! @Arguments A, mor, B
+@DeclareOperation( "AsSliceCategoryCell",
+        [ IsObjectInASliceCategory, IsCapCategoryMorphism, IsObjectInASliceCategory ] );

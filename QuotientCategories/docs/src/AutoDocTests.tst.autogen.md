@@ -2,6 +2,8 @@
 ```jldoctest AutoDocTests
 julia> using MatricesForHomalg, CAP, ToolsForCategoricalTowers, LinearAlgebraForCAP, ModulePresentationsForCAP, QuotientCategories
 
+julia> # extracted from examples/quotient_category_of_left_presentations_by_projectives.g
+
 julia> true
 true
 
