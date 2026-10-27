@@ -4,10 +4,10 @@ authors = [
 	"Mohamed Barakat <mohamed.barakat@uni-siegen.de>"
 ]
 
-# Transpiled from GAP's ToolsForCategoricalTowers v2026.09-01
-version = "0.1.12"
+# Transpiled from GAP's ToolsForCategoricalTowers v2026.10-02
+version = "0.1.13"
 
-# Current dependencies of GAP's ToolsForCategoricalTowers v2026.09-01
+# Current dependencies of GAP's ToolsForCategoricalTowers v2026.10-02
 # NeededOtherPackages:
 #   CAP >= 2026.05-02
 #   MonoidalCategories >= 2026.06-01

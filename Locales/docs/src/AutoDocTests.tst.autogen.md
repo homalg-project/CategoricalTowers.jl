@@ -2,6 +2,8 @@
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, ToolsForCategoricalTowers, Toposes, FpCategories, Locales
 
+julia> # extracted from examples/DiscreteSkeletalCategory.g
+
 julia> true
 true
 
@@ -62,6 +64,8 @@ julia> HomStructure( two, one )
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, ToolsForCategoricalTowers, Toposes, FpCategories, Locales
+
+julia> # extracted from examples/TotalOrderAsCategory.g
 
 julia> true
 true
@@ -141,6 +145,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, ToolsForCategoricalTowers, Toposes, FpCategories, Locales
+
+julia> # extracted from examples/ProsetOfCategory.g
 
 julia> true
 true

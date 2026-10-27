@@ -39,10 +39,7 @@ include( "gap/FiniteCocompletion.gi.autogen.jl");
 include( "gap/CategoryOfBouquets.gi.autogen.jl");
 include( "gap/CategoryOfQuivers.gi.autogen.jl");
 
-#= comment for Julia (requires SliceCategories)
 include( "gap/CategoryOfDecoratedQuivers.gi.autogen.jl");
-# =#
-
 include( "gap/CategoryOfReflexiveQuivers.gi.autogen.jl");
 include( "gap/FiniteCompletion.gi.autogen.jl");
 include( "gap/FreeDistributiveCompletion.gi.autogen.jl");

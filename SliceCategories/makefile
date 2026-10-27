@@ -1,0 +1,49 @@
+.PHONY: test convert-to-notebook
+
+install:
+	julia -e 'using Pkg; Pkg.develop(path=".");'
+
+uninstall:
+	julia -e 'using Pkg; Pkg.rm("SliceCategories");'
+
+test:
+	julia -e 'using Pkg; Pkg.test("SliceCategories");'
+
+gen-basic:
+	rm -f ./src/gap/*.autogen.jl
+	rm -f ./src/gap/*/*.autogen.jl
+	rm -f ./docs/src/*.autogen.md
+	./.generate.sh -e gen_basic=1
+
+gen:
+	rm -f ./src/gap/*.autogen.jl
+	rm -f ./src/gap/*/*.autogen.jl
+	rm -f ./docs/src/*.autogen.md
+	./.generate.sh -e gen_basic=0
+
+convert-to-notebook:
+	@test -n "$(FILE)" || (echo "Usage: make convert-to-notebook FILE=docs/src/file_name.md"; exit 1)
+	@test -f "$(FILE)" || (echo "File not found: $(FILE)"; exit 1)
+	julia ../dev/md_to_notebook.jl "$(FILE)"
+
+git-commit:
+	@if git diff Project.toml | grep -q '^+version ='; then \
+	echo -e "\033[32mCommitting changes in \"SliceCategories\"\033[0m"; \
+	git add .; \
+	git commit \
+		-m "Update to GAP's $$(grep "# Transpiled from GAP's" "Project.toml" | cut -d ' ' -f 5-)" \
+		-m "Bump Version to v$$(grep "version = " "Project.toml" | cut -d '"' -f 2)" \
+		; \
+	else \
+		echo -e "\033[33mNo changes in \"SliceCategories\" to commit or no version bump detected.\033[0m"; \
+	fi
+
+codecov:
+	julia --project=. -e 'using Coverage; using Pkg; Pkg.test(coverage=true); LCOV.writefile("coverage.lcov", process_folder(pwd()));'
+	genhtml -o coverage_report coverage.lcov
+	open coverage_report/index.html
+
+clean-codecov:
+	find . -type f -name "*.jl.*.cov" -exec rm -f {} +
+	rm -f coverage.lcov
+	rm -rf coverage_report

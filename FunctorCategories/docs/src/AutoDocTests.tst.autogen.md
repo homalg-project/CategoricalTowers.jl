@@ -1,6 +1,93 @@
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+
+julia> # extracted from examples/NerveTruncatedInDegree2.g
+
+julia> Delta2 = SimplicialCategoryTruncatedInDegree( 2 )
+PathCategory( FinQuiver(
+  "Delta(C0,C1,C2)[id:C1→C0,s:C0→C1,t:C0→C1,
+                   is:C2→C1,it:C2→C1,
+                   ps:C1→C2,pt:C1→C2,mu:C1→C2]" ) )
+/ [ s⋅id == id(C0), t⋅id == id(C0), ps⋅is == id(C1), ... ]
+
+julia> ViewObj( DefiningRelations( Delta2 ) )
+[ [ s⋅id:(C0) → (C0), id(C0):(C0) → (C0) ],
+  [ t⋅id:(C0) → (C0), id(C0):(C0) → (C0) ],
+  [ ps⋅is:(C1) → (C1), id(C1):(C1) → (C1) ],
+  [ pt⋅it:(C1) → (C1), id(C1):(C1) → (C1) ],
+  [ is⋅id:(C2) → (C0), it⋅id:(C2) → (C0) ],
+  [ pt⋅is:(C1) → (C1), id⋅t:(C1) → (C1) ],
+  [ ps⋅it:(C1) → (C1), id⋅s:(C1) → (C1) ],
+  [ s⋅pt:(C0) → (C2), t⋅ps:(C0) → (C2) ],
+  [ s⋅mu:(C0) → (C2), s⋅ps:(C0) → (C2) ],
+  [ t⋅mu:(C0) → (C2), t⋅pt:(C0) → (C2) ],
+  [ mu⋅is:(C1) → (C1), id(C1):(C1) → (C1) ],
+  [ mu⋅it:(C1) → (C1), id(C1):(C1) → (C1) ] ]
+
+julia> Size( Delta2 )
+31
+
+julia> N = NerveTruncatedInDegree2( Delta2 )
+<An object in PreSheaves( PathCategory( FinQuiver(
+  "Delta(C0,C1,C2)[id:C1→C0,s:C0→C1,t:C0→C1,
+                   is:C2→C1,it:C2→C1,
+                   ps:C1→C2,pt:C1→C2,mu:C1→C2]" ) )
+/ [ s⋅id == id(C0), t⋅id == id(C0), ps⋅is == id(C1), ... ],
+ SkeletalFinSets )>
+
+julia> IsWellDefined( N )
+true
+
+julia> N.C0
+|3|
+
+julia> Display( N.C0 )
+[ 0, 1, 2 ]
+
+julia> N.C1
+|31|
+
+julia> Display( N.C1 )
+[ 0,..., 30 ]
+
+julia> N.C2
+|393|
+
+julia> Display( N.C2 )
+[ 0,..., 392 ]
+
+julia> N.id
+|3| → |31|
+
+julia> Display( N.id )
+[ 0, 1, 2 ] ⱶ[ 0, 5, 21 ]→ [ 0,..., 30 ]
+
+julia> PSh = CapCategory( N )
+PreSheaves( PathCategory( FinQuiver( "Delta(C0,C1,C2)[id:C1→C0,
+s:C0→C1,t:C0→C1,is:C2→C1,it:C2→C1,ps:C1→C2,pt:C1→C2,
+mu:C1→C2]" ) ) / [ s⋅id == id(C0), t⋅id == id(C0), ps⋅is == id(C1), ... ],
+SkeletalFinSets )
+
+julia> IntCat = CategoryOfInternalCategories( PSh,
+                          RangeCategoryOfHomomorphismStructure( Delta2 ) )
+FullSubcategoryByObjectMembershipFunction(
+PreSheaves( PathCategory( FinQuiver(
+  "Delta(C0,C1,C2)[id:C1→C0,s:C0→C1,t:C0→C1,
+                   is:C2→C1,it:C2→C1,
+                   ps:C1→C2,pt:C1→C2,mu:C1→C2]" ) )
+/ [ s⋅id == id(C0), t⋅id == id(C0), ps⋅is == id(C1), ... ],
+SkeletalFinSets ), ObjectMembershipFunction )
+
+julia> IsWellDefined( N / IntCat )
+true
+
+```
+
+```jldoctest AutoDocTests
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+
+julia> # extracted from examples/CategoryFromNerveData.g
 
 julia> C = SimplicialCategoryTruncatedInDegree( 2 )
 PathCategory( FinQuiver( "Delta(C0,C1,C2)[id:C1→C0,
@@ -53,7 +140,9 @@ julia> Display( N.id )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+
+julia> # extracted from examples/OptimizedCoYoneda.g
 
 julia> true
 true
@@ -118,7 +207,9 @@ given by the above data
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+
+julia> # extracted from examples/FinBouquets.g
 
 julia> FinBouquets
 FinBouquets
@@ -218,7 +309,9 @@ julia> Display( PM )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+
+julia> # extracted from examples/FinQuivers.g
 
 julia> FinQuivers
 FinQuivers
@@ -490,7 +583,9 @@ given by the above data
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+
+julia> # extracted from examples/DPO_Quivers.g
 
 julia> L = CreateQuiver( 3, [ 1,0,  2,0,  2,2 ] )
 <An object in FinQuivers>
@@ -531,7 +626,9 @@ given by the above data
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+
+julia> # extracted from examples/FinReflexiveQuivers.g
 
 julia> true
 true
@@ -703,7 +800,85 @@ given by the above data
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+
+julia> # extracted from examples/DecoratedFinQuivers.g
+
+julia> true
+true
+
+julia> FinQuivers
+FinQuivers
+
+julia> decorating_quiver = SubobjectClassifier( FinQuivers )
+<An object in FinQuivers>
+
+julia> Display( decorating_quiver )
+( [ 0, 1 ],
+  [ 0 = [ 0, 0 ], 1 = [ 1, 0 ], 2 = [ 0, 1 ],
+    3 = [ 1, 1 ], 4 = [ 1, 1 ] ] )
+
+julia> DecoratedFinQuivers =
+          CategoryOfDecoratedQuivers( decorating_quiver,
+                  [ "magenta", "cyan" ],
+                  [ "red", "brown", "orange", "blue", "green" ] )
+CategoryOfDecoratedQuivers( decorating_quiver )
+
+julia> B = TerminalObject( DecoratedFinQuivers )
+<An object in CategoryOfDecoratedQuivers( decorating_quiver )>
+
+julia> Display( B )
+( [ 0 = "magenta", 1 = "cyan" ],
+  [ 0 = [ 0, 0, "red" ], 1 = [ 1, 0, "brown" ], 2 = [ 0, 1, "orange" ],
+    3 = [ 1, 1, "blue" ], 4 = [ 1, 1, "green" ] ] )
+
+julia> iota = Subobject( B, [ 0 ], [ 3, 4 ] )
+<A morphism in CategoryOfDecoratedQuivers( decorating_quiver )>
+
+julia> Display( iota )
+Image of <(V)>:
+[ 0, 1 ] ⱶ[ 0, 1 ]→ [ 0, 1 ]
+
+Image of <(A)>:
+[ 0, 1 ] ⱶ[ 3, 4 ]→ [ 0,..., 4 ]
+
+A morphism in CategoryOfDecoratedQuivers( decorating_quiver )
+given by the above data
+
+julia> dq1 = CreateDecoratedQuiver( DecoratedFinQuivers,
+                       [ 0, 1, 1, 1 ], # decoration of [ 0, 1, 2, 3 ]
+                       [ 0,0,0,  0,1,2,  1,0,1,  1,2,3,  2,3,4,  3,2,3 ] )
+<An object in CategoryOfDecoratedQuivers( decorating_quiver )>
+
+julia> Display( dq1 )
+( [ 0 = "magenta", 1 = "cyan", 2 = "cyan", 3 = "cyan" ],
+  [ 0 = [ 0, 0, "red" ], 1 = [ 0, 1, "orange" ], 2 = [ 1, 0, "brown" ],
+    3 = [ 1, 2, "blue" ], 4 = [ 2, 3, "green" ], 5 = [ 3, 2, "blue" ] ] )
+
+julia> IsWellDefined( dq1 )
+true
+
+julia> omega = SubobjectClassifier( DecoratedFinQuivers )
+<An object in CategoryOfDecoratedQuivers( decorating_quiver )>
+
+julia> Display( omega )
+( [ 0 = "magenta", 1 = "magenta", 2 = "cyan", 3 = "cyan" ],
+  [ 0 = [ 0, 0, "red" ], 1 = [ 1, 0, "red" ], 2 = [ 0, 1, "red" ],
+    3 = [ 1, 1, "red" ], 4 = [ 1, 1, "red" ], 5 = [ 2, 0, "brown" ],
+    6 = [ 3, 0, "brown" ], 7 = [ 2, 1, "brown" ], 8 = [ 3, 1, "brown" ],
+    9 = [ 3, 1, "brown" ], 10 = [ 0, 2, "orange" ], 11 = [ 1, 2, "orange" ],
+    12 = [ 0, 3, "orange" ], 13 = [ 1, 3, "orange" ], 14 = [ 1, 3, "orange" ],
+    15 = [ 2, 2, "blue" ], 16 = [ 3, 2, "blue" ], 17 = [ 2, 3, "blue" ],
+    18 = [ 3, 3, "blue" ], 19 = [ 3, 3, "blue" ], 20 = [ 2, 2, "green" ],
+    21 = [ 3, 2, "green" ], 22 = [ 2, 3, "green" ], 23 = [ 3, 3, "green" ],
+    24 = [ 3, 3, "green" ] ] )
+
+```
+
+```jldoctest AutoDocTests
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+
+julia> # extracted from examples/QuotientsOfAlgebroidFromDataTablesUsingPreSheaves.g
 
 julia> true
 true
@@ -806,13 +981,13 @@ AdditiveClosure( QuotientCategory( Z-algebroid( [0,1,2,3][a:0→1,b:1→3,
 c:0→2,d:2→3,e:3→3] ) defined by 4 objects and 5 generating morphisms,
 2-sided ideal generated by 2 morphisms ) )
 
-julia> T = RandomObject( add_qB, [[10],[1]] );
+julia> T = RandomObject( add_qB, [[5],[1]] );
 
-julia> u = RandomMorphism( T, T, 5 );
+julia> u = RandomMorphism( T, T, 2 );
 
-julia> v = RandomMorphism( T, T, 5 );
+julia> v = RandomMorphism( T, T, 2 );
 
-julia> w = RandomMorphism( T, T, 5 );
+julia> w = RandomMorphism( T, T, 2 );
 
 julia> HomStructure( PreCompose( [ u, v, w ] ) ) == PreCompose( HomStructure( v ), HomStructure( u, w ) )
 true
@@ -823,7 +998,9 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+
+julia> # extracted from examples/QuotientsOfAlgebroidFromDataTablesUsingPreSheaves.g
 
 julia> true
 true

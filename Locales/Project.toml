@@ -6,10 +6,10 @@ authors = [
 	"Tom Kuhmichel <tom.kuhmichel@student.uni-siegen.de>"
 ]
 
-# Transpiled from GAP's Locales v2026.09-03
-version = "0.1.5"
+# Transpiled from GAP's Locales v2026.10-03
+version = "0.1.6"
 
-# Current dependencies of GAP's Locales v2026.09-03
+# Current dependencies of GAP's Locales v2026.10-03
 # NeededOtherPackages:
 #   GAPDoc >= 1.5
 #   ToolsForHomalg >= 2021.12-02

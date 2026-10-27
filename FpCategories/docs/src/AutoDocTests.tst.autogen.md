@@ -2,6 +2,8 @@
 ```jldoctest AutoDocTests
 julia> using CAP, QuotientCategories, FpCategories
 
+julia> # extracted from examples/FinQuiver.g
+
 julia> true
 true
 
@@ -92,6 +94,8 @@ julia> NumberOfMorphisms( q_op_x_q )
 ```jldoctest AutoDocTests
 julia> using CAP, QuotientCategories, FpCategories
 
+julia> # extracted from examples/FinQuiver.g
+
 julia> q1 = RandomFinQuiver( 2, 4, false );
 
 julia> q2 = RandomFinQuiver( 2, 4, true );
@@ -120,6 +124,8 @@ julia> Display( ExternalHoms( q3 )[1][3] )
 
 ```jldoctest AutoDocTests
 julia> using CAP, QuotientCategories, FpCategories
+
+julia> # extracted from examples/CategoryFromDataTables.g
 
 julia> true
 true
@@ -377,6 +383,8 @@ julia> ViewObj( List( mors_op, DecompositionOfMorphismInCategory ) )
 ```jldoctest AutoDocTests
 julia> using CAP, QuotientCategories, FpCategories
 
+julia> # extracted from examples/NerveTruncatedInDegree2AsFunctor.g
+
 julia> true
 true
 
@@ -443,6 +451,8 @@ julia> Display( ApplyFunctor( N, Delta2op.id ) )
 
 ```jldoctest AutoDocTests
 julia> using CAP, QuotientCategories, FpCategories
+
+julia> # extracted from examples/YonedaCompositionAsNaturalEpimorphism.g
 
 julia> Delta2 = SimplicialCategoryTruncatedInDegree( 2 )
 PathCategory( FinQuiver(
@@ -514,6 +524,8 @@ Functor from PathCategory( FinQuiver(
 
 ```jldoctest AutoDocTests
 julia> using CAP, QuotientCategories, FpCategories
+
+julia> # extracted from examples/CategoryFromNerveData.g
 
 julia> true
 true
@@ -703,6 +715,8 @@ julia> Perform( SetOfGeneratingMorphisms( C_op ), Display )
 ```jldoctest AutoDocTests
 julia> using CAP, QuotientCategories, FpCategories
 
+julia> # extracted from examples/PathCategory.g
+
 julia> true
 true
 
@@ -824,6 +838,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, QuotientCategories, FpCategories
+
+julia> # extracted from examples/Delta2.g
 
 julia> true
 true

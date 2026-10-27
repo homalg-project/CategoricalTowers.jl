@@ -2,6 +2,8 @@
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP, MatricesForHomalg, FreydCategoriesForCAP, ToolsForCategoricalTowers
 
+julia> # extracted from examples/DummyCategoryInDoctrines.g
+
 julia> true
 true
 
@@ -51,6 +53,8 @@ A CAP category with name DummyCategoryInDoctrines( [ "IsCategoryWithZeroObject" 
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP, MatricesForHomalg, FreydCategoriesForCAP, ToolsForCategoricalTowers
+
+julia> # extracted from examples/MorphismBetweenCoproducts.g
 
 julia> true
 true
@@ -199,6 +203,8 @@ true
 
 ```jldoctest AutoDocTests
 julia> using CAP, MonoidalCategories, CartesianCategories, Toposes, FinSetsForCAP, MatricesForHomalg, FreydCategoriesForCAP, ToolsForCategoricalTowers
+
+julia> # extracted from examples/MorphismBetweenDirectProducts.g
 
 julia> true
 true

@@ -38,6 +38,8 @@ using PresheafCategories
 
 using SubcategoriesForCAP
 
+using SliceCategories
+
 include("pre_init.jl")
 
 include("init.jl")
