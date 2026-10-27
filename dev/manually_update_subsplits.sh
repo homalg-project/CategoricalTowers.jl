@@ -41,11 +41,6 @@ git subtree split --prefix=FpLinearCategories -b FpLinearCategories-split
 git push git@github.com:${GITHUB_USER}/FpLinearCategories.jl.git FpLinearCategories-split:master
 echo "Pushed to FpLinearCategories.jl"
 
-# Locales
-git subtree split --prefix=Locales -b Locales-split
-git push git@github.com:${GITHUB_USER}/Locales.jl.git Locales-split:master
-echo "Pushed to Locales.jl"
-
 # SubcategoriesForCAP
 git subtree split --prefix=SubcategoriesForCAP -b SubcategoriesForCAP-split
 git push git@github.com:${GITHUB_USER}/SubcategoriesForCAP.jl.git SubcategoriesForCAP-split:master
