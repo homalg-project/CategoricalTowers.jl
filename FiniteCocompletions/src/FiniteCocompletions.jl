@@ -18,7 +18,7 @@ using FinSetsForCAP
 
 using QuotientCategories
 
-using Locales
+using LocalesForCAP
 
 using FpCategories
 

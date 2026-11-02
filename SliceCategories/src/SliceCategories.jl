@@ -12,7 +12,7 @@ using ToolsForCategoricalTowers
 
 using Toposes
 
-using Locales
+using LocalesForCAP
 
 using FpCategories
 

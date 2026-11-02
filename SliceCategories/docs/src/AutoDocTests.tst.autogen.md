@@ -1,6 +1,6 @@
 
 ```jldoctest AutoDocTests
-julia> using CAP, MonoidalCategories, CartesianCategories, ToolsForCategoricalTowers, Toposes, Locales, FpCategories, FreydCategoriesForCAP, FinSetsForCAP, Singular, MatricesForHomalg, AdditiveClosuresForCAP, SliceCategories
+julia> using CAP, MonoidalCategories, CartesianCategories, ToolsForCategoricalTowers, Toposes, LocalesForCAP, FpCategories, FreydCategoriesForCAP, FinSetsForCAP, Singular, MatricesForHomalg, AdditiveClosuresForCAP, SliceCategories
 
 julia> # extracted from examples/SliceCategory.g
 
@@ -319,7 +319,7 @@ A morphism in the slice category given by the above data
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, MonoidalCategories, CartesianCategories, ToolsForCategoricalTowers, Toposes, Locales, FpCategories, FreydCategoriesForCAP, FinSetsForCAP, Singular, MatricesForHomalg, AdditiveClosuresForCAP, SliceCategories
+julia> using CAP, MonoidalCategories, CartesianCategories, ToolsForCategoricalTowers, Toposes, LocalesForCAP, FpCategories, FreydCategoriesForCAP, FinSetsForCAP, Singular, MatricesForHomalg, AdditiveClosuresForCAP, SliceCategories
 
 julia> # extracted from examples/SliceCategoryOverTensorUnit.g
 
@@ -409,7 +409,7 @@ A morphism in the slice category given by:
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, MonoidalCategories, CartesianCategories, ToolsForCategoricalTowers, Toposes, Locales, FpCategories, FreydCategoriesForCAP, FinSetsForCAP, Singular, MatricesForHomalg, AdditiveClosuresForCAP, SliceCategories
+julia> using CAP, MonoidalCategories, CartesianCategories, ToolsForCategoricalTowers, Toposes, LocalesForCAP, FpCategories, FreydCategoriesForCAP, FinSetsForCAP, Singular, MatricesForHomalg, AdditiveClosuresForCAP, SliceCategories
 
 julia> # extracted from examples/DPO.g
 
@@ -498,7 +498,7 @@ A morphism in the slice category given by the above data
 ```
 
 ```jldoctest AutoDocTests
-julia> using CAP, MonoidalCategories, CartesianCategories, ToolsForCategoricalTowers, Toposes, Locales, FpCategories, FreydCategoriesForCAP, FinSetsForCAP, Singular, MatricesForHomalg, AdditiveClosuresForCAP, SliceCategories
+julia> using CAP, MonoidalCategories, CartesianCategories, ToolsForCategoricalTowers, Toposes, LocalesForCAP, FpCategories, FreydCategoriesForCAP, FinSetsForCAP, Singular, MatricesForHomalg, AdditiveClosuresForCAP, SliceCategories
 
 julia> # extracted from examples/LazySliceCategory.g
 
