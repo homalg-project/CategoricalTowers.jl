@@ -4,7 +4,7 @@ install:
 	julia -e 'using Pkg; Pkg.develop(path=".");'
 
 uninstall:
-	julia -e 'using Pkg; Pkg.rm("FiniteCocompletions");'
+	julia -e 'using Pkg; haskey(Pkg.project().dependencies, "FiniteCocompletions") ? Pkg.rm("FiniteCocompletions") : println("\033[94mFiniteCocompletions is not installed or already removed, skipping.\033[0m");'
 
 test:
 	julia -e 'using Pkg; Pkg.test("FiniteCocompletions");'

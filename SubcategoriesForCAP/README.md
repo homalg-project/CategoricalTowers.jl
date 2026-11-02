@@ -24,7 +24,7 @@ Each badge confirms that Julia's General registry has an available release satis
 | Dependency | Release status |
 | --- | --- |
 | [CAP](https://github.com/JuliaRegistries/General/tree/master/C/CAP) | ![CAP release status](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fhomalg-project%2FReleaseStatusForJuliaPackages%2Fmain%2FCategoricalTowers.jl%2FSubcategoriesForCAP%2Fdependencies%2FCAP.json) |
-| [Locales](https://github.com/JuliaRegistries/General/tree/master/L/Locales) | ![Locales release status](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fhomalg-project%2FReleaseStatusForJuliaPackages%2Fmain%2FCategoricalTowers.jl%2FSubcategoriesForCAP%2Fdependencies%2FLocales.json) |
+| [LocalesForCAP](https://github.com/JuliaRegistries/General/tree/master/L/LocalesForCAP) | ![LocalesForCAP release status](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fhomalg-project%2FReleaseStatusForJuliaPackages%2Fmain%2FCategoricalTowers.jl%2FSubcategoriesForCAP%2Fdependencies%2FLocalesForCAP.json) |
 | [ToolsForCategoricalTowers](https://github.com/JuliaRegistries/General/tree/master/T/ToolsForCategoricalTowers) | ![ToolsForCategoricalTowers release status](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fhomalg-project%2FReleaseStatusForJuliaPackages%2Fmain%2FCategoricalTowers.jl%2FSubcategoriesForCAP%2Fdependencies%2FToolsForCategoricalTowers.json) |
 
 The badge data is refreshed every hour by the [central release-status workflow][ReleaseStatusWorkflow].

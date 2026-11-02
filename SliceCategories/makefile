@@ -4,7 +4,7 @@ install:
 	julia -e 'using Pkg; Pkg.develop(path=".");'
 
 uninstall:
-	julia -e 'using Pkg; Pkg.rm("SliceCategories");'
+	julia -e 'using Pkg; haskey(Pkg.project().dependencies, "SliceCategories") ? Pkg.rm("SliceCategories") : println("\033[94mSliceCategories is not installed or already removed, skipping.\033[0m");'
 
 test:
 	julia -e 'using Pkg; Pkg.test("SliceCategories");'

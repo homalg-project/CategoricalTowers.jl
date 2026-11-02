@@ -1,6 +1,6 @@
 
 ```jldoctest AutoDocTests
-julia> using CAP, ToolsForCategoricalTowers, Locales, MatricesForHomalg, AdditiveClosuresForCAP, FreydCategoriesForCAP, SubcategoriesForCAP
+julia> using CAP, ToolsForCategoricalTowers, LocalesForCAP, MatricesForHomalg, AdditiveClosuresForCAP, FreydCategoriesForCAP, SubcategoriesForCAP
 
 julia> # extracted from examples/Freyd_ZZ.g
 

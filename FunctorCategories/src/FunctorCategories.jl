@@ -30,7 +30,7 @@ using FpCategories
 
 using FpLinearCategories
 
-using Locales
+using LocalesForCAP
 
 using FiniteCocompletions
 
@@ -39,6 +39,8 @@ using PresheafCategories
 using SubcategoriesForCAP
 
 using SliceCategories
+
+using GeneralizedMorphismsForCAP
 
 include("pre_init.jl")
 

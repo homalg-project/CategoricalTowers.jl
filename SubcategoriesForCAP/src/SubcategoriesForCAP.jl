@@ -6,7 +6,7 @@ using CAP
 
 using ToolsForCategoricalTowers
 
-using Locales
+using LocalesForCAP
 
 include("init.jl")
 
