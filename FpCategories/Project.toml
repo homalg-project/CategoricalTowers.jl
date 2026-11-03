@@ -5,10 +5,10 @@ authors = [
 	"Kamal Saleh <kamal.saleh@uni-siegen.de>"
 ]
 
-# Transpiled from GAP's FpCategories v2026.09-03
-version = "0.1.15"
+# Transpiled from GAP's FpCategories v2026.10-01
+version = "0.1.16"
 
-# Current dependencies of GAP's FpCategories v2026.09-03
+# Current dependencies of GAP's FpCategories v2026.10-01
 # NeededOtherPackages:
 #   GAPDoc >= 1.5
 #   CAP >= 2025.11-03
@@ -32,10 +32,10 @@ Toposes = "36a15fe6-6211-457f-8fdb-aa2e0d2f3052"
 
 [compat]
 julia = "1.11, 1.12"
-CAP = "~0.8.17"
+CAP = "~0.8.21"
 CartesianCategories = "~0.3.12, 0.4"
 ToolsForCategoricalTowers = "~0.1.12"
-QuotientCategories = "~0.2.6"
+QuotientCategories = "~0.2.7"
 FinSetsForCAP = "~0.3.2"
 Toposes = "~0.1.24"
 

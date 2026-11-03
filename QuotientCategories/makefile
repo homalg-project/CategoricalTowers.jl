@@ -4,7 +4,7 @@ install:
 	julia -e 'using Pkg; Pkg.develop(path=".");'
 
 uninstall:
-	julia -e 'using Pkg; Pkg.rm("QuotientCategories");'
+	julia -e 'using Pkg; haskey(Pkg.project().dependencies, "QuotientCategories") ? Pkg.rm("QuotientCategories") : println("\033[94mQuotientCategories is not installed or already removed, skipping.\033[0m");'
 
 test:
 	julia -e 'using Pkg; Pkg.test("QuotientCategories");'
