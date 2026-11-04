@@ -5,24 +5,26 @@
 #
 @BindGlobal( "PARSE_CAP_QUIVER_DATUM_FROM_STRING",
   function ( data_string )
-    local data, p, name, objs, min, max, mors, q_datum, g, s, t, mor;
+    local data, p, q, name, objs, min, max, mors, q_datum, g, s, t, mor;
     
-    data = data_string;
+    # unicode string, so that positions are character positions and not byte positions
+    data = Unicode( ReplacedString( data_string, "→", "->" ) );
     
-    data = ReplacedString( data, "→", "->" );
-    
-    p = PositionSublist( data, "(" );
+    p = Position( data, Unicode( "(" )[1] );
     
     if (p != fail && p > 1)
-        name = data[ (1):(p-1) ];
+        name = Encode( data[ (1):(p-1) ] );
     else
         Error( "please use the format \"q(A,B)[x:A->B,y:B->A]\"\n" );
     end;
     
-    data = data[ (p + 1):(Length( data ) - 1) ];
+    q = PositionSublist( data, Unicode( ")[" ) );
     
-    data = ReplacedString( data, ")[", "|" );
-    data = SplitString( data, "|" );
+    if (q == fail)
+        data = [ Encode( data[ (p + 1):(Length( data ) - 1) ] ) ];
+    else
+        data = [ Encode( data[ (p + 1):(q - 1) ] ), Encode( data[ (q + 2):(Length( data ) - 1) ] ) ];
+    end;
     
     if (IntGAP( data[1] ) != fail)
         objs = List( (1):(IntGAP( data[1] )), StringGAP );

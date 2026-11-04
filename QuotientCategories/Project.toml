@@ -4,10 +4,10 @@ authors = [
 	"Kamal Saleh <kamal.saleh@uni-siegen.de>"
 ]
 
-# Transpiled from GAP's QuotientCategories v2026.07-02
-version = "0.2.6"
+# Transpiled from GAP's QuotientCategories v2026.11-01
+version = "0.2.7"
 
-# Current dependencies of GAP's QuotientCategories v2026.07-02
+# Current dependencies of GAP's QuotientCategories v2026.11-01
 # NeededOtherPackages:
 #   MatricesForHomalg >= 2026.04-01
 #   CAP >= 2026.04-02
