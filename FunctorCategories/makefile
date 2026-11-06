@@ -4,7 +4,7 @@ install:
 	julia -e 'using Pkg; Pkg.develop(path=".");'
 
 uninstall:
-	julia -e 'using Pkg; haskey(Pkg.project().dependencies, "FunctorCategories") ? Pkg.rm("FunctorCategories") : println("\033[94mFunctorCategories is not installed or already removed, skipping.\033[0m");'
+	julia -e 'import Pkg; package_name = "FunctorCategories"; any(package -> package.name == package_name, values(Pkg.dependencies())) ? Pkg.rm(package_name; mode=Pkg.PKGMODE_MANIFEST) : println("\033[94mSkipping FunctorCategories (not installed or already removed)\033[0m");'
 
 test:
 	julia -e 'using Pkg; Pkg.test("FunctorCategories");'
