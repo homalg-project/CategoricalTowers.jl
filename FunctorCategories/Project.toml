@@ -5,10 +5,10 @@ authors = [
 	"Kamal Saleh <kamal.saleh@uni-siegen.de>"
 ]
 
-# Transpiled from GAP's FunctorCategories v2026.10-03
-version = "0.1.2"
+# Transpiled from GAP's FunctorCategories v2026.10-05
+version = "0.1.0"
 
-# Current dependencies of GAP's FunctorCategories v2026.10-03
+# Current dependencies of GAP's FunctorCategories v2026.10-05
 # NeededOtherPackages:
 #   GAPDoc >= 1.5
 #   ToolsForHomalg >= 2026.04-01
@@ -22,7 +22,7 @@ version = "0.1.2"
 #   Toposes >= 2025.12-02
 #   FinSetsForCAP >= 2025.12-08
 #   FpCategories >= 2026.09-03
-#   Locales >= 2025.02-04
+#   LocalesForCAP >= 2026.10-05
 #   PresheafCategories >= 2026.09-02
 #   FiniteCocompletions >= 2026.09-01
 #   Algebroids >= 2026.09-02
@@ -45,11 +45,12 @@ Toposes = "36a15fe6-6211-457f-8fdb-aa2e0d2f3052"
 FinSetsForCAP = "0a079e9b-4bc2-44fe-a89b-7607e4464786"
 FpCategories = "b9f20f1b-1226-4811-b6a0-b2e47a225553"
 FpLinearCategories = "607c1b85-d155-426e-91c9-9defd76aa9e1"
-Locales = "1a4f975e-c827-4943-8d73-13a8c91de15b"
+LocalesForCAP = "1a4f975e-c827-4943-8d73-13a8c91de15b"
 FiniteCocompletions = "908ca681-a438-4f45-a9ca-a80846b18011"
 PresheafCategories = "7356a560-9b13-4027-8f83-9f0b8f55db70"
 SubcategoriesForCAP = "54e686c7-8599-4fba-8d83-06e8ab9e4db3"
 SliceCategories = "f3113cef-7312-4333-9b89-0d3b62b43454"
+GeneralizedMorphismsForCAP = "7d31831b-b58f-4001-85d4-aa36a35a28ea"
 
 [weakdeps]
 
@@ -70,11 +71,12 @@ Toposes = "~0.1.24"
 FinSetsForCAP = "~0.3.11"
 FpCategories = "~0.1.15"
 FpLinearCategories = "~0.2.6"
-Locales = "~0.1.5"
-FiniteCocompletions = "~0.1.2"
+LocalesForCAP = "~0.1.0"
+FiniteCocompletions = "~0.1.0"
 PresheafCategories = "~0.1.7"
-SubcategoriesForCAP = "~0.1.4"
+SubcategoriesForCAP = "~0.1.0"
 SliceCategories = "0.1"
+GeneralizedMorphismsForCAP = "~0.1.0"
 julia = "1.12"
 
 [extras]
