@@ -4,7 +4,7 @@ install:
 	julia -e 'using Pkg; Pkg.develop(path=".");'
 
 uninstall:
-	julia -e 'using Pkg; Pkg.rm("PresheafCategories");'
+	julia -e 'using Pkg; haskey(Pkg.project().dependencies, "PresheafCategories") ? Pkg.rm("PresheafCategories") : println("\033[94mPresheafCategories is not installed or already removed, skipping.\033[0m");'
 
 test:
 	julia -e 'using Pkg; Pkg.test("PresheafCategories");'

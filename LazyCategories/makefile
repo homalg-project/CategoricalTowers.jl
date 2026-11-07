@@ -4,7 +4,7 @@ install:
 	julia -e 'using Pkg; Pkg.develop(path=".");'
 
 uninstall:
-	julia -e 'using Pkg; Pkg.rm("LazyCategories");'
+	julia -e 'using Pkg; haskey(Pkg.project().dependencies, "LazyCategories") ? Pkg.rm("LazyCategories") : println("\033[94mLazyCategories is not installed or already removed, skipping.\033[0m");'
 
 test:
 	julia -e 'using Pkg; Pkg.test("LazyCategories");'

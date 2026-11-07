@@ -4,7 +4,7 @@ install:
 	julia -e 'using Pkg; Pkg.develop(path=".");'
 
 uninstall:
-	julia -e 'using Pkg; Pkg.rm("ToolsForCategoricalTowers");'
+	julia -e 'using Pkg; haskey(Pkg.project().dependencies, "ToolsForCategoricalTowers") ? Pkg.rm("ToolsForCategoricalTowers") : println("\033[94mToolsForCategoricalTowers is not installed or already removed, skipping.\033[0m");'
 
 test:
 	julia -e 'using Pkg; Pkg.test("ToolsForCategoricalTowers");'
