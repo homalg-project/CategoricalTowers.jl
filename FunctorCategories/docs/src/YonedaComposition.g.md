@@ -1,5 +1,5 @@
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, LocalesForCAP, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, FunctorCategories
 
 julia> Delta2 = SimplicialCategoryTruncatedInDegree( 2 )
 PathCategory( FinQuiver( "Delta(C0,C1,C2)[id:C1→C0,s:C0→C1,t:C0→C1,is:C2→C1,it:C2→C1,ps:C1→C2,pt:C1→C2,mu:C1→C2]" ) ) / [ s⋅id == id(C0), t⋅id == id(C0), ps⋅is == id(C1), ... ]

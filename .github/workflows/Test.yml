@@ -30,7 +30,6 @@ jobs:
           - QuotientCategories
           - FpCategories
           - FpLinearCategories
-          - Locales
           - SubcategoriesForCAP
           - PresheafCategories
           - FiniteCocompletions

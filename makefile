@@ -4,7 +4,6 @@ install:
 		Pkg.develop(path = "QuotientCategories"); \
 		Pkg.develop(path = "FpCategories"); \
 		Pkg.develop(path = "FpLinearCategories"); \
-		Pkg.develop(path = "Locales"); \
 		Pkg.develop(path = "SubcategoriesForCAP"); \
 		Pkg.develop(path = "PresheafCategories"); \
 		Pkg.develop(path = "FiniteCocompletions"); \
@@ -18,7 +17,6 @@ uninstall:
 	$(MAKE) -C QuotientCategories uninstall
 	$(MAKE) -C FpCategories uninstall
 	$(MAKE) -C FpLinearCategories uninstall
-	$(MAKE) -C Locales uninstall
 	$(MAKE) -C SubcategoriesForCAP uninstall
 	$(MAKE) -C PresheafCategories uninstall
 	$(MAKE) -C FiniteCocompletions uninstall
@@ -31,7 +29,6 @@ gen-basic:
 	$(MAKE) -C QuotientCategories gen-basic
 	$(MAKE) -C FpCategories gen-basic
 	$(MAKE) -C FpLinearCategories gen-basic
-	$(MAKE) -C Locales gen-basic
 	$(MAKE) -C SubcategoriesForCAP gen-basic
 	$(MAKE) -C PresheafCategories gen-basic
 	$(MAKE) -C FiniteCocompletions gen-basic
@@ -45,7 +42,6 @@ gen:
 	$(MAKE) -C QuotientCategories gen
 	$(MAKE) -C FpCategories gen
 	$(MAKE) -C FpLinearCategories gen
-	$(MAKE) -C Locales gen
 	$(MAKE) -C SubcategoriesForCAP gen
 	$(MAKE) -C PresheafCategories gen
 	$(MAKE) -C FiniteCocompletions gen
@@ -62,7 +58,6 @@ test:
 	$(MAKE) -C QuotientCategories test
 	$(MAKE) -C FpCategories test
 	$(MAKE) -C FpLinearCategories test
-	$(MAKE) -C Locales test
 	$(MAKE) -C SubcategoriesForCAP test
 	$(MAKE) -C PresheafCategories test
 	$(MAKE) -C FiniteCocompletions test
@@ -75,7 +70,6 @@ git-commit:
 	$(MAKE) -C QuotientCategories git-commit
 	$(MAKE) -C FpCategories git-commit
 	$(MAKE) -C FpLinearCategories git-commit
-	$(MAKE) -C Locales git-commit
 	$(MAKE) -C SubcategoriesForCAP git-commit
 	$(MAKE) -C PresheafCategories git-commit
 	$(MAKE) -C FiniteCocompletions git-commit

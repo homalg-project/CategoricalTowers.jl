@@ -1,6 +1,6 @@
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, LocalesForCAP, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, GeneralizedMorphismsForCAP, FunctorCategories
 
 julia> # extracted from examples/NerveTruncatedInDegree2.g
 
@@ -85,7 +85,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, LocalesForCAP, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, GeneralizedMorphismsForCAP, FunctorCategories
 
 julia> # extracted from examples/CategoryFromNerveData.g
 
@@ -140,7 +140,7 @@ julia> Display( N.id )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, LocalesForCAP, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, GeneralizedMorphismsForCAP, FunctorCategories
 
 julia> # extracted from examples/OptimizedCoYoneda.g
 
@@ -207,7 +207,7 @@ given by the above data
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, LocalesForCAP, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, GeneralizedMorphismsForCAP, FunctorCategories
 
 julia> # extracted from examples/FinBouquets.g
 
@@ -309,7 +309,7 @@ julia> Display( PM )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, LocalesForCAP, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, GeneralizedMorphismsForCAP, FunctorCategories
 
 julia> # extracted from examples/FinQuivers.g
 
@@ -583,7 +583,7 @@ given by the above data
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, LocalesForCAP, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, GeneralizedMorphismsForCAP, FunctorCategories
 
 julia> # extracted from examples/DPO_Quivers.g
 
@@ -626,7 +626,7 @@ given by the above data
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, LocalesForCAP, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, GeneralizedMorphismsForCAP, FunctorCategories
 
 julia> # extracted from examples/FinReflexiveQuivers.g
 
@@ -800,7 +800,7 @@ given by the above data
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, LocalesForCAP, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, GeneralizedMorphismsForCAP, FunctorCategories
 
 julia> # extracted from examples/DecoratedFinQuivers.g
 
@@ -876,7 +876,7 @@ julia> Display( omega )
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, LocalesForCAP, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, GeneralizedMorphismsForCAP, FunctorCategories
 
 julia> # extracted from examples/QuotientsOfAlgebroidFromDataTablesUsingPreSheaves.g
 
@@ -998,7 +998,7 @@ true
 ```
 
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, QuotientCategories, LinearAlgebraForCAP, LinearClosuresForCAP, AdditiveClosuresForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, LocalesForCAP, FiniteCocompletions, PresheafCategories, SubcategoriesForCAP, SliceCategories, GeneralizedMorphismsForCAP, FunctorCategories
 
 julia> # extracted from examples/QuotientsOfAlgebroidFromDataTablesUsingPreSheaves.g
 

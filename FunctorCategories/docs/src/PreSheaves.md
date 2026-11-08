@@ -1,5 +1,5 @@
 ```jldoctest AutoDocTests
-julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, LinearAlgebraForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, Locales, PresheafCategories, QuotientCategories, SubcategoriesForCAP, FunctorCategories
+julia> using MatricesForHomalg, CAP, MonoidalCategories, CartesianCategories, LinearAlgebraForCAP, FreydCategoriesForCAP, ToolsForCategoricalTowers, Toposes, FinSetsForCAP, FpCategories, FpLinearCategories, LocalesForCAP, PresheafCategories, QuotientCategories, SubcategoriesForCAP, FunctorCategories
 
 julia> q_O = FinQuiver( "q_O(A,B,C)[x:A->B,y:A->B,z:B->C,w:B->C]" )
 FinQuiver( "q_O(A,B,C)[x:A→B,y:A→B,z:B→C,w:B→C]" )

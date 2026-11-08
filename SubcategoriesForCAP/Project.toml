@@ -6,21 +6,21 @@ authors = [
 	"Kamal Saleh <kamal.saleh@uni-siegen.de>"
 ]
 
-# Transpiled from GAP's SubcategoriesForCAP v2026.07-01
-version = "0.1.4"
+# Transpiled from GAP's SubcategoriesForCAP v2026.10-01
+version = "0.1.0"
 
-# Current dependencies of GAP's SubcategoriesForCAP v2026.07-01
+# Current dependencies of GAP's SubcategoriesForCAP v2026.10-01
 # NeededOtherPackages:
 #   GAPDoc >= 1.5
 #   CAP >= 2026.04-02
-#   Locales >= 2024.02-21
+#   LocalesForCAP >= 2026.10-05
 # SuggestedOtherPackages:
 #   FreydCategoriesForCAP >= 2026.04-01
 
 [deps]
 CAP = "d64df2ee-d2bb-46f4-8cbc-f03bb858f8cb"
 ToolsForCategoricalTowers = "e2cf920d-0824-4cbb-97bb-0be40824f89f"
-Locales = "1a4f975e-c827-4943-8d73-13a8c91de15b"
+LocalesForCAP = "1a4f975e-c827-4943-8d73-13a8c91de15b"
 
 [weakdeps]
 
@@ -29,7 +29,7 @@ Locales = "1a4f975e-c827-4943-8d73-13a8c91de15b"
 [compat]
 CAP = "~0.8.17"
 ToolsForCategoricalTowers = "~0.1.12"
-Locales = "~0.1.5"
+LocalesForCAP = "~0.1.0"
 MatricesForHomalg = "~0.1.6"
 AdditiveClosuresForCAP = "0.2"
 FreydCategoriesForCAP = "0.2"

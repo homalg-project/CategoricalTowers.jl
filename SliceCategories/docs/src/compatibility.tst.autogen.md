@@ -1,6 +1,6 @@
 
 ```jldoctest
-julia> using CAP, MonoidalCategories, CartesianCategories, ToolsForCategoricalTowers, Toposes, Locales, FpCategories, FreydCategoriesForCAP, FinSetsForCAP, Singular, MatricesForHomalg, AdditiveClosuresForCAP, SliceCategories
+julia> using CAP, MonoidalCategories, CartesianCategories, ToolsForCategoricalTowers, Toposes, LocalesForCAP, FpCategories, FreydCategoriesForCAP, FinSetsForCAP, Singular, MatricesForHomalg, AdditiveClosuresForCAP, SliceCategories
 
 julia> true
 true
