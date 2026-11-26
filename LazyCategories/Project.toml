@@ -4,10 +4,10 @@ authors = [
 	"Mohamed Barakat <mohamed.barakat@uni-siegen.de>"
 ]
 
-# Transpiled from GAP's LazyCategories v2026.10-04
+# Transpiled from GAP's LazyCategories v2026.11-01
 version = "0.1.0"
 
-# Current dependencies of GAP's LazyCategories v2026.10-04
+# Current dependencies of GAP's LazyCategories v2026.11-01
 # NeededOtherPackages:
 #   GAPDoc >= 1.5
 #   ToolsForHomalg >= 2026.04-01

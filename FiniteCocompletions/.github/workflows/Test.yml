@@ -16,12 +16,16 @@ concurrency:
 
 jobs:
   test:
-    name: Julia ${{ matrix.julia-version }}
+    name: ${{ matrix.group.group }} - Julia ${{ matrix.julia-version }}
     runs-on: ubuntu-latest
     timeout-minutes: 60
     strategy:
       fail-fast: false
       matrix:
+        # generated from .github/ci_test_groups.yml
+        group:
+          - group: "default"
+            files: ["CartesianDiagonal.g.md", "CocartesianCodiagonal.g.md", "FiniteStrictCoproductCompletionOfObjectFiniteCategory.g.md", "FiniteStrictCoproductCompletionOfObjectFiniteCategory_ColiftAlongEpimorphism.g.md", "FiniteStrictCoproductCompletionOfObjectFiniteCategory_Equalizer.g.md", "FiniteStrictCoproductCompletionOfObjectFiniteCategory_poset.g.md", "FiniteStrictCoproductCompletion_poset.g.md", "FiniteStrictProductCompletion_poset.g.md", "HomStructure.g.md", "SkeletalCoproduct.g.md", "SkeletalCoproductComplement.g.md", "SkeletalDirectProduct.g.md", "SkeletalEqualizer.g.md", "SkeletalHomStructure.g.md", "SkeletalInitialTerminal.g.md", "SkeletalLift.g.md", "SkeletalMorphismsOfExternalHom.g.md", "SkeletalPreCompose.g.md", "SkeletalWellDefined.g.md", "TerminalCategory_as_FiniteCoproductCompletion.g.md", "TerminalCategory_as_FiniteProductCompletion.g.md"]
         julia-version:
           - '1.12'
           - '1.13'
@@ -39,3 +43,5 @@ jobs:
         uses: julia-actions/cache@v2
       - name: Instantiate and test package
         run: julia --project=. -e 'using Pkg; Pkg.instantiate(); Pkg.test()'
+        env:
+          DOCTEST_FILES: ${{ join(matrix.group.files, ',') }}

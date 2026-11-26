@@ -5,10 +5,10 @@ authors = [
 	"Tom Kuhmichel <tom.kuhmichel@student.uni-siegen.de>"
 ]
 
-# Transpiled from GAP's SliceCategories v2026.10-02
+# Transpiled from GAP's SliceCategories v2026.11-01
 version = "0.1.0"
 
-# Current dependencies of GAP's SliceCategories v2026.10-02
+# Current dependencies of GAP's SliceCategories v2026.11-01
 # NeededOtherPackages:
 #   GAPDoc >= 1.5
 #   CAP >= 2026.05-02

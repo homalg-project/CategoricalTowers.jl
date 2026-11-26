@@ -5,10 +5,10 @@ authors = [
 	"Kamal Saleh <kamal.saleh@uni-siegen.de>"
 ]
 
-# Transpiled from GAP's FunctorCategories v2026.10-05
+# Transpiled from GAP's FunctorCategories v2026.11-02
 version = "0.1.0"
 
-# Current dependencies of GAP's FunctorCategories v2026.10-05
+# Current dependencies of GAP's FunctorCategories v2026.11-02
 # NeededOtherPackages:
 #   GAPDoc >= 1.5
 #   ToolsForHomalg >= 2026.04-01
