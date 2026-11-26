@@ -1,0 +1,27 @@
+# Every group is tested in its own CI job, which tests only the listed files of docs/src.
+# Every .md file in docs/src must be listed in a group.
+# After editing this file, run `make gen` to update .github/workflows/Test.yml.
+ci_test_groups:
+  - group: default
+    files:
+      - CartesianDiagonal.g.md
+      - CocartesianCodiagonal.g.md
+      - FiniteStrictCoproductCompletionOfObjectFiniteCategory.g.md
+      - FiniteStrictCoproductCompletionOfObjectFiniteCategory_ColiftAlongEpimorphism.g.md
+      - FiniteStrictCoproductCompletionOfObjectFiniteCategory_Equalizer.g.md
+      - FiniteStrictCoproductCompletionOfObjectFiniteCategory_poset.g.md
+      - FiniteStrictCoproductCompletion_poset.g.md
+      - FiniteStrictProductCompletion_poset.g.md
+      - HomStructure.g.md
+      - SkeletalCoproduct.g.md
+      - SkeletalCoproductComplement.g.md
+      - SkeletalDirectProduct.g.md
+      - SkeletalEqualizer.g.md
+      - SkeletalHomStructure.g.md
+      - SkeletalInitialTerminal.g.md
+      - SkeletalLift.g.md
+      - SkeletalMorphismsOfExternalHom.g.md
+      - SkeletalPreCompose.g.md
+      - SkeletalWellDefined.g.md
+      - TerminalCategory_as_FiniteCoproductCompletion.g.md
+      - TerminalCategory_as_FiniteProductCompletion.g.md

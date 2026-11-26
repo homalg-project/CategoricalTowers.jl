@@ -5,10 +5,10 @@ authors = [
 	"Marc Talleux <marc.talleux@u-picardie.fr>"
 ]
 
-# Transpiled from GAP's FiniteCocompletions v2026.10-04
+# Transpiled from GAP's FiniteCocompletions v2026.11-02
 version = "0.1.0"
 
-# Current dependencies of GAP's FiniteCocompletions v2026.10-04
+# Current dependencies of GAP's FiniteCocompletions v2026.11-02
 # NeededOtherPackages:
 #   GAPDoc >= 1.5
 #   CAP >= 2026.06-03

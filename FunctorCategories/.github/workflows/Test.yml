@@ -16,12 +16,24 @@ concurrency:
 
 jobs:
   test:
-    name: Julia ${{ matrix.julia-version }}
+    name: ${{ matrix.group.group }} - Julia ${{ matrix.julia-version }}
     runs-on: ubuntu-latest
     timeout-minutes: 60
     strategy:
       fail-fast: false
       matrix:
+        # generated from .github/ci_test_groups.yml
+        group:
+          - group: "SubobjectClassifier_TerminalCategory_YonedaComposition"
+            files: ["SubobjectClassifier.g.md", "TerminalCategory.g.md", "YonedaComposition.g.md"]
+          - group: "StreamVortexSystemBig"
+            files: ["StreamVortexSystemBig.g.md"]
+          - group: "StreamVortexSystem"
+            files: ["StreamVortexSystem.g.md", "StreamVortexSystemLinear.g.md"]
+          - group: "PreSheaves"
+            files: ["Weierstrass.g.md", "PreSheaves.md", "presheaves_of_algebroid_from_data_tables.g.md"]
+          - group: "AutoDocTests"
+            files: ["AutoDocTests.tst.autogen.md"]
         julia-version:
           - '1.12'
           - '1.13'
@@ -39,3 +51,5 @@ jobs:
         uses: julia-actions/cache@v2
       - name: Instantiate and test package
         run: julia --project=. -e 'using Pkg; Pkg.instantiate(); Pkg.test()'
+        env:
+          DOCTEST_FILES: ${{ join(matrix.group.files, ',') }}

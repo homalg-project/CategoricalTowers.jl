@@ -329,36 +329,6 @@ end );
         
     end );
     
-    if (CanCompute( D, "IsLiftableAlongMonomorphism" ))
-        
-        ##
-        AddIsLiftableAlongMonomorphism( PSh,
-          function ( PSh, eta, rho )
-            local D;
-            
-            D = Target( PSh );
-            
-            return ForAll( SetOfObjects( Source( PSh ) ), object -> IsLiftableAlongMonomorphism( D, eta( object ), rho( object ) ) );
-            
-        end );
-        
-    end;
-    
-    if (CanCompute( D, "IsColiftableAlongEpimorphism" ))
-        
-        ##
-        AddIsColiftableAlongEpimorphism( PSh,
-          function ( PSh, eta, rho )
-            local D;
-            
-            D = Target( PSh );
-            
-            return ForAll( SetOfObjects( Source( PSh ) ), object -> IsColiftableAlongEpimorphism( D, eta( object ), rho( object ) ) );
-            
-        end );
-        
-    end;
-    
     ## this code should become obsolete with following feature request:
     ## https://github.com/homalg-project/CAP_project/issues/801
     if (CanCompute( D, "MorphismBetweenDirectSumsWithGivenDirectSums" ))
